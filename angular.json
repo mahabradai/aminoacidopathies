@@ -104,6 +104,7 @@
       "path": "./target/angular/",
       "environment": "all"
     },
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "3c96ab89-3a1b-42d7-bc2e-7a8197b13813"
   }
 }
