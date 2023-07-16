@@ -1,0 +1,25 @@
+{
+  "changelogDate": "20230716183343",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "datemaj",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Fiche",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "pathologie",
+      "relationshipName": "pathologie",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"]
+    }
+  ],
+  "service": "serviceClass"
+}
