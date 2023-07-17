@@ -109,6 +109,23 @@
       "fieldName": "niveau_scolarisation",
       "fieldType": "eniveauscolarisation",
       "fieldValues": "PRIMAIRE,COLLEGE,SECONDAIRE,SUPERIEUR"
+    },
+    {
+      "fieldName": "cas_familiaux",
+      "fieldType": "ecasfamiliaux",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "nbcasconfirme",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nbcassuspectes",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nbcasdecedes",
+      "fieldType": "Integer"
     }
   ],
   "jpaMetamodelFiltering": false,

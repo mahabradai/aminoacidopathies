@@ -11,6 +11,7 @@ import { ecouverture } from 'app/entities/enumerations/ecouverture.model';
 import { eactivite } from 'app/entities/enumerations/eactivite.model';
 import { escolarisetype } from 'app/entities/enumerations/escolarisetype.model';
 import { eniveauscolarisation } from 'app/entities/enumerations/eniveauscolarisation.model';
+import { ecasfamiliaux } from 'app/entities/enumerations/ecasfamiliaux.model';
 
 export interface IFiche {
   id: number;
@@ -38,6 +39,10 @@ export interface IFiche {
   scolarise?: boolean | null;
   type_scolarise?: escolarisetype | null;
   niveau_scolarisation?: eniveauscolarisation | null;
+  cas_familiaux?: ecasfamiliaux | null;
+  nbcasconfirme?: number | null;
+  nbcassuspectes?: number | null;
+  nbcasdecedes?: number | null;
   pathologie?: Pick<IPathologie, 'id'> | null;
 }
 

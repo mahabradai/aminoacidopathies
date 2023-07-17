@@ -306,6 +306,56 @@
         </div>
 
         <div class="row mb-3">
+          <label class="form-label" for="field_cas_familiaux">Cas Familiaux</label>
+          <select
+            class="form-control"
+            name="cas_familiaux"
+            formControlName="cas_familiaux"
+            id="field_cas_familiaux"
+            data-cy="cas_familiaux"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let ecasfamiliaux of ecasfamiliauxValues" [value]="ecasfamiliaux">ecasfamiliaux</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nbcasconfirme">Nbcasconfirme</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nbcasconfirme"
+            id="field_nbcasconfirme"
+            data-cy="nbcasconfirme"
+            formControlName="nbcasconfirme"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nbcassuspectes">Nbcassuspectes</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nbcassuspectes"
+            id="field_nbcassuspectes"
+            data-cy="nbcassuspectes"
+            formControlName="nbcassuspectes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nbcasdecedes">Nbcasdecedes</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nbcasdecedes"
+            id="field_nbcasdecedes"
+            data-cy="nbcasdecedes"
+            formControlName="nbcasdecedes"
+          />
+        </div>
+
+        <div class="row mb-3">
           <label class="form-label" for="field_pathologie">Pathologie</label>
           <select
             class="form-control"

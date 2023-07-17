@@ -44,6 +44,10 @@ describe('Fiche Form Service', () => {
             scolarise: expect.any(Object),
             type_scolarise: expect.any(Object),
             niveau_scolarisation: expect.any(Object),
+            cas_familiaux: expect.any(Object),
+            nbcasconfirme: expect.any(Object),
+            nbcassuspectes: expect.any(Object),
+            nbcasdecedes: expect.any(Object),
             pathologie: expect.any(Object),
           })
         );
@@ -79,6 +83,10 @@ describe('Fiche Form Service', () => {
             scolarise: expect.any(Object),
             type_scolarise: expect.any(Object),
             niveau_scolarisation: expect.any(Object),
+            cas_familiaux: expect.any(Object),
+            nbcasconfirme: expect.any(Object),
+            nbcassuspectes: expect.any(Object),
+            nbcasdecedes: expect.any(Object),
             pathologie: expect.any(Object),
           })
         );

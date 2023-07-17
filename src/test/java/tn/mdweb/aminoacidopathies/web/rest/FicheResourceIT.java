@@ -23,6 +23,7 @@ import tn.mdweb.aminoacidopathies.IntegrationTest;
 import tn.mdweb.aminoacidopathies.domain.Fiche;
 import tn.mdweb.aminoacidopathies.domain.Pathologie;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
+import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
@@ -117,6 +118,18 @@ class FicheResourceIT {
     private static final eniveauscolarisation DEFAULT_NIVEAU_SCOLARISATION = eniveauscolarisation.PRIMAIRE;
     private static final eniveauscolarisation UPDATED_NIVEAU_SCOLARISATION = eniveauscolarisation.COLLEGE;
 
+    private static final ecasfamiliaux DEFAULT_CAS_FAMILIAUX = ecasfamiliaux.OUI;
+    private static final ecasfamiliaux UPDATED_CAS_FAMILIAUX = ecasfamiliaux.NON;
+
+    private static final Integer DEFAULT_NBCASCONFIRME = 1;
+    private static final Integer UPDATED_NBCASCONFIRME = 2;
+
+    private static final Integer DEFAULT_NBCASSUSPECTES = 1;
+    private static final Integer UPDATED_NBCASSUSPECTES = 2;
+
+    private static final Integer DEFAULT_NBCASDECEDES = 1;
+    private static final Integer UPDATED_NBCASDECEDES = 2;
+
     private static final String ENTITY_API_URL = "/api/fiches";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -168,7 +181,11 @@ class FicheResourceIT {
             .travail(DEFAULT_TRAVAIL)
             .scolarise(DEFAULT_SCOLARISE)
             .type_scolarise(DEFAULT_TYPE_SCOLARISE)
-            .niveau_scolarisation(DEFAULT_NIVEAU_SCOLARISATION);
+            .niveau_scolarisation(DEFAULT_NIVEAU_SCOLARISATION)
+            .cas_familiaux(DEFAULT_CAS_FAMILIAUX)
+            .nbcasconfirme(DEFAULT_NBCASCONFIRME)
+            .nbcassuspectes(DEFAULT_NBCASSUSPECTES)
+            .nbcasdecedes(DEFAULT_NBCASDECEDES);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -213,7 +230,11 @@ class FicheResourceIT {
             .travail(UPDATED_TRAVAIL)
             .scolarise(UPDATED_SCOLARISE)
             .type_scolarise(UPDATED_TYPE_SCOLARISE)
-            .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION);
+            .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION)
+            .cas_familiaux(UPDATED_CAS_FAMILIAUX)
+            .nbcasconfirme(UPDATED_NBCASCONFIRME)
+            .nbcassuspectes(UPDATED_NBCASSUSPECTES)
+            .nbcasdecedes(UPDATED_NBCASDECEDES);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -270,6 +291,10 @@ class FicheResourceIT {
         assertThat(testFiche.getScolarise()).isEqualTo(DEFAULT_SCOLARISE);
         assertThat(testFiche.getType_scolarise()).isEqualTo(DEFAULT_TYPE_SCOLARISE);
         assertThat(testFiche.getNiveau_scolarisation()).isEqualTo(DEFAULT_NIVEAU_SCOLARISATION);
+        assertThat(testFiche.getCas_familiaux()).isEqualTo(DEFAULT_CAS_FAMILIAUX);
+        assertThat(testFiche.getNbcasconfirme()).isEqualTo(DEFAULT_NBCASCONFIRME);
+        assertThat(testFiche.getNbcassuspectes()).isEqualTo(DEFAULT_NBCASSUSPECTES);
+        assertThat(testFiche.getNbcasdecedes()).isEqualTo(DEFAULT_NBCASDECEDES);
     }
 
     @Test
@@ -344,7 +369,11 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.[*].travail").value(hasItem(DEFAULT_TRAVAIL)))
             .andExpect(jsonPath("$.[*].scolarise").value(hasItem(DEFAULT_SCOLARISE.booleanValue())))
             .andExpect(jsonPath("$.[*].type_scolarise").value(hasItem(DEFAULT_TYPE_SCOLARISE.toString())))
-            .andExpect(jsonPath("$.[*].niveau_scolarisation").value(hasItem(DEFAULT_NIVEAU_SCOLARISATION.toString())));
+            .andExpect(jsonPath("$.[*].niveau_scolarisation").value(hasItem(DEFAULT_NIVEAU_SCOLARISATION.toString())))
+            .andExpect(jsonPath("$.[*].cas_familiaux").value(hasItem(DEFAULT_CAS_FAMILIAUX.toString())))
+            .andExpect(jsonPath("$.[*].nbcasconfirme").value(hasItem(DEFAULT_NBCASCONFIRME)))
+            .andExpect(jsonPath("$.[*].nbcassuspectes").value(hasItem(DEFAULT_NBCASSUSPECTES)))
+            .andExpect(jsonPath("$.[*].nbcasdecedes").value(hasItem(DEFAULT_NBCASDECEDES)));
     }
 
     @Test
@@ -382,7 +411,11 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.travail").value(DEFAULT_TRAVAIL))
             .andExpect(jsonPath("$.scolarise").value(DEFAULT_SCOLARISE.booleanValue()))
             .andExpect(jsonPath("$.type_scolarise").value(DEFAULT_TYPE_SCOLARISE.toString()))
-            .andExpect(jsonPath("$.niveau_scolarisation").value(DEFAULT_NIVEAU_SCOLARISATION.toString()));
+            .andExpect(jsonPath("$.niveau_scolarisation").value(DEFAULT_NIVEAU_SCOLARISATION.toString()))
+            .andExpect(jsonPath("$.cas_familiaux").value(DEFAULT_CAS_FAMILIAUX.toString()))
+            .andExpect(jsonPath("$.nbcasconfirme").value(DEFAULT_NBCASCONFIRME))
+            .andExpect(jsonPath("$.nbcassuspectes").value(DEFAULT_NBCASSUSPECTES))
+            .andExpect(jsonPath("$.nbcasdecedes").value(DEFAULT_NBCASDECEDES));
     }
 
     @Test
@@ -428,7 +461,11 @@ class FicheResourceIT {
             .travail(UPDATED_TRAVAIL)
             .scolarise(UPDATED_SCOLARISE)
             .type_scolarise(UPDATED_TYPE_SCOLARISE)
-            .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION);
+            .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION)
+            .cas_familiaux(UPDATED_CAS_FAMILIAUX)
+            .nbcasconfirme(UPDATED_NBCASCONFIRME)
+            .nbcassuspectes(UPDATED_NBCASSUSPECTES)
+            .nbcasdecedes(UPDATED_NBCASDECEDES);
         FicheDTO ficheDTO = ficheMapper.toDto(updatedFiche);
 
         restFicheMockMvc
@@ -467,6 +504,10 @@ class FicheResourceIT {
         assertThat(testFiche.getScolarise()).isEqualTo(UPDATED_SCOLARISE);
         assertThat(testFiche.getType_scolarise()).isEqualTo(UPDATED_TYPE_SCOLARISE);
         assertThat(testFiche.getNiveau_scolarisation()).isEqualTo(UPDATED_NIVEAU_SCOLARISATION);
+        assertThat(testFiche.getCas_familiaux()).isEqualTo(UPDATED_CAS_FAMILIAUX);
+        assertThat(testFiche.getNbcasconfirme()).isEqualTo(UPDATED_NBCASCONFIRME);
+        assertThat(testFiche.getNbcassuspectes()).isEqualTo(UPDATED_NBCASSUSPECTES);
+        assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
     }
 
     @Test
@@ -560,7 +601,10 @@ class FicheResourceIT {
             .btravail(UPDATED_BTRAVAIL)
             .travail(UPDATED_TRAVAIL)
             .type_scolarise(UPDATED_TYPE_SCOLARISE)
-            .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION);
+            .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION)
+            .cas_familiaux(UPDATED_CAS_FAMILIAUX)
+            .nbcassuspectes(UPDATED_NBCASSUSPECTES)
+            .nbcasdecedes(UPDATED_NBCASDECEDES);
 
         restFicheMockMvc
             .perform(
@@ -598,6 +642,10 @@ class FicheResourceIT {
         assertThat(testFiche.getScolarise()).isEqualTo(DEFAULT_SCOLARISE);
         assertThat(testFiche.getType_scolarise()).isEqualTo(UPDATED_TYPE_SCOLARISE);
         assertThat(testFiche.getNiveau_scolarisation()).isEqualTo(UPDATED_NIVEAU_SCOLARISATION);
+        assertThat(testFiche.getCas_familiaux()).isEqualTo(UPDATED_CAS_FAMILIAUX);
+        assertThat(testFiche.getNbcasconfirme()).isEqualTo(DEFAULT_NBCASCONFIRME);
+        assertThat(testFiche.getNbcassuspectes()).isEqualTo(UPDATED_NBCASSUSPECTES);
+        assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
     }
 
     @Test
@@ -636,7 +684,11 @@ class FicheResourceIT {
             .travail(UPDATED_TRAVAIL)
             .scolarise(UPDATED_SCOLARISE)
             .type_scolarise(UPDATED_TYPE_SCOLARISE)
-            .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION);
+            .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION)
+            .cas_familiaux(UPDATED_CAS_FAMILIAUX)
+            .nbcasconfirme(UPDATED_NBCASCONFIRME)
+            .nbcassuspectes(UPDATED_NBCASSUSPECTES)
+            .nbcasdecedes(UPDATED_NBCASDECEDES);
 
         restFicheMockMvc
             .perform(
@@ -674,6 +726,10 @@ class FicheResourceIT {
         assertThat(testFiche.getScolarise()).isEqualTo(UPDATED_SCOLARISE);
         assertThat(testFiche.getType_scolarise()).isEqualTo(UPDATED_TYPE_SCOLARISE);
         assertThat(testFiche.getNiveau_scolarisation()).isEqualTo(UPDATED_NIVEAU_SCOLARISATION);
+        assertThat(testFiche.getCas_familiaux()).isEqualTo(UPDATED_CAS_FAMILIAUX);
+        assertThat(testFiche.getNbcasconfirme()).isEqualTo(UPDATED_NBCASCONFIRME);
+        assertThat(testFiche.getNbcassuspectes()).isEqualTo(UPDATED_NBCASSUSPECTES);
+        assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
     }
 
     @Test

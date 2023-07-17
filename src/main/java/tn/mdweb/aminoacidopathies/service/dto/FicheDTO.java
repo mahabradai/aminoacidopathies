@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 import javax.validation.constraints.*;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
+import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
@@ -72,6 +73,14 @@ public class FicheDTO implements Serializable {
     private escolarisetype type_scolarise;
 
     private eniveauscolarisation niveau_scolarisation;
+
+    private ecasfamiliaux cas_familiaux;
+
+    private Integer nbcasconfirme;
+
+    private Integer nbcassuspectes;
+
+    private Integer nbcasdecedes;
 
     private PathologieDTO pathologie;
 
@@ -275,6 +284,38 @@ public class FicheDTO implements Serializable {
         this.niveau_scolarisation = niveau_scolarisation;
     }
 
+    public ecasfamiliaux getCas_familiaux() {
+        return cas_familiaux;
+    }
+
+    public void setCas_familiaux(ecasfamiliaux cas_familiaux) {
+        this.cas_familiaux = cas_familiaux;
+    }
+
+    public Integer getNbcasconfirme() {
+        return nbcasconfirme;
+    }
+
+    public void setNbcasconfirme(Integer nbcasconfirme) {
+        this.nbcasconfirme = nbcasconfirme;
+    }
+
+    public Integer getNbcassuspectes() {
+        return nbcassuspectes;
+    }
+
+    public void setNbcassuspectes(Integer nbcassuspectes) {
+        this.nbcassuspectes = nbcassuspectes;
+    }
+
+    public Integer getNbcasdecedes() {
+        return nbcasdecedes;
+    }
+
+    public void setNbcasdecedes(Integer nbcasdecedes) {
+        this.nbcasdecedes = nbcasdecedes;
+    }
+
     public PathologieDTO getPathologie() {
         return pathologie;
     }
@@ -333,6 +374,10 @@ public class FicheDTO implements Serializable {
             ", scolarise='" + getScolarise() + "'" +
             ", type_scolarise='" + getType_scolarise() + "'" +
             ", niveau_scolarisation='" + getNiveau_scolarisation() + "'" +
+            ", cas_familiaux='" + getCas_familiaux() + "'" +
+            ", nbcasconfirme=" + getNbcasconfirme() +
+            ", nbcassuspectes=" + getNbcassuspectes() +
+            ", nbcasdecedes=" + getNbcasdecedes() +
             ", pathologie=" + getPathologie() +
             "}";
     }

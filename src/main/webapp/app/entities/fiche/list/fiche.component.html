@@ -182,6 +182,30 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
+          <th scope="col" jhiSortBy="cas_familiaux">
+            <div class="d-flex">
+              <span>Cas Familiaux</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbcasconfirme">
+            <div class="d-flex">
+              <span>Nbcasconfirme</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbcassuspectes">
+            <div class="d-flex">
+              <span>Nbcassuspectes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbcasdecedes">
+            <div class="d-flex">
+              <span>Nbcasdecedes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
           <th scope="col" jhiSortBy="pathologie.id">
             <div class="d-flex">
               <span>Pathologie</span>
@@ -220,6 +244,10 @@
           <td>{{ fiche.scolarise }}</td>
           <td>{{ fiche.type_scolarise }}</td>
           <td>{{ fiche.niveau_scolarisation }}</td>
+          <td>{{ fiche.cas_familiaux }}</td>
+          <td>{{ fiche.nbcasconfirme }}</td>
+          <td>{{ fiche.nbcassuspectes }}</td>
+          <td>{{ fiche.nbcasdecedes }}</td>
           <td>
             <div *ngIf="fiche.pathologie">
               <a [routerLink]="['/pathologie', fiche.pathologie.id, 'view']">{{ fiche.pathologie.id }}</a>

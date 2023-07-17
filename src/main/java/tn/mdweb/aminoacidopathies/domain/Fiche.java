@@ -7,6 +7,7 @@ import javax.validation.constraints.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
+import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
@@ -117,6 +118,19 @@ public class Fiche implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "niveau_scolarisation")
     private eniveauscolarisation niveau_scolarisation;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "cas_familiaux")
+    private ecasfamiliaux cas_familiaux;
+
+    @Column(name = "nbcasconfirme")
+    private Integer nbcasconfirme;
+
+    @Column(name = "nbcassuspectes")
+    private Integer nbcassuspectes;
+
+    @Column(name = "nbcasdecedes")
+    private Integer nbcasdecedes;
 
     @ManyToOne(optional = false)
     @NotNull
@@ -449,6 +463,58 @@ public class Fiche implements Serializable {
         this.niveau_scolarisation = niveau_scolarisation;
     }
 
+    public ecasfamiliaux getCas_familiaux() {
+        return this.cas_familiaux;
+    }
+
+    public Fiche cas_familiaux(ecasfamiliaux cas_familiaux) {
+        this.setCas_familiaux(cas_familiaux);
+        return this;
+    }
+
+    public void setCas_familiaux(ecasfamiliaux cas_familiaux) {
+        this.cas_familiaux = cas_familiaux;
+    }
+
+    public Integer getNbcasconfirme() {
+        return this.nbcasconfirme;
+    }
+
+    public Fiche nbcasconfirme(Integer nbcasconfirme) {
+        this.setNbcasconfirme(nbcasconfirme);
+        return this;
+    }
+
+    public void setNbcasconfirme(Integer nbcasconfirme) {
+        this.nbcasconfirme = nbcasconfirme;
+    }
+
+    public Integer getNbcassuspectes() {
+        return this.nbcassuspectes;
+    }
+
+    public Fiche nbcassuspectes(Integer nbcassuspectes) {
+        this.setNbcassuspectes(nbcassuspectes);
+        return this;
+    }
+
+    public void setNbcassuspectes(Integer nbcassuspectes) {
+        this.nbcassuspectes = nbcassuspectes;
+    }
+
+    public Integer getNbcasdecedes() {
+        return this.nbcasdecedes;
+    }
+
+    public Fiche nbcasdecedes(Integer nbcasdecedes) {
+        this.setNbcasdecedes(nbcasdecedes);
+        return this;
+    }
+
+    public void setNbcasdecedes(Integer nbcasdecedes) {
+        this.nbcasdecedes = nbcasdecedes;
+    }
+
     public Pathologie getPathologie() {
         return this.pathologie;
     }
@@ -510,6 +576,10 @@ public class Fiche implements Serializable {
             ", scolarise='" + getScolarise() + "'" +
             ", type_scolarise='" + getType_scolarise() + "'" +
             ", niveau_scolarisation='" + getNiveau_scolarisation() + "'" +
+            ", cas_familiaux='" + getCas_familiaux() + "'" +
+            ", nbcasconfirme=" + getNbcasconfirme() +
+            ", nbcassuspectes=" + getNbcassuspectes() +
+            ", nbcasdecedes=" + getNbcasdecedes() +
             "}";
     }
 }
