@@ -12,8 +12,11 @@ import { IFiche, NewFiche } from '../fiche.model';
 
 export type PartialUpdateFiche = Partial<IFiche> & Pick<IFiche, 'id'>;
 
-type RestOf<T extends IFiche | NewFiche> = Omit<T, 'datemaj'> & {
+type RestOf<T extends IFiche | NewFiche> = Omit<T, 'datemaj' | 'date_enregistrement' | 'date_naissance' | 'date_deces'> & {
   datemaj?: string | null;
+  date_enregistrement?: string | null;
+  date_naissance?: string | null;
+  date_deces?: string | null;
 };
 
 export type RestFiche = RestOf<IFiche>;
@@ -99,6 +102,9 @@ export class FicheService {
     return {
       ...fiche,
       datemaj: fiche.datemaj?.format(DATE_FORMAT) ?? null,
+      date_enregistrement: fiche.date_enregistrement?.format(DATE_FORMAT) ?? null,
+      date_naissance: fiche.date_naissance?.format(DATE_FORMAT) ?? null,
+      date_deces: fiche.date_deces?.format(DATE_FORMAT) ?? null,
     };
   }
 
@@ -106,6 +112,9 @@ export class FicheService {
     return {
       ...restFiche,
       datemaj: restFiche.datemaj ? dayjs(restFiche.datemaj) : undefined,
+      date_enregistrement: restFiche.date_enregistrement ? dayjs(restFiche.date_enregistrement) : undefined,
+      date_naissance: restFiche.date_naissance ? dayjs(restFiche.date_naissance) : undefined,
+      date_deces: restFiche.date_deces ? dayjs(restFiche.date_deces) : undefined,
     };
   }
 

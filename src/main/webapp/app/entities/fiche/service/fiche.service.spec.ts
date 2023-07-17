@@ -10,6 +10,9 @@ import { FicheService, RestFiche } from './fiche.service';
 const requireRestSample: RestFiche = {
   ...sampleWithRequiredData,
   datemaj: sampleWithRequiredData.datemaj?.format(DATE_FORMAT),
+  date_enregistrement: sampleWithRequiredData.date_enregistrement?.format(DATE_FORMAT),
+  date_naissance: sampleWithRequiredData.date_naissance?.format(DATE_FORMAT),
+  date_deces: sampleWithRequiredData.date_deces?.format(DATE_FORMAT),
 };
 
 describe('Fiche Service', () => {

@@ -17,6 +17,75 @@
             <column name="datemaj" type="date">
                 <constraints nullable="false" />
             </column>
+            <column name="type_observation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="identifiant_registre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_enregistrement" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="sexe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_naissance" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="statut" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_deces" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="circonstance_deces" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="autre_circonstance_deces" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lieu_deces" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="consanguinite" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="origine_geo_pere_gouvernorat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="origine_geo_mere_gouvernorat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="origine_geo_pere_deleguation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="origine_geo_mere_deleguation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="couverture_sociale" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="autre_couverture_sociale" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="activite" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="btravail" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="travail" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="scolarise" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="type_scolarise" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="niveau_scolarisation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="pathologie_id" type="bigint">
                 <constraints nullable="false" />
             </column>
@@ -42,6 +111,29 @@
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="datemaj" type="date"/>
+            <column name="type_observation" type="string"/>
+            <column name="identifiant_registre" type="string"/>
+            <column name="date_enregistrement" type="date"/>
+            <column name="sexe" type="string"/>
+            <column name="date_naissance" type="date"/>
+            <column name="statut" type="string"/>
+            <column name="date_deces" type="date"/>
+            <column name="circonstance_deces" type="string"/>
+            <column name="autre_circonstance_deces" type="string"/>
+            <column name="lieu_deces" type="string"/>
+            <column name="consanguinite" type="string"/>
+            <column name="origine_geo_pere_gouvernorat" type="string"/>
+            <column name="origine_geo_mere_gouvernorat" type="string"/>
+            <column name="origine_geo_pere_deleguation" type="string"/>
+            <column name="origine_geo_mere_deleguation" type="string"/>
+            <column name="couverture_sociale" type="string"/>
+            <column name="autre_couverture_sociale" type="string"/>
+            <column name="activite" type="string"/>
+            <column name="btravail" type="boolean"/>
+            <column name="travail" type="string"/>
+            <column name="scolarise" type="boolean"/>
+            <column name="type_scolarise" type="string"/>
+            <column name="niveau_scolarisation" type="string"/>
             <column name="pathologie_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

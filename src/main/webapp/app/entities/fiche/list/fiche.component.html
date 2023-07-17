@@ -44,6 +44,144 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
+          <th scope="col" jhiSortBy="type_observation">
+            <div class="d-flex">
+              <span>Type Observation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="identifiant_registre">
+            <div class="d-flex">
+              <span>Identifiant Registre</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="date_enregistrement">
+            <div class="d-flex">
+              <span>Date Enregistrement</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sexe">
+            <div class="d-flex">
+              <span>Sexe</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="date_naissance">
+            <div class="d-flex">
+              <span>Date Naissance</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="statut">
+            <div class="d-flex">
+              <span>Statut</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="date_deces">
+            <div class="d-flex">
+              <span>Date Deces</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="circonstance_deces">
+            <div class="d-flex">
+              <span>Circonstance Deces</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autre_circonstance_deces">
+            <div class="d-flex">
+              <span>Autre Circonstance Deces</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lieu_deces">
+            <div class="d-flex">
+              <span>Lieu Deces</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="consanguinite">
+            <div class="d-flex">
+              <span>Consanguinite</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="origine_geo_pere_gouvernorat">
+            <div class="d-flex">
+              <span>Origine Geo Pere Gouvernorat</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="origine_geo_mere_gouvernorat">
+            <div class="d-flex">
+              <span>Origine Geo Mere Gouvernorat</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="origine_geo_pere_deleguation">
+            <div class="d-flex">
+              <span>Origine Geo Pere Deleguation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="origine_geo_mere_deleguation">
+            <div class="d-flex">
+              <span>Origine Geo Mere Deleguation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="couverture_sociale">
+            <div class="d-flex">
+              <span>Couverture Sociale</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autre_couverture_sociale">
+            <div class="d-flex">
+              <span>Autre Couverture Sociale</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="activite">
+            <div class="d-flex">
+              <span>Activite</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="btravail">
+            <div class="d-flex">
+              <span>Btravail</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="travail">
+            <div class="d-flex">
+              <span>Travail</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="scolarise">
+            <div class="d-flex">
+              <span>Scolarise</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="type_scolarise">
+            <div class="d-flex">
+              <span>Type Scolarise</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="niveau_scolarisation">
+            <div class="d-flex">
+              <span>Niveau Scolarisation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
           <th scope="col" jhiSortBy="pathologie.id">
             <div class="d-flex">
               <span>Pathologie</span>
@@ -59,6 +197,29 @@
             <a [routerLink]="['/fiche', fiche.id, 'view']">{{ fiche.id }}</a>
           </td>
           <td>{{ fiche.datemaj | formatMediumDate }}</td>
+          <td>{{ fiche.type_observation }}</td>
+          <td>{{ fiche.identifiant_registre }}</td>
+          <td>{{ fiche.date_enregistrement | formatMediumDate }}</td>
+          <td>{{ fiche.sexe }}</td>
+          <td>{{ fiche.date_naissance | formatMediumDate }}</td>
+          <td>{{ fiche.statut }}</td>
+          <td>{{ fiche.date_deces | formatMediumDate }}</td>
+          <td>{{ fiche.circonstance_deces }}</td>
+          <td>{{ fiche.autre_circonstance_deces }}</td>
+          <td>{{ fiche.lieu_deces }}</td>
+          <td>{{ fiche.consanguinite }}</td>
+          <td>{{ fiche.origine_geo_pere_gouvernorat }}</td>
+          <td>{{ fiche.origine_geo_mere_gouvernorat }}</td>
+          <td>{{ fiche.origine_geo_pere_deleguation }}</td>
+          <td>{{ fiche.origine_geo_mere_deleguation }}</td>
+          <td>{{ fiche.couverture_sociale }}</td>
+          <td>{{ fiche.autre_couverture_sociale }}</td>
+          <td>{{ fiche.activite }}</td>
+          <td>{{ fiche.btravail }}</td>
+          <td>{{ fiche.travail }}</td>
+          <td>{{ fiche.scolarise }}</td>
+          <td>{{ fiche.type_scolarise }}</td>
+          <td>{{ fiche.niveau_scolarisation }}</td>
           <td>
             <div *ngIf="fiche.pathologie">
               <a [routerLink]="['/pathologie', fiche.pathologie.id, 'view']">{{ fiche.pathologie.id }}</a>

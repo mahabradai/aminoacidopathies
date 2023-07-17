@@ -6,6 +6,109 @@
       "fieldName": "datemaj",
       "fieldType": "LocalDate",
       "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type_observation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identifiant_registre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date_enregistrement",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sexe",
+      "fieldType": "esexe",
+      "fieldValues": "M,F,INDETERMINE"
+    },
+    {
+      "fieldName": "date_naissance",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "estatut",
+      "fieldValues": "ENCORE_SUIVI,DECEDE,PERDU_DE_VUE,INTERRUPTION_DE_GROSSESSE"
+    },
+    {
+      "fieldName": "date_deces",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "circonstance_deces",
+      "fieldType": "ecirconstance",
+      "fieldValues": "TBL_NEURO,TBL_HEMORRAGIQUE,TBL_INFX,NON_PRECISE,AUTRE"
+    },
+    {
+      "fieldName": "autre_circonstance_deces",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lieu_deces",
+      "fieldType": "elieudeces",
+      "fieldValues": "DOMICILE,STRUCTURE_SANTE_PUBLIQUE_NP"
+    },
+    {
+      "fieldName": "consanguinite",
+      "fieldType": "econsanguinite",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "origine_geo_pere_gouvernorat",
+      "fieldType": "egouvernorat",
+      "fieldValues": "ARIANA,BEJA,BENAROUS,BIZERTE,GABES,GAFSA,JENDOUBA,KAIROUAN,KASSERINE,KEBIL,KEF,MAHDIA,MANOUBA,MEDENINE,MONASTIR,NABEUL,SFAX,SIDIBOUZID,SILIANA,SOUSSE,TATAOUINE,TOZEUR,TUNIS,ZAGHOUAN"
+    },
+    {
+      "fieldName": "origine_geo_mere_gouvernorat",
+      "fieldType": "egouvernoratmere",
+      "fieldValues": "ARIANA,BEJA,BENAROUS,BIZERTE,GABES,GAFSA,JENDOUBA,KAIROUAN,KASSERINE,KEBIL,KEF,MAHDIA,MANOUBA,MEDENINE,MONASTIR,NABEUL,SFAX,SIDIBOUZID,SILIANA,SOUSSE,TATAOUINE,TOZEUR,TUNIS,ZAGHOUAN,NP"
+    },
+    {
+      "fieldName": "origine_geo_pere_deleguation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "origine_geo_mere_deleguation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "couverture_sociale",
+      "fieldType": "ecouverture",
+      "fieldValues": "AUCUNE,CNAM,TARIF_REDUIT,INDIGENT,REGIME_MILITAIRE,AUTRE"
+    },
+    {
+      "fieldName": "autre_couverture_sociale",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activite",
+      "fieldType": "eactivite",
+      "fieldValues": "NP,NON,NA,OUI"
+    },
+    {
+      "fieldName": "btravail",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "travail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scolarise",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "type_scolarise",
+      "fieldType": "escolarisetype",
+      "fieldValues": "ECOLE_NORMALE,ECOLE_INTEGRATION,CENTRE_SPECIALISE,AUTRE,NP"
+    },
+    {
+      "fieldName": "niveau_scolarisation",
+      "fieldType": "eniveauscolarisation",
+      "fieldValues": "PRIMAIRE,COLLEGE,SECONDAIRE,SUPERIEUR"
     }
   ],
   "jpaMetamodelFiltering": false,

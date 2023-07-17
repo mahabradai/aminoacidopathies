@@ -9,6 +9,17 @@ import { IFiche } from '../fiche.model';
 import { FicheService } from '../service/fiche.service';
 import { IPathologie } from 'app/entities/pathologie/pathologie.model';
 import { PathologieService } from 'app/entities/pathologie/service/pathologie.service';
+import { esexe } from 'app/entities/enumerations/esexe.model';
+import { estatut } from 'app/entities/enumerations/estatut.model';
+import { ecirconstance } from 'app/entities/enumerations/ecirconstance.model';
+import { elieudeces } from 'app/entities/enumerations/elieudeces.model';
+import { econsanguinite } from 'app/entities/enumerations/econsanguinite.model';
+import { egouvernorat } from 'app/entities/enumerations/egouvernorat.model';
+import { egouvernoratmere } from 'app/entities/enumerations/egouvernoratmere.model';
+import { ecouverture } from 'app/entities/enumerations/ecouverture.model';
+import { eactivite } from 'app/entities/enumerations/eactivite.model';
+import { escolarisetype } from 'app/entities/enumerations/escolarisetype.model';
+import { eniveauscolarisation } from 'app/entities/enumerations/eniveauscolarisation.model';
 
 @Component({
   selector: 'jhi-fiche-update',
@@ -17,6 +28,17 @@ import { PathologieService } from 'app/entities/pathologie/service/pathologie.se
 export class FicheUpdateComponent implements OnInit {
   isSaving = false;
   fiche: IFiche | null = null;
+  esexeValues = Object.keys(esexe);
+  estatutValues = Object.keys(estatut);
+  ecirconstanceValues = Object.keys(ecirconstance);
+  elieudecesValues = Object.keys(elieudeces);
+  econsanguiniteValues = Object.keys(econsanguinite);
+  egouvernoratValues = Object.keys(egouvernorat);
+  egouvernoratmereValues = Object.keys(egouvernoratmere);
+  ecouvertureValues = Object.keys(ecouverture);
+  eactiviteValues = Object.keys(eactivite);
+  escolarisetypeValues = Object.keys(escolarisetype);
+  eniveauscolarisationValues = Object.keys(eniveauscolarisation);
 
   pathologiesSharedCollection: IPathologie[] = [];
 

@@ -1,11 +1,11 @@
-id;datemaj;pathologie_id
-1;2023-07-16;1
-2;2023-07-16;2
-3;2023-07-16;3
-4;2023-07-15;4
-5;2023-07-15;5
-6;2023-07-16;6
-7;2023-07-16;7
-8;2023-07-15;8
-9;2023-07-16;9
-10;2023-07-16;10
+id;datemaj;type_observation;identifiant_registre;date_enregistrement;sexe;date_naissance;statut;date_deces;circonstance_deces;autre_circonstance_deces;lieu_deces;consanguinite;origine_geo_pere_gouvernorat;origine_geo_mere_gouvernorat;origine_geo_pere_deleguation;origine_geo_mere_deleguation;couverture_sociale;autre_couverture_sociale;activite;btravail;travail;scolarise;type_scolarise;niveau_scolarisation;pathologie_id
+1;2023-07-16;Dinar withdrawal;strategic;2023-07-16;F;2023-07-16;DECEDE;2023-07-16;NON_PRECISE;wireless;DOMICILE;NP;TUNIS;KASSERINE;up customized Lake;Tasty Island;AUCUNE;Rustic;NA;true;Fresh Progressive;true;ECOLE_INTEGRATION;SECONDAIRE;1
+2;2023-07-16;repurpose;Executive Proactive Corporate;2023-07-16;INDETERMINE;2023-07-16;PERDU_DE_VUE;2023-07-16;TBL_HEMORRAGIQUE;Investor Optimization SMS;DOMICILE;OUI;KAIROUAN;GABES;copy calculate;Market connecting;INDIGENT;parsing Configuration;NON;false;bypass database Refined;false;NP;COLLEGE;2
+3;2023-07-15;Lek;Visionary drive;2023-07-16;F;2023-07-16;ENCORE_SUIVI;2023-07-15;TBL_INFX;transmitting;STRUCTURE_SANTE_PUBLIQUE_NP;NON;JENDOUBA;MAHDIA;Leone Utah Account;turn-key quantifying Rubber;REGIME_MILITAIRE;24/365;NA;false;Samoa;false;CENTRE_SPECIALISE;COLLEGE;3
+4;2023-07-16;Account high-level Lead;ROI Jordanian Loan;2023-07-16;M;2023-07-16;PERDU_DE_VUE;2023-07-16;TBL_NEURO;Loan systems Pass;STRUCTURE_SANTE_PUBLIQUE_NP;NON;BEJA;TUNIS;transmitter;management Computer Producer;AUTRE;Account Electronics;NP;true;invoice Human Zimbabwe;false;CENTRE_SPECIALISE;PRIMAIRE;4
+5;2023-07-16;national Austria Wyoming;Future-proofed Cotton Technician;2023-07-16;INDETERMINE;2023-07-16;DECEDE;2023-07-16;AUTRE;salmon functionalities;DOMICILE;NP;KEBIL;NP;Armenia;interfaces;TARIF_REDUIT;microchip;NP;true;Georgia Sausages;false;ECOLE_NORMALE;COLLEGE;5
+6;2023-07-16;Market Fresh;Shirt Pound deposit;2023-07-15;M;2023-07-16;PERDU_DE_VUE;2023-07-16;TBL_HEMORRAGIQUE;program;DOMICILE;OUI;BENAROUS;KAIROUAN;optical Missouri connect;District content-based;AUTRE;drive Optional JBOD;NP;true;Awesome 3rd;false;NP;SECONDAIRE;6
+7;2023-07-16;Islands Representative withdrawal;Missouri Lao;2023-07-16;F;2023-07-16;ENCORE_SUIVI;2023-07-16;TBL_INFX;Station Producer;STRUCTURE_SANTE_PUBLIQUE_NP;OUI;KEBIL;TUNIS;mobile Table;digital Polarised Rupiah;TARIF_REDUIT;neural-net;NA;true;Handcrafted Pataca;true;NP;COLLEGE;7
+8;2023-07-16;silver Rustic;up Costa cultivate;2023-07-16;M;2023-07-16;INTERRUPTION_DE_GROSSESSE;2023-07-15;TBL_HEMORRAGIQUE;Car Metrics XSS;STRUCTURE_SANTE_PUBLIQUE_NP;NON;KEBIL;GABES;bluetooth Multi-lateral;program;TARIF_REDUIT;Legacy Factors;NP;false;Movies;true;ECOLE_INTEGRATION;SECONDAIRE;8
+9;2023-07-15;silver Awesome Rubber;Towels RAM;2023-07-16;INDETERMINE;2023-07-16;ENCORE_SUIVI;2023-07-16;NON_PRECISE;Account;DOMICILE;NON;TATAOUINE;BEJA;Director Communications viral;Handcrafted static;REGIME_MILITAIRE;Home;OUI;true;hardware Vision-oriented;true;AUTRE;COLLEGE;9
+10;2023-07-16;Account copying Global;compelling;2023-07-16;INDETERMINE;2023-07-16;ENCORE_SUIVI;2023-07-16;TBL_NEURO;reboot XML overriding;DOMICILE;NON;BIZERTE;BEJA;Station;Account Fresh;INDIGENT;parsing;NA;true;Forward Awesome;true;AUTRE;COLLEGE;10
