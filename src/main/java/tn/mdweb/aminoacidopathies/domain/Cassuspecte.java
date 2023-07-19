@@ -107,6 +107,15 @@ public class Cassuspecte implements Serializable {
     @Column(name = "manifestations_ophtalmologiques_autre")
     private String manifestations_ophtalmologiques_autre;
 
+    @Column(name = "autre_criteres")
+    private Boolean autre_criteres;
+
+    @Column(name = "str_autres_criteres")
+    private String str_autres_criteres;
+
+    @Column(name = "critere_non_precise")
+    private Boolean critere_non_precise;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -486,6 +495,45 @@ public class Cassuspecte implements Serializable {
         this.manifestations_ophtalmologiques_autre = manifestations_ophtalmologiques_autre;
     }
 
+    public Boolean getAutre_criteres() {
+        return this.autre_criteres;
+    }
+
+    public Cassuspecte autre_criteres(Boolean autre_criteres) {
+        this.setAutre_criteres(autre_criteres);
+        return this;
+    }
+
+    public void setAutre_criteres(Boolean autre_criteres) {
+        this.autre_criteres = autre_criteres;
+    }
+
+    public String getStr_autres_criteres() {
+        return this.str_autres_criteres;
+    }
+
+    public Cassuspecte str_autres_criteres(String str_autres_criteres) {
+        this.setStr_autres_criteres(str_autres_criteres);
+        return this;
+    }
+
+    public void setStr_autres_criteres(String str_autres_criteres) {
+        this.str_autres_criteres = str_autres_criteres;
+    }
+
+    public Boolean getCritere_non_precise() {
+        return this.critere_non_precise;
+    }
+
+    public Cassuspecte critere_non_precise(Boolean critere_non_precise) {
+        this.setCritere_non_precise(critere_non_precise);
+        return this;
+    }
+
+    public void setCritere_non_precise(Boolean critere_non_precise) {
+        this.critere_non_precise = critere_non_precise;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -538,6 +586,9 @@ public class Cassuspecte implements Serializable {
             ", glaucome='" + getGlaucome() + "'" +
             ", myopie='" + getMyopie() + "'" +
             ", manifestations_ophtalmologiques_autre='" + getManifestations_ophtalmologiques_autre() + "'" +
+            ", autre_criteres='" + getAutre_criteres() + "'" +
+            ", str_autres_criteres='" + getStr_autres_criteres() + "'" +
+            ", critere_non_precise='" + getCritere_non_precise() + "'" +
             "}";
     }
 }

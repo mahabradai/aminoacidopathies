@@ -116,6 +116,15 @@ class CassuspecteResourceIT {
     private static final String DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE = "AAAAAAAAAA";
     private static final String UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE = "BBBBBBBBBB";
 
+    private static final Boolean DEFAULT_AUTRE_CRITERES = false;
+    private static final Boolean UPDATED_AUTRE_CRITERES = true;
+
+    private static final String DEFAULT_STR_AUTRES_CRITERES = "AAAAAAAAAA";
+    private static final String UPDATED_STR_AUTRES_CRITERES = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_CRITERE_NON_PRECISE = false;
+    private static final Boolean UPDATED_CRITERE_NON_PRECISE = true;
+
     private static final String ENTITY_API_URL = "/api/cassuspectes";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -171,7 +180,10 @@ class CassuspecteResourceIT {
             .cataracte(DEFAULT_CATARACTE)
             .glaucome(DEFAULT_GLAUCOME)
             .myopie(DEFAULT_MYOPIE)
-            .manifestations_ophtalmologiques_autre(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+            .manifestations_ophtalmologiques_autre(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE)
+            .autre_criteres(DEFAULT_AUTRE_CRITERES)
+            .str_autres_criteres(DEFAULT_STR_AUTRES_CRITERES)
+            .critere_non_precise(DEFAULT_CRITERE_NON_PRECISE);
         return cassuspecte;
     }
 
@@ -210,7 +222,10 @@ class CassuspecteResourceIT {
             .cataracte(UPDATED_CATARACTE)
             .glaucome(UPDATED_GLAUCOME)
             .myopie(UPDATED_MYOPIE)
-            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE)
+            .autre_criteres(UPDATED_AUTRE_CRITERES)
+            .str_autres_criteres(UPDATED_STR_AUTRES_CRITERES)
+            .critere_non_precise(UPDATED_CRITERE_NON_PRECISE);
         return cassuspecte;
     }
 
@@ -263,6 +278,9 @@ class CassuspecteResourceIT {
         assertThat(testCassuspecte.getGlaucome()).isEqualTo(DEFAULT_GLAUCOME);
         assertThat(testCassuspecte.getMyopie()).isEqualTo(DEFAULT_MYOPIE);
         assertThat(testCassuspecte.getManifestations_ophtalmologiques_autre()).isEqualTo(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+        assertThat(testCassuspecte.getAutre_criteres()).isEqualTo(DEFAULT_AUTRE_CRITERES);
+        assertThat(testCassuspecte.getStr_autres_criteres()).isEqualTo(DEFAULT_STR_AUTRES_CRITERES);
+        assertThat(testCassuspecte.getCritere_non_precise()).isEqualTo(DEFAULT_CRITERE_NON_PRECISE);
     }
 
     @Test
@@ -329,7 +347,10 @@ class CassuspecteResourceIT {
             .andExpect(jsonPath("$.[*].myopie").value(hasItem(DEFAULT_MYOPIE.booleanValue())))
             .andExpect(
                 jsonPath("$.[*].manifestations_ophtalmologiques_autre").value(hasItem(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE))
-            );
+            )
+            .andExpect(jsonPath("$.[*].autre_criteres").value(hasItem(DEFAULT_AUTRE_CRITERES.booleanValue())))
+            .andExpect(jsonPath("$.[*].str_autres_criteres").value(hasItem(DEFAULT_STR_AUTRES_CRITERES)))
+            .andExpect(jsonPath("$.[*].critere_non_precise").value(hasItem(DEFAULT_CRITERE_NON_PRECISE.booleanValue())));
     }
 
     @Test
@@ -371,7 +392,10 @@ class CassuspecteResourceIT {
             .andExpect(jsonPath("$.cataracte").value(DEFAULT_CATARACTE.booleanValue()))
             .andExpect(jsonPath("$.glaucome").value(DEFAULT_GLAUCOME.booleanValue()))
             .andExpect(jsonPath("$.myopie").value(DEFAULT_MYOPIE.booleanValue()))
-            .andExpect(jsonPath("$.manifestations_ophtalmologiques_autre").value(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE));
+            .andExpect(jsonPath("$.manifestations_ophtalmologiques_autre").value(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE))
+            .andExpect(jsonPath("$.autre_criteres").value(DEFAULT_AUTRE_CRITERES.booleanValue()))
+            .andExpect(jsonPath("$.str_autres_criteres").value(DEFAULT_STR_AUTRES_CRITERES))
+            .andExpect(jsonPath("$.critere_non_precise").value(DEFAULT_CRITERE_NON_PRECISE.booleanValue()));
     }
 
     @Test
@@ -421,7 +445,10 @@ class CassuspecteResourceIT {
             .cataracte(UPDATED_CATARACTE)
             .glaucome(UPDATED_GLAUCOME)
             .myopie(UPDATED_MYOPIE)
-            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE)
+            .autre_criteres(UPDATED_AUTRE_CRITERES)
+            .str_autres_criteres(UPDATED_STR_AUTRES_CRITERES)
+            .critere_non_precise(UPDATED_CRITERE_NON_PRECISE);
         CassuspecteDTO cassuspecteDTO = cassuspecteMapper.toDto(updatedCassuspecte);
 
         restCassuspecteMockMvc
@@ -464,6 +491,9 @@ class CassuspecteResourceIT {
         assertThat(testCassuspecte.getGlaucome()).isEqualTo(UPDATED_GLAUCOME);
         assertThat(testCassuspecte.getMyopie()).isEqualTo(UPDATED_MYOPIE);
         assertThat(testCassuspecte.getManifestations_ophtalmologiques_autre()).isEqualTo(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+        assertThat(testCassuspecte.getAutre_criteres()).isEqualTo(UPDATED_AUTRE_CRITERES);
+        assertThat(testCassuspecte.getStr_autres_criteres()).isEqualTo(UPDATED_STR_AUTRES_CRITERES);
+        assertThat(testCassuspecte.getCritere_non_precise()).isEqualTo(UPDATED_CRITERE_NON_PRECISE);
     }
 
     @Test
@@ -559,7 +589,9 @@ class CassuspecteResourceIT {
             .luxation(UPDATED_LUXATION)
             .ectopie_cristalinienne(UPDATED_ECTOPIE_CRISTALINIENNE)
             .myopie(UPDATED_MYOPIE)
-            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE)
+            .str_autres_criteres(UPDATED_STR_AUTRES_CRITERES)
+            .critere_non_precise(UPDATED_CRITERE_NON_PRECISE);
 
         restCassuspecteMockMvc
             .perform(
@@ -601,6 +633,9 @@ class CassuspecteResourceIT {
         assertThat(testCassuspecte.getGlaucome()).isEqualTo(DEFAULT_GLAUCOME);
         assertThat(testCassuspecte.getMyopie()).isEqualTo(UPDATED_MYOPIE);
         assertThat(testCassuspecte.getManifestations_ophtalmologiques_autre()).isEqualTo(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+        assertThat(testCassuspecte.getAutre_criteres()).isEqualTo(DEFAULT_AUTRE_CRITERES);
+        assertThat(testCassuspecte.getStr_autres_criteres()).isEqualTo(UPDATED_STR_AUTRES_CRITERES);
+        assertThat(testCassuspecte.getCritere_non_precise()).isEqualTo(UPDATED_CRITERE_NON_PRECISE);
     }
 
     @Test
@@ -643,7 +678,10 @@ class CassuspecteResourceIT {
             .cataracte(UPDATED_CATARACTE)
             .glaucome(UPDATED_GLAUCOME)
             .myopie(UPDATED_MYOPIE)
-            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE)
+            .autre_criteres(UPDATED_AUTRE_CRITERES)
+            .str_autres_criteres(UPDATED_STR_AUTRES_CRITERES)
+            .critere_non_precise(UPDATED_CRITERE_NON_PRECISE);
 
         restCassuspecteMockMvc
             .perform(
@@ -685,6 +723,9 @@ class CassuspecteResourceIT {
         assertThat(testCassuspecte.getGlaucome()).isEqualTo(UPDATED_GLAUCOME);
         assertThat(testCassuspecte.getMyopie()).isEqualTo(UPDATED_MYOPIE);
         assertThat(testCassuspecte.getManifestations_ophtalmologiques_autre()).isEqualTo(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
+        assertThat(testCassuspecte.getAutre_criteres()).isEqualTo(UPDATED_AUTRE_CRITERES);
+        assertThat(testCassuspecte.getStr_autres_criteres()).isEqualTo(UPDATED_STR_AUTRES_CRITERES);
+        assertThat(testCassuspecte.getCritere_non_precise()).isEqualTo(UPDATED_CRITERE_NON_PRECISE);
     }
 
     @Test

@@ -114,6 +114,18 @@
     {
       "fieldName": "manifestations_ophtalmologiques_autre",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "autre_criteres",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "str_autres_criteres",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "critere_non_precise",
+      "fieldType": "Boolean"
     }
   ],
   "jpaMetamodelFiltering": false,

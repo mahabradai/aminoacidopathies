@@ -68,6 +68,12 @@ public class CassuspecteDTO implements Serializable {
 
     private String manifestations_ophtalmologiques_autre;
 
+    private Boolean autre_criteres;
+
+    private String str_autres_criteres;
+
+    private Boolean critere_non_precise;
+
     public Long getId() {
         return id;
     }
@@ -300,6 +306,30 @@ public class CassuspecteDTO implements Serializable {
         this.manifestations_ophtalmologiques_autre = manifestations_ophtalmologiques_autre;
     }
 
+    public Boolean getAutre_criteres() {
+        return autre_criteres;
+    }
+
+    public void setAutre_criteres(Boolean autre_criteres) {
+        this.autre_criteres = autre_criteres;
+    }
+
+    public String getStr_autres_criteres() {
+        return str_autres_criteres;
+    }
+
+    public void setStr_autres_criteres(String str_autres_criteres) {
+        this.str_autres_criteres = str_autres_criteres;
+    }
+
+    public Boolean getCritere_non_precise() {
+        return critere_non_precise;
+    }
+
+    public void setCritere_non_precise(Boolean critere_non_precise) {
+        this.critere_non_precise = critere_non_precise;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -354,6 +384,9 @@ public class CassuspecteDTO implements Serializable {
             ", glaucome='" + getGlaucome() + "'" +
             ", myopie='" + getMyopie() + "'" +
             ", manifestations_ophtalmologiques_autre='" + getManifestations_ophtalmologiques_autre() + "'" +
+            ", autre_criteres='" + getAutre_criteres() + "'" +
+            ", str_autres_criteres='" + getStr_autres_criteres() + "'" +
+            ", critere_non_precise='" + getCritere_non_precise() + "'" +
             "}";
     }
 }

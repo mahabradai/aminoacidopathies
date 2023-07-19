@@ -98,6 +98,15 @@
             <column name="manifestations_ophtalmologiques_autre" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="autre_criteres" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="str_autres_criteres" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="critere_non_precise" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
     </changeSet>
@@ -147,6 +156,9 @@
             <column name="glaucome" type="boolean"/>
             <column name="myopie" type="boolean"/>
             <column name="manifestations_ophtalmologiques_autre" type="string"/>
+            <column name="autre_criteres" type="boolean"/>
+            <column name="str_autres_criteres" type="string"/>
+            <column name="critere_non_precise" type="boolean"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

@@ -48,6 +48,9 @@ describe('Cassuspecte Form Service', () => {
             glaucome: expect.any(Object),
             myopie: expect.any(Object),
             manifestations_ophtalmologiques_autre: expect.any(Object),
+            autre_criteres: expect.any(Object),
+            str_autres_criteres: expect.any(Object),
+            critere_non_precise: expect.any(Object),
           })
         );
       });
@@ -86,6 +89,9 @@ describe('Cassuspecte Form Service', () => {
             glaucome: expect.any(Object),
             myopie: expect.any(Object),
             manifestations_ophtalmologiques_autre: expect.any(Object),
+            autre_criteres: expect.any(Object),
+            str_autres_criteres: expect.any(Object),
+            critere_non_precise: expect.any(Object),
           })
         );
       });

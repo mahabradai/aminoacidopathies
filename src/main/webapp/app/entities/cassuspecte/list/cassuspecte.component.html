@@ -206,6 +206,24 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
+          <th scope="col" jhiSortBy="autre_criteres">
+            <div class="d-flex">
+              <span>Autre Criteres</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="str_autres_criteres">
+            <div class="d-flex">
+              <span>Str Autres Criteres</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="critere_non_precise">
+            <div class="d-flex">
+              <span>Critere Non Precise</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -242,6 +260,9 @@
           <td>{{ cassuspecte.glaucome }}</td>
           <td>{{ cassuspecte.myopie }}</td>
           <td>{{ cassuspecte.manifestations_ophtalmologiques_autre }}</td>
+          <td>{{ cassuspecte.autre_criteres }}</td>
+          <td>{{ cassuspecte.str_autres_criteres }}</td>
+          <td>{{ cassuspecte.critere_non_precise }}</td>
           <td class="text-end">
             <div class="btn-group">
               <button

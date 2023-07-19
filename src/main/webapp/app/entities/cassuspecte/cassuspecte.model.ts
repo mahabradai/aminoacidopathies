@@ -30,6 +30,9 @@ export interface ICassuspecte {
   glaucome?: boolean | null;
   myopie?: boolean | null;
   manifestations_ophtalmologiques_autre?: string | null;
+  autre_criteres?: boolean | null;
+  str_autres_criteres?: string | null;
+  critere_non_precise?: boolean | null;
 }
 
 export type NewCassuspecte = Omit<ICassuspecte, 'id'> & { id: null };

@@ -38,6 +38,8 @@ type CassuspecteFormDefaults = Pick<
   | 'cataracte'
   | 'glaucome'
   | 'myopie'
+  | 'autre_criteres'
+  | 'critere_non_precise'
 >;
 
 type CassuspecteFormGroupContent = {
@@ -70,6 +72,9 @@ type CassuspecteFormGroupContent = {
   glaucome: FormControl<ICassuspecte['glaucome']>;
   myopie: FormControl<ICassuspecte['myopie']>;
   manifestations_ophtalmologiques_autre: FormControl<ICassuspecte['manifestations_ophtalmologiques_autre']>;
+  autre_criteres: FormControl<ICassuspecte['autre_criteres']>;
+  str_autres_criteres: FormControl<ICassuspecte['str_autres_criteres']>;
+  critere_non_precise: FormControl<ICassuspecte['critere_non_precise']>;
 };
 
 export type CassuspecteFormGroup = FormGroup<CassuspecteFormGroupContent>;
@@ -117,6 +122,9 @@ export class CassuspecteFormService {
       glaucome: new FormControl(cassuspecteRawValue.glaucome),
       myopie: new FormControl(cassuspecteRawValue.myopie),
       manifestations_ophtalmologiques_autre: new FormControl(cassuspecteRawValue.manifestations_ophtalmologiques_autre),
+      autre_criteres: new FormControl(cassuspecteRawValue.autre_criteres),
+      str_autres_criteres: new FormControl(cassuspecteRawValue.str_autres_criteres),
+      critere_non_precise: new FormControl(cassuspecteRawValue.critere_non_precise),
     });
   }
 
@@ -158,6 +166,8 @@ export class CassuspecteFormService {
       cataracte: false,
       glaucome: false,
       myopie: false,
+      autre_criteres: false,
+      critere_non_precise: false,
     };
   }
 }
