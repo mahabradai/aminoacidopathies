@@ -17,6 +17,19 @@ export interface ICassuspecte {
   ballonnement?: boolean | null;
   syndrome_hemorragique?: boolean | null;
   autres_signes_hepatiques?: string | null;
+  signes_osseux?: boolean | null;
+  signes_de_rachitisme?: boolean | null;
+  autre_signes_osseux?: string | null;
+  manifestations_thrombotiques?: boolean | null;
+  cerebrale?: boolean | null;
+  autre_manifestations_thrombotiques?: string | null;
+  manifestations_ophtalmologiques?: boolean | null;
+  luxation?: boolean | null;
+  ectopie_cristalinienne?: boolean | null;
+  cataracte?: boolean | null;
+  glaucome?: boolean | null;
+  myopie?: boolean | null;
+  manifestations_ophtalmologiques_autre?: string | null;
 }
 
 export type NewCassuspecte = Omit<ICassuspecte, 'id'> & { id: null };

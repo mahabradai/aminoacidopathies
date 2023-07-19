@@ -28,6 +28,16 @@ type CassuspecteFormDefaults = Pick<
   | 'ictere'
   | 'ballonnement'
   | 'syndrome_hemorragique'
+  | 'signes_osseux'
+  | 'signes_de_rachitisme'
+  | 'manifestations_thrombotiques'
+  | 'cerebrale'
+  | 'manifestations_ophtalmologiques'
+  | 'luxation'
+  | 'ectopie_cristalinienne'
+  | 'cataracte'
+  | 'glaucome'
+  | 'myopie'
 >;
 
 type CassuspecteFormGroupContent = {
@@ -47,6 +57,19 @@ type CassuspecteFormGroupContent = {
   ballonnement: FormControl<ICassuspecte['ballonnement']>;
   syndrome_hemorragique: FormControl<ICassuspecte['syndrome_hemorragique']>;
   autres_signes_hepatiques: FormControl<ICassuspecte['autres_signes_hepatiques']>;
+  signes_osseux: FormControl<ICassuspecte['signes_osseux']>;
+  signes_de_rachitisme: FormControl<ICassuspecte['signes_de_rachitisme']>;
+  autre_signes_osseux: FormControl<ICassuspecte['autre_signes_osseux']>;
+  manifestations_thrombotiques: FormControl<ICassuspecte['manifestations_thrombotiques']>;
+  cerebrale: FormControl<ICassuspecte['cerebrale']>;
+  autre_manifestations_thrombotiques: FormControl<ICassuspecte['autre_manifestations_thrombotiques']>;
+  manifestations_ophtalmologiques: FormControl<ICassuspecte['manifestations_ophtalmologiques']>;
+  luxation: FormControl<ICassuspecte['luxation']>;
+  ectopie_cristalinienne: FormControl<ICassuspecte['ectopie_cristalinienne']>;
+  cataracte: FormControl<ICassuspecte['cataracte']>;
+  glaucome: FormControl<ICassuspecte['glaucome']>;
+  myopie: FormControl<ICassuspecte['myopie']>;
+  manifestations_ophtalmologiques_autre: FormControl<ICassuspecte['manifestations_ophtalmologiques_autre']>;
 };
 
 export type CassuspecteFormGroup = FormGroup<CassuspecteFormGroupContent>;
@@ -81,6 +104,19 @@ export class CassuspecteFormService {
       ballonnement: new FormControl(cassuspecteRawValue.ballonnement),
       syndrome_hemorragique: new FormControl(cassuspecteRawValue.syndrome_hemorragique),
       autres_signes_hepatiques: new FormControl(cassuspecteRawValue.autres_signes_hepatiques),
+      signes_osseux: new FormControl(cassuspecteRawValue.signes_osseux),
+      signes_de_rachitisme: new FormControl(cassuspecteRawValue.signes_de_rachitisme),
+      autre_signes_osseux: new FormControl(cassuspecteRawValue.autre_signes_osseux),
+      manifestations_thrombotiques: new FormControl(cassuspecteRawValue.manifestations_thrombotiques),
+      cerebrale: new FormControl(cassuspecteRawValue.cerebrale),
+      autre_manifestations_thrombotiques: new FormControl(cassuspecteRawValue.autre_manifestations_thrombotiques),
+      manifestations_ophtalmologiques: new FormControl(cassuspecteRawValue.manifestations_ophtalmologiques),
+      luxation: new FormControl(cassuspecteRawValue.luxation),
+      ectopie_cristalinienne: new FormControl(cassuspecteRawValue.ectopie_cristalinienne),
+      cataracte: new FormControl(cassuspecteRawValue.cataracte),
+      glaucome: new FormControl(cassuspecteRawValue.glaucome),
+      myopie: new FormControl(cassuspecteRawValue.myopie),
+      manifestations_ophtalmologiques_autre: new FormControl(cassuspecteRawValue.manifestations_ophtalmologiques_autre),
     });
   }
 
@@ -112,6 +148,16 @@ export class CassuspecteFormService {
       ictere: false,
       ballonnement: false,
       syndrome_hemorragique: false,
+      signes_osseux: false,
+      signes_de_rachitisme: false,
+      manifestations_thrombotiques: false,
+      cerebrale: false,
+      manifestations_ophtalmologiques: false,
+      luxation: false,
+      ectopie_cristalinienne: false,
+      cataracte: false,
+      glaucome: false,
+      myopie: false,
     };
   }
 }

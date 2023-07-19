@@ -62,6 +62,58 @@
     {
       "fieldName": "autres_signes_hepatiques",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "signes_osseux",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "signes_de_rachitisme",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "autre_signes_osseux",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "manifestations_thrombotiques",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cerebrale",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "autre_manifestations_thrombotiques",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "manifestations_ophtalmologiques",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "luxation",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "ectopie_cristalinienne",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cataracte",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "glaucome",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "myopie",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "manifestations_ophtalmologiques_autre",
+      "fieldType": "String"
     }
   ],
   "jpaMetamodelFiltering": false,

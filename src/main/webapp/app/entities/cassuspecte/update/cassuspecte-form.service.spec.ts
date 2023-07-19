@@ -35,6 +35,19 @@ describe('Cassuspecte Form Service', () => {
             ballonnement: expect.any(Object),
             syndrome_hemorragique: expect.any(Object),
             autres_signes_hepatiques: expect.any(Object),
+            signes_osseux: expect.any(Object),
+            signes_de_rachitisme: expect.any(Object),
+            autre_signes_osseux: expect.any(Object),
+            manifestations_thrombotiques: expect.any(Object),
+            cerebrale: expect.any(Object),
+            autre_manifestations_thrombotiques: expect.any(Object),
+            manifestations_ophtalmologiques: expect.any(Object),
+            luxation: expect.any(Object),
+            ectopie_cristalinienne: expect.any(Object),
+            cataracte: expect.any(Object),
+            glaucome: expect.any(Object),
+            myopie: expect.any(Object),
+            manifestations_ophtalmologiques_autre: expect.any(Object),
           })
         );
       });
@@ -60,6 +73,19 @@ describe('Cassuspecte Form Service', () => {
             ballonnement: expect.any(Object),
             syndrome_hemorragique: expect.any(Object),
             autres_signes_hepatiques: expect.any(Object),
+            signes_osseux: expect.any(Object),
+            signes_de_rachitisme: expect.any(Object),
+            autre_signes_osseux: expect.any(Object),
+            manifestations_thrombotiques: expect.any(Object),
+            cerebrale: expect.any(Object),
+            autre_manifestations_thrombotiques: expect.any(Object),
+            manifestations_ophtalmologiques: expect.any(Object),
+            luxation: expect.any(Object),
+            ectopie_cristalinienne: expect.any(Object),
+            cataracte: expect.any(Object),
+            glaucome: expect.any(Object),
+            myopie: expect.any(Object),
+            manifestations_ophtalmologiques_autre: expect.any(Object),
           })
         );
       });

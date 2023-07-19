@@ -68,6 +68,45 @@ public class Cassuspecte implements Serializable {
     @Column(name = "autres_signes_hepatiques")
     private String autres_signes_hepatiques;
 
+    @Column(name = "signes_osseux")
+    private Boolean signes_osseux;
+
+    @Column(name = "signes_de_rachitisme")
+    private Boolean signes_de_rachitisme;
+
+    @Column(name = "autre_signes_osseux")
+    private String autre_signes_osseux;
+
+    @Column(name = "manifestations_thrombotiques")
+    private Boolean manifestations_thrombotiques;
+
+    @Column(name = "cerebrale")
+    private Boolean cerebrale;
+
+    @Column(name = "autre_manifestations_thrombotiques")
+    private String autre_manifestations_thrombotiques;
+
+    @Column(name = "manifestations_ophtalmologiques")
+    private Boolean manifestations_ophtalmologiques;
+
+    @Column(name = "luxation")
+    private Boolean luxation;
+
+    @Column(name = "ectopie_cristalinienne")
+    private Boolean ectopie_cristalinienne;
+
+    @Column(name = "cataracte")
+    private Boolean cataracte;
+
+    @Column(name = "glaucome")
+    private Boolean glaucome;
+
+    @Column(name = "myopie")
+    private Boolean myopie;
+
+    @Column(name = "manifestations_ophtalmologiques_autre")
+    private String manifestations_ophtalmologiques_autre;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -278,6 +317,175 @@ public class Cassuspecte implements Serializable {
         this.autres_signes_hepatiques = autres_signes_hepatiques;
     }
 
+    public Boolean getSignes_osseux() {
+        return this.signes_osseux;
+    }
+
+    public Cassuspecte signes_osseux(Boolean signes_osseux) {
+        this.setSignes_osseux(signes_osseux);
+        return this;
+    }
+
+    public void setSignes_osseux(Boolean signes_osseux) {
+        this.signes_osseux = signes_osseux;
+    }
+
+    public Boolean getSignes_de_rachitisme() {
+        return this.signes_de_rachitisme;
+    }
+
+    public Cassuspecte signes_de_rachitisme(Boolean signes_de_rachitisme) {
+        this.setSignes_de_rachitisme(signes_de_rachitisme);
+        return this;
+    }
+
+    public void setSignes_de_rachitisme(Boolean signes_de_rachitisme) {
+        this.signes_de_rachitisme = signes_de_rachitisme;
+    }
+
+    public String getAutre_signes_osseux() {
+        return this.autre_signes_osseux;
+    }
+
+    public Cassuspecte autre_signes_osseux(String autre_signes_osseux) {
+        this.setAutre_signes_osseux(autre_signes_osseux);
+        return this;
+    }
+
+    public void setAutre_signes_osseux(String autre_signes_osseux) {
+        this.autre_signes_osseux = autre_signes_osseux;
+    }
+
+    public Boolean getManifestations_thrombotiques() {
+        return this.manifestations_thrombotiques;
+    }
+
+    public Cassuspecte manifestations_thrombotiques(Boolean manifestations_thrombotiques) {
+        this.setManifestations_thrombotiques(manifestations_thrombotiques);
+        return this;
+    }
+
+    public void setManifestations_thrombotiques(Boolean manifestations_thrombotiques) {
+        this.manifestations_thrombotiques = manifestations_thrombotiques;
+    }
+
+    public Boolean getCerebrale() {
+        return this.cerebrale;
+    }
+
+    public Cassuspecte cerebrale(Boolean cerebrale) {
+        this.setCerebrale(cerebrale);
+        return this;
+    }
+
+    public void setCerebrale(Boolean cerebrale) {
+        this.cerebrale = cerebrale;
+    }
+
+    public String getAutre_manifestations_thrombotiques() {
+        return this.autre_manifestations_thrombotiques;
+    }
+
+    public Cassuspecte autre_manifestations_thrombotiques(String autre_manifestations_thrombotiques) {
+        this.setAutre_manifestations_thrombotiques(autre_manifestations_thrombotiques);
+        return this;
+    }
+
+    public void setAutre_manifestations_thrombotiques(String autre_manifestations_thrombotiques) {
+        this.autre_manifestations_thrombotiques = autre_manifestations_thrombotiques;
+    }
+
+    public Boolean getManifestations_ophtalmologiques() {
+        return this.manifestations_ophtalmologiques;
+    }
+
+    public Cassuspecte manifestations_ophtalmologiques(Boolean manifestations_ophtalmologiques) {
+        this.setManifestations_ophtalmologiques(manifestations_ophtalmologiques);
+        return this;
+    }
+
+    public void setManifestations_ophtalmologiques(Boolean manifestations_ophtalmologiques) {
+        this.manifestations_ophtalmologiques = manifestations_ophtalmologiques;
+    }
+
+    public Boolean getLuxation() {
+        return this.luxation;
+    }
+
+    public Cassuspecte luxation(Boolean luxation) {
+        this.setLuxation(luxation);
+        return this;
+    }
+
+    public void setLuxation(Boolean luxation) {
+        this.luxation = luxation;
+    }
+
+    public Boolean getEctopie_cristalinienne() {
+        return this.ectopie_cristalinienne;
+    }
+
+    public Cassuspecte ectopie_cristalinienne(Boolean ectopie_cristalinienne) {
+        this.setEctopie_cristalinienne(ectopie_cristalinienne);
+        return this;
+    }
+
+    public void setEctopie_cristalinienne(Boolean ectopie_cristalinienne) {
+        this.ectopie_cristalinienne = ectopie_cristalinienne;
+    }
+
+    public Boolean getCataracte() {
+        return this.cataracte;
+    }
+
+    public Cassuspecte cataracte(Boolean cataracte) {
+        this.setCataracte(cataracte);
+        return this;
+    }
+
+    public void setCataracte(Boolean cataracte) {
+        this.cataracte = cataracte;
+    }
+
+    public Boolean getGlaucome() {
+        return this.glaucome;
+    }
+
+    public Cassuspecte glaucome(Boolean glaucome) {
+        this.setGlaucome(glaucome);
+        return this;
+    }
+
+    public void setGlaucome(Boolean glaucome) {
+        this.glaucome = glaucome;
+    }
+
+    public Boolean getMyopie() {
+        return this.myopie;
+    }
+
+    public Cassuspecte myopie(Boolean myopie) {
+        this.setMyopie(myopie);
+        return this;
+    }
+
+    public void setMyopie(Boolean myopie) {
+        this.myopie = myopie;
+    }
+
+    public String getManifestations_ophtalmologiques_autre() {
+        return this.manifestations_ophtalmologiques_autre;
+    }
+
+    public Cassuspecte manifestations_ophtalmologiques_autre(String manifestations_ophtalmologiques_autre) {
+        this.setManifestations_ophtalmologiques_autre(manifestations_ophtalmologiques_autre);
+        return this;
+    }
+
+    public void setManifestations_ophtalmologiques_autre(String manifestations_ophtalmologiques_autre) {
+        this.manifestations_ophtalmologiques_autre = manifestations_ophtalmologiques_autre;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -317,6 +525,19 @@ public class Cassuspecte implements Serializable {
             ", ballonnement='" + getBallonnement() + "'" +
             ", syndrome_hemorragique='" + getSyndrome_hemorragique() + "'" +
             ", autres_signes_hepatiques='" + getAutres_signes_hepatiques() + "'" +
+            ", signes_osseux='" + getSignes_osseux() + "'" +
+            ", signes_de_rachitisme='" + getSignes_de_rachitisme() + "'" +
+            ", autre_signes_osseux='" + getAutre_signes_osseux() + "'" +
+            ", manifestations_thrombotiques='" + getManifestations_thrombotiques() + "'" +
+            ", cerebrale='" + getCerebrale() + "'" +
+            ", autre_manifestations_thrombotiques='" + getAutre_manifestations_thrombotiques() + "'" +
+            ", manifestations_ophtalmologiques='" + getManifestations_ophtalmologiques() + "'" +
+            ", luxation='" + getLuxation() + "'" +
+            ", ectopie_cristalinienne='" + getEctopie_cristalinienne() + "'" +
+            ", cataracte='" + getCataracte() + "'" +
+            ", glaucome='" + getGlaucome() + "'" +
+            ", myopie='" + getMyopie() + "'" +
+            ", manifestations_ophtalmologiques_autre='" + getManifestations_ophtalmologiques_autre() + "'" +
             "}";
     }
 }

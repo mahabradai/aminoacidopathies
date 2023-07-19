@@ -59,6 +59,45 @@
             <column name="autres_signes_hepatiques" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="signes_osseux" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="signes_de_rachitisme" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="autre_signes_osseux" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="manifestations_thrombotiques" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="cerebrale" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="autre_manifestations_thrombotiques" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="manifestations_ophtalmologiques" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="luxation" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="ectopie_cristalinienne" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="cataracte" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="glaucome" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="myopie" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="manifestations_ophtalmologiques_autre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
     </changeSet>
@@ -95,6 +134,19 @@
             <column name="ballonnement" type="boolean"/>
             <column name="syndrome_hemorragique" type="boolean"/>
             <column name="autres_signes_hepatiques" type="string"/>
+            <column name="signes_osseux" type="boolean"/>
+            <column name="signes_de_rachitisme" type="boolean"/>
+            <column name="autre_signes_osseux" type="string"/>
+            <column name="manifestations_thrombotiques" type="boolean"/>
+            <column name="cerebrale" type="boolean"/>
+            <column name="autre_manifestations_thrombotiques" type="string"/>
+            <column name="manifestations_ophtalmologiques" type="boolean"/>
+            <column name="luxation" type="boolean"/>
+            <column name="ectopie_cristalinienne" type="boolean"/>
+            <column name="cataracte" type="boolean"/>
+            <column name="glaucome" type="boolean"/>
+            <column name="myopie" type="boolean"/>
+            <column name="manifestations_ophtalmologiques_autre" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

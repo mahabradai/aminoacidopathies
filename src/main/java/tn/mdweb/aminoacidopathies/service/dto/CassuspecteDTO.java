@@ -42,6 +42,32 @@ public class CassuspecteDTO implements Serializable {
 
     private String autres_signes_hepatiques;
 
+    private Boolean signes_osseux;
+
+    private Boolean signes_de_rachitisme;
+
+    private String autre_signes_osseux;
+
+    private Boolean manifestations_thrombotiques;
+
+    private Boolean cerebrale;
+
+    private String autre_manifestations_thrombotiques;
+
+    private Boolean manifestations_ophtalmologiques;
+
+    private Boolean luxation;
+
+    private Boolean ectopie_cristalinienne;
+
+    private Boolean cataracte;
+
+    private Boolean glaucome;
+
+    private Boolean myopie;
+
+    private String manifestations_ophtalmologiques_autre;
+
     public Long getId() {
         return id;
     }
@@ -170,6 +196,110 @@ public class CassuspecteDTO implements Serializable {
         this.autres_signes_hepatiques = autres_signes_hepatiques;
     }
 
+    public Boolean getSignes_osseux() {
+        return signes_osseux;
+    }
+
+    public void setSignes_osseux(Boolean signes_osseux) {
+        this.signes_osseux = signes_osseux;
+    }
+
+    public Boolean getSignes_de_rachitisme() {
+        return signes_de_rachitisme;
+    }
+
+    public void setSignes_de_rachitisme(Boolean signes_de_rachitisme) {
+        this.signes_de_rachitisme = signes_de_rachitisme;
+    }
+
+    public String getAutre_signes_osseux() {
+        return autre_signes_osseux;
+    }
+
+    public void setAutre_signes_osseux(String autre_signes_osseux) {
+        this.autre_signes_osseux = autre_signes_osseux;
+    }
+
+    public Boolean getManifestations_thrombotiques() {
+        return manifestations_thrombotiques;
+    }
+
+    public void setManifestations_thrombotiques(Boolean manifestations_thrombotiques) {
+        this.manifestations_thrombotiques = manifestations_thrombotiques;
+    }
+
+    public Boolean getCerebrale() {
+        return cerebrale;
+    }
+
+    public void setCerebrale(Boolean cerebrale) {
+        this.cerebrale = cerebrale;
+    }
+
+    public String getAutre_manifestations_thrombotiques() {
+        return autre_manifestations_thrombotiques;
+    }
+
+    public void setAutre_manifestations_thrombotiques(String autre_manifestations_thrombotiques) {
+        this.autre_manifestations_thrombotiques = autre_manifestations_thrombotiques;
+    }
+
+    public Boolean getManifestations_ophtalmologiques() {
+        return manifestations_ophtalmologiques;
+    }
+
+    public void setManifestations_ophtalmologiques(Boolean manifestations_ophtalmologiques) {
+        this.manifestations_ophtalmologiques = manifestations_ophtalmologiques;
+    }
+
+    public Boolean getLuxation() {
+        return luxation;
+    }
+
+    public void setLuxation(Boolean luxation) {
+        this.luxation = luxation;
+    }
+
+    public Boolean getEctopie_cristalinienne() {
+        return ectopie_cristalinienne;
+    }
+
+    public void setEctopie_cristalinienne(Boolean ectopie_cristalinienne) {
+        this.ectopie_cristalinienne = ectopie_cristalinienne;
+    }
+
+    public Boolean getCataracte() {
+        return cataracte;
+    }
+
+    public void setCataracte(Boolean cataracte) {
+        this.cataracte = cataracte;
+    }
+
+    public Boolean getGlaucome() {
+        return glaucome;
+    }
+
+    public void setGlaucome(Boolean glaucome) {
+        this.glaucome = glaucome;
+    }
+
+    public Boolean getMyopie() {
+        return myopie;
+    }
+
+    public void setMyopie(Boolean myopie) {
+        this.myopie = myopie;
+    }
+
+    public String getManifestations_ophtalmologiques_autre() {
+        return manifestations_ophtalmologiques_autre;
+    }
+
+    public void setManifestations_ophtalmologiques_autre(String manifestations_ophtalmologiques_autre) {
+        this.manifestations_ophtalmologiques_autre = manifestations_ophtalmologiques_autre;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -211,6 +341,19 @@ public class CassuspecteDTO implements Serializable {
             ", ballonnement='" + getBallonnement() + "'" +
             ", syndrome_hemorragique='" + getSyndrome_hemorragique() + "'" +
             ", autres_signes_hepatiques='" + getAutres_signes_hepatiques() + "'" +
+            ", signes_osseux='" + getSignes_osseux() + "'" +
+            ", signes_de_rachitisme='" + getSignes_de_rachitisme() + "'" +
+            ", autre_signes_osseux='" + getAutre_signes_osseux() + "'" +
+            ", manifestations_thrombotiques='" + getManifestations_thrombotiques() + "'" +
+            ", cerebrale='" + getCerebrale() + "'" +
+            ", autre_manifestations_thrombotiques='" + getAutre_manifestations_thrombotiques() + "'" +
+            ", manifestations_ophtalmologiques='" + getManifestations_ophtalmologiques() + "'" +
+            ", luxation='" + getLuxation() + "'" +
+            ", ectopie_cristalinienne='" + getEctopie_cristalinienne() + "'" +
+            ", cataracte='" + getCataracte() + "'" +
+            ", glaucome='" + getGlaucome() + "'" +
+            ", myopie='" + getMyopie() + "'" +
+            ", manifestations_ophtalmologiques_autre='" + getManifestations_ophtalmologiques_autre() + "'" +
             "}";
     }
 }

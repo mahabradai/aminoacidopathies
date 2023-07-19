@@ -77,6 +77,45 @@ class CassuspecteResourceIT {
     private static final String DEFAULT_AUTRES_SIGNES_HEPATIQUES = "AAAAAAAAAA";
     private static final String UPDATED_AUTRES_SIGNES_HEPATIQUES = "BBBBBBBBBB";
 
+    private static final Boolean DEFAULT_SIGNES_OSSEUX = false;
+    private static final Boolean UPDATED_SIGNES_OSSEUX = true;
+
+    private static final Boolean DEFAULT_SIGNES_DE_RACHITISME = false;
+    private static final Boolean UPDATED_SIGNES_DE_RACHITISME = true;
+
+    private static final String DEFAULT_AUTRE_SIGNES_OSSEUX = "AAAAAAAAAA";
+    private static final String UPDATED_AUTRE_SIGNES_OSSEUX = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_MANIFESTATIONS_THROMBOTIQUES = false;
+    private static final Boolean UPDATED_MANIFESTATIONS_THROMBOTIQUES = true;
+
+    private static final Boolean DEFAULT_CEREBRALE = false;
+    private static final Boolean UPDATED_CEREBRALE = true;
+
+    private static final String DEFAULT_AUTRE_MANIFESTATIONS_THROMBOTIQUES = "AAAAAAAAAA";
+    private static final String UPDATED_AUTRE_MANIFESTATIONS_THROMBOTIQUES = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES = false;
+    private static final Boolean UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES = true;
+
+    private static final Boolean DEFAULT_LUXATION = false;
+    private static final Boolean UPDATED_LUXATION = true;
+
+    private static final Boolean DEFAULT_ECTOPIE_CRISTALINIENNE = false;
+    private static final Boolean UPDATED_ECTOPIE_CRISTALINIENNE = true;
+
+    private static final Boolean DEFAULT_CATARACTE = false;
+    private static final Boolean UPDATED_CATARACTE = true;
+
+    private static final Boolean DEFAULT_GLAUCOME = false;
+    private static final Boolean UPDATED_GLAUCOME = true;
+
+    private static final Boolean DEFAULT_MYOPIE = false;
+    private static final Boolean UPDATED_MYOPIE = true;
+
+    private static final String DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE = "AAAAAAAAAA";
+    private static final String UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/cassuspectes";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -119,7 +158,20 @@ class CassuspecteResourceIT {
             .ictere(DEFAULT_ICTERE)
             .ballonnement(DEFAULT_BALLONNEMENT)
             .syndrome_hemorragique(DEFAULT_SYNDROME_HEMORRAGIQUE)
-            .autres_signes_hepatiques(DEFAULT_AUTRES_SIGNES_HEPATIQUES);
+            .autres_signes_hepatiques(DEFAULT_AUTRES_SIGNES_HEPATIQUES)
+            .signes_osseux(DEFAULT_SIGNES_OSSEUX)
+            .signes_de_rachitisme(DEFAULT_SIGNES_DE_RACHITISME)
+            .autre_signes_osseux(DEFAULT_AUTRE_SIGNES_OSSEUX)
+            .manifestations_thrombotiques(DEFAULT_MANIFESTATIONS_THROMBOTIQUES)
+            .cerebrale(DEFAULT_CEREBRALE)
+            .autre_manifestations_thrombotiques(DEFAULT_AUTRE_MANIFESTATIONS_THROMBOTIQUES)
+            .manifestations_ophtalmologiques(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES)
+            .luxation(DEFAULT_LUXATION)
+            .ectopie_cristalinienne(DEFAULT_ECTOPIE_CRISTALINIENNE)
+            .cataracte(DEFAULT_CATARACTE)
+            .glaucome(DEFAULT_GLAUCOME)
+            .myopie(DEFAULT_MYOPIE)
+            .manifestations_ophtalmologiques_autre(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
         return cassuspecte;
     }
 
@@ -145,7 +197,20 @@ class CassuspecteResourceIT {
             .ictere(UPDATED_ICTERE)
             .ballonnement(UPDATED_BALLONNEMENT)
             .syndrome_hemorragique(UPDATED_SYNDROME_HEMORRAGIQUE)
-            .autres_signes_hepatiques(UPDATED_AUTRES_SIGNES_HEPATIQUES);
+            .autres_signes_hepatiques(UPDATED_AUTRES_SIGNES_HEPATIQUES)
+            .signes_osseux(UPDATED_SIGNES_OSSEUX)
+            .signes_de_rachitisme(UPDATED_SIGNES_DE_RACHITISME)
+            .autre_signes_osseux(UPDATED_AUTRE_SIGNES_OSSEUX)
+            .manifestations_thrombotiques(UPDATED_MANIFESTATIONS_THROMBOTIQUES)
+            .cerebrale(UPDATED_CEREBRALE)
+            .autre_manifestations_thrombotiques(UPDATED_AUTRE_MANIFESTATIONS_THROMBOTIQUES)
+            .manifestations_ophtalmologiques(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES)
+            .luxation(UPDATED_LUXATION)
+            .ectopie_cristalinienne(UPDATED_ECTOPIE_CRISTALINIENNE)
+            .cataracte(UPDATED_CATARACTE)
+            .glaucome(UPDATED_GLAUCOME)
+            .myopie(UPDATED_MYOPIE)
+            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
         return cassuspecte;
     }
 
@@ -185,6 +250,19 @@ class CassuspecteResourceIT {
         assertThat(testCassuspecte.getBallonnement()).isEqualTo(DEFAULT_BALLONNEMENT);
         assertThat(testCassuspecte.getSyndrome_hemorragique()).isEqualTo(DEFAULT_SYNDROME_HEMORRAGIQUE);
         assertThat(testCassuspecte.getAutres_signes_hepatiques()).isEqualTo(DEFAULT_AUTRES_SIGNES_HEPATIQUES);
+        assertThat(testCassuspecte.getSignes_osseux()).isEqualTo(DEFAULT_SIGNES_OSSEUX);
+        assertThat(testCassuspecte.getSignes_de_rachitisme()).isEqualTo(DEFAULT_SIGNES_DE_RACHITISME);
+        assertThat(testCassuspecte.getAutre_signes_osseux()).isEqualTo(DEFAULT_AUTRE_SIGNES_OSSEUX);
+        assertThat(testCassuspecte.getManifestations_thrombotiques()).isEqualTo(DEFAULT_MANIFESTATIONS_THROMBOTIQUES);
+        assertThat(testCassuspecte.getCerebrale()).isEqualTo(DEFAULT_CEREBRALE);
+        assertThat(testCassuspecte.getAutre_manifestations_thrombotiques()).isEqualTo(DEFAULT_AUTRE_MANIFESTATIONS_THROMBOTIQUES);
+        assertThat(testCassuspecte.getManifestations_ophtalmologiques()).isEqualTo(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES);
+        assertThat(testCassuspecte.getLuxation()).isEqualTo(DEFAULT_LUXATION);
+        assertThat(testCassuspecte.getEctopie_cristalinienne()).isEqualTo(DEFAULT_ECTOPIE_CRISTALINIENNE);
+        assertThat(testCassuspecte.getCataracte()).isEqualTo(DEFAULT_CATARACTE);
+        assertThat(testCassuspecte.getGlaucome()).isEqualTo(DEFAULT_GLAUCOME);
+        assertThat(testCassuspecte.getMyopie()).isEqualTo(DEFAULT_MYOPIE);
+        assertThat(testCassuspecte.getManifestations_ophtalmologiques_autre()).isEqualTo(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
     }
 
     @Test
@@ -234,7 +312,24 @@ class CassuspecteResourceIT {
             .andExpect(jsonPath("$.[*].ictere").value(hasItem(DEFAULT_ICTERE.booleanValue())))
             .andExpect(jsonPath("$.[*].ballonnement").value(hasItem(DEFAULT_BALLONNEMENT.booleanValue())))
             .andExpect(jsonPath("$.[*].syndrome_hemorragique").value(hasItem(DEFAULT_SYNDROME_HEMORRAGIQUE.booleanValue())))
-            .andExpect(jsonPath("$.[*].autres_signes_hepatiques").value(hasItem(DEFAULT_AUTRES_SIGNES_HEPATIQUES)));
+            .andExpect(jsonPath("$.[*].autres_signes_hepatiques").value(hasItem(DEFAULT_AUTRES_SIGNES_HEPATIQUES)))
+            .andExpect(jsonPath("$.[*].signes_osseux").value(hasItem(DEFAULT_SIGNES_OSSEUX.booleanValue())))
+            .andExpect(jsonPath("$.[*].signes_de_rachitisme").value(hasItem(DEFAULT_SIGNES_DE_RACHITISME.booleanValue())))
+            .andExpect(jsonPath("$.[*].autre_signes_osseux").value(hasItem(DEFAULT_AUTRE_SIGNES_OSSEUX)))
+            .andExpect(jsonPath("$.[*].manifestations_thrombotiques").value(hasItem(DEFAULT_MANIFESTATIONS_THROMBOTIQUES.booleanValue())))
+            .andExpect(jsonPath("$.[*].cerebrale").value(hasItem(DEFAULT_CEREBRALE.booleanValue())))
+            .andExpect(jsonPath("$.[*].autre_manifestations_thrombotiques").value(hasItem(DEFAULT_AUTRE_MANIFESTATIONS_THROMBOTIQUES)))
+            .andExpect(
+                jsonPath("$.[*].manifestations_ophtalmologiques").value(hasItem(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES.booleanValue()))
+            )
+            .andExpect(jsonPath("$.[*].luxation").value(hasItem(DEFAULT_LUXATION.booleanValue())))
+            .andExpect(jsonPath("$.[*].ectopie_cristalinienne").value(hasItem(DEFAULT_ECTOPIE_CRISTALINIENNE.booleanValue())))
+            .andExpect(jsonPath("$.[*].cataracte").value(hasItem(DEFAULT_CATARACTE.booleanValue())))
+            .andExpect(jsonPath("$.[*].glaucome").value(hasItem(DEFAULT_GLAUCOME.booleanValue())))
+            .andExpect(jsonPath("$.[*].myopie").value(hasItem(DEFAULT_MYOPIE.booleanValue())))
+            .andExpect(
+                jsonPath("$.[*].manifestations_ophtalmologiques_autre").value(hasItem(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE))
+            );
     }
 
     @Test
@@ -263,7 +358,20 @@ class CassuspecteResourceIT {
             .andExpect(jsonPath("$.ictere").value(DEFAULT_ICTERE.booleanValue()))
             .andExpect(jsonPath("$.ballonnement").value(DEFAULT_BALLONNEMENT.booleanValue()))
             .andExpect(jsonPath("$.syndrome_hemorragique").value(DEFAULT_SYNDROME_HEMORRAGIQUE.booleanValue()))
-            .andExpect(jsonPath("$.autres_signes_hepatiques").value(DEFAULT_AUTRES_SIGNES_HEPATIQUES));
+            .andExpect(jsonPath("$.autres_signes_hepatiques").value(DEFAULT_AUTRES_SIGNES_HEPATIQUES))
+            .andExpect(jsonPath("$.signes_osseux").value(DEFAULT_SIGNES_OSSEUX.booleanValue()))
+            .andExpect(jsonPath("$.signes_de_rachitisme").value(DEFAULT_SIGNES_DE_RACHITISME.booleanValue()))
+            .andExpect(jsonPath("$.autre_signes_osseux").value(DEFAULT_AUTRE_SIGNES_OSSEUX))
+            .andExpect(jsonPath("$.manifestations_thrombotiques").value(DEFAULT_MANIFESTATIONS_THROMBOTIQUES.booleanValue()))
+            .andExpect(jsonPath("$.cerebrale").value(DEFAULT_CEREBRALE.booleanValue()))
+            .andExpect(jsonPath("$.autre_manifestations_thrombotiques").value(DEFAULT_AUTRE_MANIFESTATIONS_THROMBOTIQUES))
+            .andExpect(jsonPath("$.manifestations_ophtalmologiques").value(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES.booleanValue()))
+            .andExpect(jsonPath("$.luxation").value(DEFAULT_LUXATION.booleanValue()))
+            .andExpect(jsonPath("$.ectopie_cristalinienne").value(DEFAULT_ECTOPIE_CRISTALINIENNE.booleanValue()))
+            .andExpect(jsonPath("$.cataracte").value(DEFAULT_CATARACTE.booleanValue()))
+            .andExpect(jsonPath("$.glaucome").value(DEFAULT_GLAUCOME.booleanValue()))
+            .andExpect(jsonPath("$.myopie").value(DEFAULT_MYOPIE.booleanValue()))
+            .andExpect(jsonPath("$.manifestations_ophtalmologiques_autre").value(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE));
     }
 
     @Test
@@ -300,7 +408,20 @@ class CassuspecteResourceIT {
             .ictere(UPDATED_ICTERE)
             .ballonnement(UPDATED_BALLONNEMENT)
             .syndrome_hemorragique(UPDATED_SYNDROME_HEMORRAGIQUE)
-            .autres_signes_hepatiques(UPDATED_AUTRES_SIGNES_HEPATIQUES);
+            .autres_signes_hepatiques(UPDATED_AUTRES_SIGNES_HEPATIQUES)
+            .signes_osseux(UPDATED_SIGNES_OSSEUX)
+            .signes_de_rachitisme(UPDATED_SIGNES_DE_RACHITISME)
+            .autre_signes_osseux(UPDATED_AUTRE_SIGNES_OSSEUX)
+            .manifestations_thrombotiques(UPDATED_MANIFESTATIONS_THROMBOTIQUES)
+            .cerebrale(UPDATED_CEREBRALE)
+            .autre_manifestations_thrombotiques(UPDATED_AUTRE_MANIFESTATIONS_THROMBOTIQUES)
+            .manifestations_ophtalmologiques(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES)
+            .luxation(UPDATED_LUXATION)
+            .ectopie_cristalinienne(UPDATED_ECTOPIE_CRISTALINIENNE)
+            .cataracte(UPDATED_CATARACTE)
+            .glaucome(UPDATED_GLAUCOME)
+            .myopie(UPDATED_MYOPIE)
+            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
         CassuspecteDTO cassuspecteDTO = cassuspecteMapper.toDto(updatedCassuspecte);
 
         restCassuspecteMockMvc
@@ -330,6 +451,19 @@ class CassuspecteResourceIT {
         assertThat(testCassuspecte.getBallonnement()).isEqualTo(UPDATED_BALLONNEMENT);
         assertThat(testCassuspecte.getSyndrome_hemorragique()).isEqualTo(UPDATED_SYNDROME_HEMORRAGIQUE);
         assertThat(testCassuspecte.getAutres_signes_hepatiques()).isEqualTo(UPDATED_AUTRES_SIGNES_HEPATIQUES);
+        assertThat(testCassuspecte.getSignes_osseux()).isEqualTo(UPDATED_SIGNES_OSSEUX);
+        assertThat(testCassuspecte.getSignes_de_rachitisme()).isEqualTo(UPDATED_SIGNES_DE_RACHITISME);
+        assertThat(testCassuspecte.getAutre_signes_osseux()).isEqualTo(UPDATED_AUTRE_SIGNES_OSSEUX);
+        assertThat(testCassuspecte.getManifestations_thrombotiques()).isEqualTo(UPDATED_MANIFESTATIONS_THROMBOTIQUES);
+        assertThat(testCassuspecte.getCerebrale()).isEqualTo(UPDATED_CEREBRALE);
+        assertThat(testCassuspecte.getAutre_manifestations_thrombotiques()).isEqualTo(UPDATED_AUTRE_MANIFESTATIONS_THROMBOTIQUES);
+        assertThat(testCassuspecte.getManifestations_ophtalmologiques()).isEqualTo(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES);
+        assertThat(testCassuspecte.getLuxation()).isEqualTo(UPDATED_LUXATION);
+        assertThat(testCassuspecte.getEctopie_cristalinienne()).isEqualTo(UPDATED_ECTOPIE_CRISTALINIENNE);
+        assertThat(testCassuspecte.getCataracte()).isEqualTo(UPDATED_CATARACTE);
+        assertThat(testCassuspecte.getGlaucome()).isEqualTo(UPDATED_GLAUCOME);
+        assertThat(testCassuspecte.getMyopie()).isEqualTo(UPDATED_MYOPIE);
+        assertThat(testCassuspecte.getManifestations_ophtalmologiques_autre()).isEqualTo(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
     }
 
     @Test
@@ -419,7 +553,13 @@ class CassuspecteResourceIT {
             .autres_signes_neurologiques(UPDATED_AUTRES_SIGNES_NEUROLOGIQUES)
             .signes_hepatiques(UPDATED_SIGNES_HEPATIQUES)
             .ballonnement(UPDATED_BALLONNEMENT)
-            .autres_signes_hepatiques(UPDATED_AUTRES_SIGNES_HEPATIQUES);
+            .autres_signes_hepatiques(UPDATED_AUTRES_SIGNES_HEPATIQUES)
+            .signes_osseux(UPDATED_SIGNES_OSSEUX)
+            .cerebrale(UPDATED_CEREBRALE)
+            .luxation(UPDATED_LUXATION)
+            .ectopie_cristalinienne(UPDATED_ECTOPIE_CRISTALINIENNE)
+            .myopie(UPDATED_MYOPIE)
+            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
 
         restCassuspecteMockMvc
             .perform(
@@ -448,6 +588,19 @@ class CassuspecteResourceIT {
         assertThat(testCassuspecte.getBallonnement()).isEqualTo(UPDATED_BALLONNEMENT);
         assertThat(testCassuspecte.getSyndrome_hemorragique()).isEqualTo(DEFAULT_SYNDROME_HEMORRAGIQUE);
         assertThat(testCassuspecte.getAutres_signes_hepatiques()).isEqualTo(UPDATED_AUTRES_SIGNES_HEPATIQUES);
+        assertThat(testCassuspecte.getSignes_osseux()).isEqualTo(UPDATED_SIGNES_OSSEUX);
+        assertThat(testCassuspecte.getSignes_de_rachitisme()).isEqualTo(DEFAULT_SIGNES_DE_RACHITISME);
+        assertThat(testCassuspecte.getAutre_signes_osseux()).isEqualTo(DEFAULT_AUTRE_SIGNES_OSSEUX);
+        assertThat(testCassuspecte.getManifestations_thrombotiques()).isEqualTo(DEFAULT_MANIFESTATIONS_THROMBOTIQUES);
+        assertThat(testCassuspecte.getCerebrale()).isEqualTo(UPDATED_CEREBRALE);
+        assertThat(testCassuspecte.getAutre_manifestations_thrombotiques()).isEqualTo(DEFAULT_AUTRE_MANIFESTATIONS_THROMBOTIQUES);
+        assertThat(testCassuspecte.getManifestations_ophtalmologiques()).isEqualTo(DEFAULT_MANIFESTATIONS_OPHTALMOLOGIQUES);
+        assertThat(testCassuspecte.getLuxation()).isEqualTo(UPDATED_LUXATION);
+        assertThat(testCassuspecte.getEctopie_cristalinienne()).isEqualTo(UPDATED_ECTOPIE_CRISTALINIENNE);
+        assertThat(testCassuspecte.getCataracte()).isEqualTo(DEFAULT_CATARACTE);
+        assertThat(testCassuspecte.getGlaucome()).isEqualTo(DEFAULT_GLAUCOME);
+        assertThat(testCassuspecte.getMyopie()).isEqualTo(UPDATED_MYOPIE);
+        assertThat(testCassuspecte.getManifestations_ophtalmologiques_autre()).isEqualTo(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
     }
 
     @Test
@@ -477,7 +630,20 @@ class CassuspecteResourceIT {
             .ictere(UPDATED_ICTERE)
             .ballonnement(UPDATED_BALLONNEMENT)
             .syndrome_hemorragique(UPDATED_SYNDROME_HEMORRAGIQUE)
-            .autres_signes_hepatiques(UPDATED_AUTRES_SIGNES_HEPATIQUES);
+            .autres_signes_hepatiques(UPDATED_AUTRES_SIGNES_HEPATIQUES)
+            .signes_osseux(UPDATED_SIGNES_OSSEUX)
+            .signes_de_rachitisme(UPDATED_SIGNES_DE_RACHITISME)
+            .autre_signes_osseux(UPDATED_AUTRE_SIGNES_OSSEUX)
+            .manifestations_thrombotiques(UPDATED_MANIFESTATIONS_THROMBOTIQUES)
+            .cerebrale(UPDATED_CEREBRALE)
+            .autre_manifestations_thrombotiques(UPDATED_AUTRE_MANIFESTATIONS_THROMBOTIQUES)
+            .manifestations_ophtalmologiques(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES)
+            .luxation(UPDATED_LUXATION)
+            .ectopie_cristalinienne(UPDATED_ECTOPIE_CRISTALINIENNE)
+            .cataracte(UPDATED_CATARACTE)
+            .glaucome(UPDATED_GLAUCOME)
+            .myopie(UPDATED_MYOPIE)
+            .manifestations_ophtalmologiques_autre(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
 
         restCassuspecteMockMvc
             .perform(
@@ -506,6 +672,19 @@ class CassuspecteResourceIT {
         assertThat(testCassuspecte.getBallonnement()).isEqualTo(UPDATED_BALLONNEMENT);
         assertThat(testCassuspecte.getSyndrome_hemorragique()).isEqualTo(UPDATED_SYNDROME_HEMORRAGIQUE);
         assertThat(testCassuspecte.getAutres_signes_hepatiques()).isEqualTo(UPDATED_AUTRES_SIGNES_HEPATIQUES);
+        assertThat(testCassuspecte.getSignes_osseux()).isEqualTo(UPDATED_SIGNES_OSSEUX);
+        assertThat(testCassuspecte.getSignes_de_rachitisme()).isEqualTo(UPDATED_SIGNES_DE_RACHITISME);
+        assertThat(testCassuspecte.getAutre_signes_osseux()).isEqualTo(UPDATED_AUTRE_SIGNES_OSSEUX);
+        assertThat(testCassuspecte.getManifestations_thrombotiques()).isEqualTo(UPDATED_MANIFESTATIONS_THROMBOTIQUES);
+        assertThat(testCassuspecte.getCerebrale()).isEqualTo(UPDATED_CEREBRALE);
+        assertThat(testCassuspecte.getAutre_manifestations_thrombotiques()).isEqualTo(UPDATED_AUTRE_MANIFESTATIONS_THROMBOTIQUES);
+        assertThat(testCassuspecte.getManifestations_ophtalmologiques()).isEqualTo(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES);
+        assertThat(testCassuspecte.getLuxation()).isEqualTo(UPDATED_LUXATION);
+        assertThat(testCassuspecte.getEctopie_cristalinienne()).isEqualTo(UPDATED_ECTOPIE_CRISTALINIENNE);
+        assertThat(testCassuspecte.getCataracte()).isEqualTo(UPDATED_CATARACTE);
+        assertThat(testCassuspecte.getGlaucome()).isEqualTo(UPDATED_GLAUCOME);
+        assertThat(testCassuspecte.getMyopie()).isEqualTo(UPDATED_MYOPIE);
+        assertThat(testCassuspecte.getManifestations_ophtalmologiques_autre()).isEqualTo(UPDATED_MANIFESTATIONS_OPHTALMOLOGIQUES_AUTRE);
     }
 
     @Test
