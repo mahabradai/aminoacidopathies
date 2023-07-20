@@ -22,6 +22,8 @@ import org.springframework.transaction.annotation.Transactional;
 import tn.mdweb.aminoacidopathies.IntegrationTest;
 import tn.mdweb.aminoacidopathies.domain.Fiche;
 import tn.mdweb.aminoacidopathies.domain.Pathologie;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eMoteur;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eQI;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eage_premier_symptome;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eagepremiereconsultation;
@@ -31,10 +33,18 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edecesbasage;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychique;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychiqueval;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneuro;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneurosensorielval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
+import tn.mdweb.aminoacidopathies.domain.enumeration.egrade;
+import tn.mdweb.aminoacidopathies.domain.enumeration.ehandicapmental;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eniveauscolarisation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eregime;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eregimeval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.escolarisetype;
 import tn.mdweb.aminoacidopathies.domain.enumeration.esexe;
 import tn.mdweb.aminoacidopathies.domain.enumeration.estatut;
@@ -173,6 +183,39 @@ class FicheResourceIT {
     private static final LocalDate DEFAULT_DATE_DIAGNOSTIC = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_DATE_DIAGNOSTIC = LocalDate.now(ZoneId.systemDefault());
 
+    private static final ehandicapmental DEFAULT_HANDICAP_MENTAL = ehandicapmental.NP;
+    private static final ehandicapmental UPDATED_HANDICAP_MENTAL = ehandicapmental.OUI;
+
+    private static final eQI DEFAULT_QI = eQI.NON_EVALUE;
+    private static final eQI UPDATED_QI = eQI.QI_50_69;
+
+    private static final eMoteur DEFAULT_HANDICAP_MOTEUR = eMoteur.NP;
+    private static final eMoteur UPDATED_HANDICAP_MOTEUR = eMoteur.NON;
+
+    private static final egrade DEFAULT_HADICAP_MOTEUR_GRADE = egrade.LEGER;
+    private static final egrade UPDATED_HADICAP_MOTEUR_GRADE = egrade.MOYEN;
+
+    private static final edeficitneuro DEFAULT_DEFICIT_NEUROSENSORIEL = edeficitneuro.NON;
+    private static final edeficitneuro UPDATED_DEFICIT_NEUROSENSORIEL = edeficitneuro.OUI;
+
+    private static final edeficitneurosensorielval DEFAULT_DEFICIT_NEUROSENSORIEL_VAL = edeficitneurosensorielval.AUDITIF;
+    private static final edeficitneurosensorielval UPDATED_DEFICIT_NEUROSENSORIEL_VAL = edeficitneurosensorielval.VISUEL;
+
+    private static final edeficiencepsychique DEFAULT_DEFICIENCE_PSYCHIQUE = edeficiencepsychique.OUI;
+    private static final edeficiencepsychique UPDATED_DEFICIENCE_PSYCHIQUE = edeficiencepsychique.NON;
+
+    private static final edeficiencepsychiqueval DEFAULT_DEFICIENCE_PSYCHIQUE_VAL = edeficiencepsychiqueval.TROUBLES_COMMUNICATION_LANGUAGE;
+    private static final edeficiencepsychiqueval UPDATED_DEFICIENCE_PSYCHIQUE_VAL = edeficiencepsychiqueval.TROUBLES_COMPORTEMENT;
+
+    private static final String DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE = "AAAAAAAAAA";
+    private static final String UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE = "BBBBBBBBBB";
+
+    private static final eregime DEFAULT_REGIME = eregime.OUI;
+    private static final eregime UPDATED_REGIME = eregime.NON;
+
+    private static final eregimeval DEFAULT_REGIME_VAL = eregimeval.HYPOPROTIDIQUE;
+    private static final eregimeval UPDATED_REGIME_VAL = eregimeval.CONTROLE_EN_ACIDE_AMINE;
+
     private static final String ENTITY_API_URL = "/api/fiches";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -241,7 +284,18 @@ class FicheResourceIT {
             .mois_age_premiere_consultation(DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION)
             .jours_premiere_consultation(DEFAULT_JOURS_PREMIERE_CONSULTATION)
             .date_derniere_evaluation(DEFAULT_DATE_DERNIERE_EVALUATION)
-            .date_diagnostic(DEFAULT_DATE_DIAGNOSTIC);
+            .date_diagnostic(DEFAULT_DATE_DIAGNOSTIC)
+            .handicap_mental(DEFAULT_HANDICAP_MENTAL)
+            .qi(DEFAULT_QI)
+            .handicap_moteur(DEFAULT_HANDICAP_MOTEUR)
+            .hadicap_moteur_grade(DEFAULT_HADICAP_MOTEUR_GRADE)
+            .deficit_neurosensoriel(DEFAULT_DEFICIT_NEUROSENSORIEL)
+            .deficit_neurosensoriel_val(DEFAULT_DEFICIT_NEUROSENSORIEL_VAL)
+            .deficience_psychique(DEFAULT_DEFICIENCE_PSYCHIQUE)
+            .deficience_psychique_val(DEFAULT_DEFICIENCE_PSYCHIQUE_VAL)
+            .autre_deficience_psychique(DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE)
+            .regime(DEFAULT_REGIME)
+            .regime_val(DEFAULT_REGIME_VAL);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -303,7 +357,18 @@ class FicheResourceIT {
             .mois_age_premiere_consultation(UPDATED_MOIS_AGE_PREMIERE_CONSULTATION)
             .jours_premiere_consultation(UPDATED_JOURS_PREMIERE_CONSULTATION)
             .date_derniere_evaluation(UPDATED_DATE_DERNIERE_EVALUATION)
-            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC);
+            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC)
+            .handicap_mental(UPDATED_HANDICAP_MENTAL)
+            .qi(UPDATED_QI)
+            .handicap_moteur(UPDATED_HANDICAP_MOTEUR)
+            .hadicap_moteur_grade(UPDATED_HADICAP_MOTEUR_GRADE)
+            .deficit_neurosensoriel(UPDATED_DEFICIT_NEUROSENSORIEL)
+            .deficit_neurosensoriel_val(UPDATED_DEFICIT_NEUROSENSORIEL_VAL)
+            .deficience_psychique(UPDATED_DEFICIENCE_PSYCHIQUE)
+            .deficience_psychique_val(UPDATED_DEFICIENCE_PSYCHIQUE_VAL)
+            .autre_deficience_psychique(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE)
+            .regime(UPDATED_REGIME)
+            .regime_val(UPDATED_REGIME_VAL);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -377,6 +442,17 @@ class FicheResourceIT {
         assertThat(testFiche.getJours_premiere_consultation()).isEqualTo(DEFAULT_JOURS_PREMIERE_CONSULTATION);
         assertThat(testFiche.getDate_derniere_evaluation()).isEqualTo(DEFAULT_DATE_DERNIERE_EVALUATION);
         assertThat(testFiche.getDate_diagnostic()).isEqualTo(DEFAULT_DATE_DIAGNOSTIC);
+        assertThat(testFiche.getHandicap_mental()).isEqualTo(DEFAULT_HANDICAP_MENTAL);
+        assertThat(testFiche.getQi()).isEqualTo(DEFAULT_QI);
+        assertThat(testFiche.getHandicap_moteur()).isEqualTo(DEFAULT_HANDICAP_MOTEUR);
+        assertThat(testFiche.getHadicap_moteur_grade()).isEqualTo(DEFAULT_HADICAP_MOTEUR_GRADE);
+        assertThat(testFiche.getDeficit_neurosensoriel()).isEqualTo(DEFAULT_DEFICIT_NEUROSENSORIEL);
+        assertThat(testFiche.getDeficit_neurosensoriel_val()).isEqualTo(DEFAULT_DEFICIT_NEUROSENSORIEL_VAL);
+        assertThat(testFiche.getDeficience_psychique()).isEqualTo(DEFAULT_DEFICIENCE_PSYCHIQUE);
+        assertThat(testFiche.getDeficience_psychique_val()).isEqualTo(DEFAULT_DEFICIENCE_PSYCHIQUE_VAL);
+        assertThat(testFiche.getAutre_deficience_psychique()).isEqualTo(DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE);
+        assertThat(testFiche.getRegime()).isEqualTo(DEFAULT_REGIME);
+        assertThat(testFiche.getRegime_val()).isEqualTo(DEFAULT_REGIME_VAL);
     }
 
     @Test
@@ -468,7 +544,18 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.[*].mois_age_premiere_consultation").value(hasItem(DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION)))
             .andExpect(jsonPath("$.[*].jours_premiere_consultation").value(hasItem(DEFAULT_JOURS_PREMIERE_CONSULTATION)))
             .andExpect(jsonPath("$.[*].date_derniere_evaluation").value(hasItem(DEFAULT_DATE_DERNIERE_EVALUATION.toString())))
-            .andExpect(jsonPath("$.[*].date_diagnostic").value(hasItem(DEFAULT_DATE_DIAGNOSTIC.toString())));
+            .andExpect(jsonPath("$.[*].date_diagnostic").value(hasItem(DEFAULT_DATE_DIAGNOSTIC.toString())))
+            .andExpect(jsonPath("$.[*].handicap_mental").value(hasItem(DEFAULT_HANDICAP_MENTAL.toString())))
+            .andExpect(jsonPath("$.[*].qi").value(hasItem(DEFAULT_QI.toString())))
+            .andExpect(jsonPath("$.[*].handicap_moteur").value(hasItem(DEFAULT_HANDICAP_MOTEUR.toString())))
+            .andExpect(jsonPath("$.[*].hadicap_moteur_grade").value(hasItem(DEFAULT_HADICAP_MOTEUR_GRADE.toString())))
+            .andExpect(jsonPath("$.[*].deficit_neurosensoriel").value(hasItem(DEFAULT_DEFICIT_NEUROSENSORIEL.toString())))
+            .andExpect(jsonPath("$.[*].deficit_neurosensoriel_val").value(hasItem(DEFAULT_DEFICIT_NEUROSENSORIEL_VAL.toString())))
+            .andExpect(jsonPath("$.[*].deficience_psychique").value(hasItem(DEFAULT_DEFICIENCE_PSYCHIQUE.toString())))
+            .andExpect(jsonPath("$.[*].deficience_psychique_val").value(hasItem(DEFAULT_DEFICIENCE_PSYCHIQUE_VAL.toString())))
+            .andExpect(jsonPath("$.[*].autre_deficience_psychique").value(hasItem(DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE)))
+            .andExpect(jsonPath("$.[*].regime").value(hasItem(DEFAULT_REGIME.toString())))
+            .andExpect(jsonPath("$.[*].regime_val").value(hasItem(DEFAULT_REGIME_VAL.toString())));
     }
 
     @Test
@@ -523,7 +610,18 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.mois_age_premiere_consultation").value(DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION))
             .andExpect(jsonPath("$.jours_premiere_consultation").value(DEFAULT_JOURS_PREMIERE_CONSULTATION))
             .andExpect(jsonPath("$.date_derniere_evaluation").value(DEFAULT_DATE_DERNIERE_EVALUATION.toString()))
-            .andExpect(jsonPath("$.date_diagnostic").value(DEFAULT_DATE_DIAGNOSTIC.toString()));
+            .andExpect(jsonPath("$.date_diagnostic").value(DEFAULT_DATE_DIAGNOSTIC.toString()))
+            .andExpect(jsonPath("$.handicap_mental").value(DEFAULT_HANDICAP_MENTAL.toString()))
+            .andExpect(jsonPath("$.qi").value(DEFAULT_QI.toString()))
+            .andExpect(jsonPath("$.handicap_moteur").value(DEFAULT_HANDICAP_MOTEUR.toString()))
+            .andExpect(jsonPath("$.hadicap_moteur_grade").value(DEFAULT_HADICAP_MOTEUR_GRADE.toString()))
+            .andExpect(jsonPath("$.deficit_neurosensoriel").value(DEFAULT_DEFICIT_NEUROSENSORIEL.toString()))
+            .andExpect(jsonPath("$.deficit_neurosensoriel_val").value(DEFAULT_DEFICIT_NEUROSENSORIEL_VAL.toString()))
+            .andExpect(jsonPath("$.deficience_psychique").value(DEFAULT_DEFICIENCE_PSYCHIQUE.toString()))
+            .andExpect(jsonPath("$.deficience_psychique_val").value(DEFAULT_DEFICIENCE_PSYCHIQUE_VAL.toString()))
+            .andExpect(jsonPath("$.autre_deficience_psychique").value(DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE))
+            .andExpect(jsonPath("$.regime").value(DEFAULT_REGIME.toString()))
+            .andExpect(jsonPath("$.regime_val").value(DEFAULT_REGIME_VAL.toString()));
     }
 
     @Test
@@ -586,7 +684,18 @@ class FicheResourceIT {
             .mois_age_premiere_consultation(UPDATED_MOIS_AGE_PREMIERE_CONSULTATION)
             .jours_premiere_consultation(UPDATED_JOURS_PREMIERE_CONSULTATION)
             .date_derniere_evaluation(UPDATED_DATE_DERNIERE_EVALUATION)
-            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC);
+            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC)
+            .handicap_mental(UPDATED_HANDICAP_MENTAL)
+            .qi(UPDATED_QI)
+            .handicap_moteur(UPDATED_HANDICAP_MOTEUR)
+            .hadicap_moteur_grade(UPDATED_HADICAP_MOTEUR_GRADE)
+            .deficit_neurosensoriel(UPDATED_DEFICIT_NEUROSENSORIEL)
+            .deficit_neurosensoriel_val(UPDATED_DEFICIT_NEUROSENSORIEL_VAL)
+            .deficience_psychique(UPDATED_DEFICIENCE_PSYCHIQUE)
+            .deficience_psychique_val(UPDATED_DEFICIENCE_PSYCHIQUE_VAL)
+            .autre_deficience_psychique(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE)
+            .regime(UPDATED_REGIME)
+            .regime_val(UPDATED_REGIME_VAL);
         FicheDTO ficheDTO = ficheMapper.toDto(updatedFiche);
 
         restFicheMockMvc
@@ -642,6 +751,17 @@ class FicheResourceIT {
         assertThat(testFiche.getJours_premiere_consultation()).isEqualTo(UPDATED_JOURS_PREMIERE_CONSULTATION);
         assertThat(testFiche.getDate_derniere_evaluation()).isEqualTo(UPDATED_DATE_DERNIERE_EVALUATION);
         assertThat(testFiche.getDate_diagnostic()).isEqualTo(UPDATED_DATE_DIAGNOSTIC);
+        assertThat(testFiche.getHandicap_mental()).isEqualTo(UPDATED_HANDICAP_MENTAL);
+        assertThat(testFiche.getQi()).isEqualTo(UPDATED_QI);
+        assertThat(testFiche.getHandicap_moteur()).isEqualTo(UPDATED_HANDICAP_MOTEUR);
+        assertThat(testFiche.getHadicap_moteur_grade()).isEqualTo(UPDATED_HADICAP_MOTEUR_GRADE);
+        assertThat(testFiche.getDeficit_neurosensoriel()).isEqualTo(UPDATED_DEFICIT_NEUROSENSORIEL);
+        assertThat(testFiche.getDeficit_neurosensoriel_val()).isEqualTo(UPDATED_DEFICIT_NEUROSENSORIEL_VAL);
+        assertThat(testFiche.getDeficience_psychique()).isEqualTo(UPDATED_DEFICIENCE_PSYCHIQUE);
+        assertThat(testFiche.getDeficience_psychique_val()).isEqualTo(UPDATED_DEFICIENCE_PSYCHIQUE_VAL);
+        assertThat(testFiche.getAutre_deficience_psychique()).isEqualTo(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE);
+        assertThat(testFiche.getRegime()).isEqualTo(UPDATED_REGIME);
+        assertThat(testFiche.getRegime_val()).isEqualTo(UPDATED_REGIME_VAL);
     }
 
     @Test
@@ -743,7 +863,15 @@ class FicheResourceIT {
             .mois_age_premiers_symptomes(UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES)
             .jours_premiers_symptomes(UPDATED_JOURS_PREMIERS_SYMPTOMES)
             .age_premiere_consultation(UPDATED_AGE_PREMIERE_CONSULTATION)
-            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC);
+            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC)
+            .qi(UPDATED_QI)
+            .handicap_moteur(UPDATED_HANDICAP_MOTEUR)
+            .hadicap_moteur_grade(UPDATED_HADICAP_MOTEUR_GRADE)
+            .deficit_neurosensoriel(UPDATED_DEFICIT_NEUROSENSORIEL)
+            .deficit_neurosensoriel_val(UPDATED_DEFICIT_NEUROSENSORIEL_VAL)
+            .deficience_psychique(UPDATED_DEFICIENCE_PSYCHIQUE)
+            .autre_deficience_psychique(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE)
+            .regime_val(UPDATED_REGIME_VAL);
 
         restFicheMockMvc
             .perform(
@@ -798,6 +926,17 @@ class FicheResourceIT {
         assertThat(testFiche.getJours_premiere_consultation()).isEqualTo(DEFAULT_JOURS_PREMIERE_CONSULTATION);
         assertThat(testFiche.getDate_derniere_evaluation()).isEqualTo(DEFAULT_DATE_DERNIERE_EVALUATION);
         assertThat(testFiche.getDate_diagnostic()).isEqualTo(UPDATED_DATE_DIAGNOSTIC);
+        assertThat(testFiche.getHandicap_mental()).isEqualTo(DEFAULT_HANDICAP_MENTAL);
+        assertThat(testFiche.getQi()).isEqualTo(UPDATED_QI);
+        assertThat(testFiche.getHandicap_moteur()).isEqualTo(UPDATED_HANDICAP_MOTEUR);
+        assertThat(testFiche.getHadicap_moteur_grade()).isEqualTo(UPDATED_HADICAP_MOTEUR_GRADE);
+        assertThat(testFiche.getDeficit_neurosensoriel()).isEqualTo(UPDATED_DEFICIT_NEUROSENSORIEL);
+        assertThat(testFiche.getDeficit_neurosensoriel_val()).isEqualTo(UPDATED_DEFICIT_NEUROSENSORIEL_VAL);
+        assertThat(testFiche.getDeficience_psychique()).isEqualTo(UPDATED_DEFICIENCE_PSYCHIQUE);
+        assertThat(testFiche.getDeficience_psychique_val()).isEqualTo(DEFAULT_DEFICIENCE_PSYCHIQUE_VAL);
+        assertThat(testFiche.getAutre_deficience_psychique()).isEqualTo(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE);
+        assertThat(testFiche.getRegime()).isEqualTo(DEFAULT_REGIME);
+        assertThat(testFiche.getRegime_val()).isEqualTo(UPDATED_REGIME_VAL);
     }
 
     @Test
@@ -853,7 +992,18 @@ class FicheResourceIT {
             .mois_age_premiere_consultation(UPDATED_MOIS_AGE_PREMIERE_CONSULTATION)
             .jours_premiere_consultation(UPDATED_JOURS_PREMIERE_CONSULTATION)
             .date_derniere_evaluation(UPDATED_DATE_DERNIERE_EVALUATION)
-            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC);
+            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC)
+            .handicap_mental(UPDATED_HANDICAP_MENTAL)
+            .qi(UPDATED_QI)
+            .handicap_moteur(UPDATED_HANDICAP_MOTEUR)
+            .hadicap_moteur_grade(UPDATED_HADICAP_MOTEUR_GRADE)
+            .deficit_neurosensoriel(UPDATED_DEFICIT_NEUROSENSORIEL)
+            .deficit_neurosensoriel_val(UPDATED_DEFICIT_NEUROSENSORIEL_VAL)
+            .deficience_psychique(UPDATED_DEFICIENCE_PSYCHIQUE)
+            .deficience_psychique_val(UPDATED_DEFICIENCE_PSYCHIQUE_VAL)
+            .autre_deficience_psychique(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE)
+            .regime(UPDATED_REGIME)
+            .regime_val(UPDATED_REGIME_VAL);
 
         restFicheMockMvc
             .perform(
@@ -908,6 +1058,17 @@ class FicheResourceIT {
         assertThat(testFiche.getJours_premiere_consultation()).isEqualTo(UPDATED_JOURS_PREMIERE_CONSULTATION);
         assertThat(testFiche.getDate_derniere_evaluation()).isEqualTo(UPDATED_DATE_DERNIERE_EVALUATION);
         assertThat(testFiche.getDate_diagnostic()).isEqualTo(UPDATED_DATE_DIAGNOSTIC);
+        assertThat(testFiche.getHandicap_mental()).isEqualTo(UPDATED_HANDICAP_MENTAL);
+        assertThat(testFiche.getQi()).isEqualTo(UPDATED_QI);
+        assertThat(testFiche.getHandicap_moteur()).isEqualTo(UPDATED_HANDICAP_MOTEUR);
+        assertThat(testFiche.getHadicap_moteur_grade()).isEqualTo(UPDATED_HADICAP_MOTEUR_GRADE);
+        assertThat(testFiche.getDeficit_neurosensoriel()).isEqualTo(UPDATED_DEFICIT_NEUROSENSORIEL);
+        assertThat(testFiche.getDeficit_neurosensoriel_val()).isEqualTo(UPDATED_DEFICIT_NEUROSENSORIEL_VAL);
+        assertThat(testFiche.getDeficience_psychique()).isEqualTo(UPDATED_DEFICIENCE_PSYCHIQUE);
+        assertThat(testFiche.getDeficience_psychique_val()).isEqualTo(UPDATED_DEFICIENCE_PSYCHIQUE_VAL);
+        assertThat(testFiche.getAutre_deficience_psychique()).isEqualTo(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE);
+        assertThat(testFiche.getRegime()).isEqualTo(UPDATED_REGIME);
+        assertThat(testFiche.getRegime_val()).isEqualTo(UPDATED_REGIME_VAL);
     }
 
     @Test

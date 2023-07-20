@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 import javax.validation.constraints.*;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eMoteur;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eQI;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eage_premier_symptome;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eagepremiereconsultation;
@@ -13,10 +15,18 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edecesbasage;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychique;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychiqueval;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneuro;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneurosensorielval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
+import tn.mdweb.aminoacidopathies.domain.enumeration.egrade;
+import tn.mdweb.aminoacidopathies.domain.enumeration.ehandicapmental;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eniveauscolarisation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eregime;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eregimeval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.escolarisetype;
 import tn.mdweb.aminoacidopathies.domain.enumeration.esexe;
 import tn.mdweb.aminoacidopathies.domain.enumeration.estatut;
@@ -111,6 +121,28 @@ public class FicheDTO implements Serializable {
     private LocalDate date_derniere_evaluation;
 
     private LocalDate date_diagnostic;
+
+    private ehandicapmental handicap_mental;
+
+    private eQI qi;
+
+    private eMoteur handicap_moteur;
+
+    private egrade hadicap_moteur_grade;
+
+    private edeficitneuro deficit_neurosensoriel;
+
+    private edeficitneurosensorielval deficit_neurosensoriel_val;
+
+    private edeficiencepsychique deficience_psychique;
+
+    private edeficiencepsychiqueval deficience_psychique_val;
+
+    private String autre_deficience_psychique;
+
+    private eregime regime;
+
+    private eregimeval regime_val;
 
     private PathologieDTO pathologie;
 
@@ -450,6 +482,94 @@ public class FicheDTO implements Serializable {
         this.date_diagnostic = date_diagnostic;
     }
 
+    public ehandicapmental getHandicap_mental() {
+        return handicap_mental;
+    }
+
+    public void setHandicap_mental(ehandicapmental handicap_mental) {
+        this.handicap_mental = handicap_mental;
+    }
+
+    public eQI getQi() {
+        return qi;
+    }
+
+    public void setQi(eQI qi) {
+        this.qi = qi;
+    }
+
+    public eMoteur getHandicap_moteur() {
+        return handicap_moteur;
+    }
+
+    public void setHandicap_moteur(eMoteur handicap_moteur) {
+        this.handicap_moteur = handicap_moteur;
+    }
+
+    public egrade getHadicap_moteur_grade() {
+        return hadicap_moteur_grade;
+    }
+
+    public void setHadicap_moteur_grade(egrade hadicap_moteur_grade) {
+        this.hadicap_moteur_grade = hadicap_moteur_grade;
+    }
+
+    public edeficitneuro getDeficit_neurosensoriel() {
+        return deficit_neurosensoriel;
+    }
+
+    public void setDeficit_neurosensoriel(edeficitneuro deficit_neurosensoriel) {
+        this.deficit_neurosensoriel = deficit_neurosensoriel;
+    }
+
+    public edeficitneurosensorielval getDeficit_neurosensoriel_val() {
+        return deficit_neurosensoriel_val;
+    }
+
+    public void setDeficit_neurosensoriel_val(edeficitneurosensorielval deficit_neurosensoriel_val) {
+        this.deficit_neurosensoriel_val = deficit_neurosensoriel_val;
+    }
+
+    public edeficiencepsychique getDeficience_psychique() {
+        return deficience_psychique;
+    }
+
+    public void setDeficience_psychique(edeficiencepsychique deficience_psychique) {
+        this.deficience_psychique = deficience_psychique;
+    }
+
+    public edeficiencepsychiqueval getDeficience_psychique_val() {
+        return deficience_psychique_val;
+    }
+
+    public void setDeficience_psychique_val(edeficiencepsychiqueval deficience_psychique_val) {
+        this.deficience_psychique_val = deficience_psychique_val;
+    }
+
+    public String getAutre_deficience_psychique() {
+        return autre_deficience_psychique;
+    }
+
+    public void setAutre_deficience_psychique(String autre_deficience_psychique) {
+        this.autre_deficience_psychique = autre_deficience_psychique;
+    }
+
+    public eregime getRegime() {
+        return regime;
+    }
+
+    public void setRegime(eregime regime) {
+        this.regime = regime;
+    }
+
+    public eregimeval getRegime_val() {
+        return regime_val;
+    }
+
+    public void setRegime_val(eregimeval regime_val) {
+        this.regime_val = regime_val;
+    }
+
     public PathologieDTO getPathologie() {
         return pathologie;
     }
@@ -525,6 +645,17 @@ public class FicheDTO implements Serializable {
             ", jours_premiere_consultation=" + getJours_premiere_consultation() +
             ", date_derniere_evaluation='" + getDate_derniere_evaluation() + "'" +
             ", date_diagnostic='" + getDate_diagnostic() + "'" +
+            ", handicap_mental='" + getHandicap_mental() + "'" +
+            ", qi='" + getQi() + "'" +
+            ", handicap_moteur='" + getHandicap_moteur() + "'" +
+            ", hadicap_moteur_grade='" + getHadicap_moteur_grade() + "'" +
+            ", deficit_neurosensoriel='" + getDeficit_neurosensoriel() + "'" +
+            ", deficit_neurosensoriel_val='" + getDeficit_neurosensoriel_val() + "'" +
+            ", deficience_psychique='" + getDeficience_psychique() + "'" +
+            ", deficience_psychique_val='" + getDeficience_psychique_val() + "'" +
+            ", autre_deficience_psychique='" + getAutre_deficience_psychique() + "'" +
+            ", regime='" + getRegime() + "'" +
+            ", regime_val='" + getRegime_val() + "'" +
             ", pathologie=" + getPathologie() +
             "}";
     }

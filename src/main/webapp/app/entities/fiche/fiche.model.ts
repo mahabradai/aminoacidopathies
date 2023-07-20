@@ -16,6 +16,16 @@ import { edecesbasage } from 'app/entities/enumerations/edecesbasage.model';
 import { ecircondecouverte } from 'app/entities/enumerations/ecircondecouverte.model';
 import { eage_premier_symptome } from 'app/entities/enumerations/eage-premier-symptome.model';
 import { eagepremiereconsultation } from 'app/entities/enumerations/eagepremiereconsultation.model';
+import { ehandicapmental } from 'app/entities/enumerations/ehandicapmental.model';
+import { eQI } from 'app/entities/enumerations/e-qi.model';
+import { eMoteur } from 'app/entities/enumerations/e-moteur.model';
+import { egrade } from 'app/entities/enumerations/egrade.model';
+import { edeficitneuro } from 'app/entities/enumerations/edeficitneuro.model';
+import { edeficitneurosensorielval } from 'app/entities/enumerations/edeficitneurosensorielval.model';
+import { edeficiencepsychique } from 'app/entities/enumerations/edeficiencepsychique.model';
+import { edeficiencepsychiqueval } from 'app/entities/enumerations/edeficiencepsychiqueval.model';
+import { eregime } from 'app/entities/enumerations/eregime.model';
+import { eregimeval } from 'app/entities/enumerations/eregimeval.model';
 
 export interface IFiche {
   id: number;
@@ -60,6 +70,17 @@ export interface IFiche {
   jours_premiere_consultation?: number | null;
   date_derniere_evaluation?: dayjs.Dayjs | null;
   date_diagnostic?: dayjs.Dayjs | null;
+  handicap_mental?: ehandicapmental | null;
+  qi?: eQI | null;
+  handicap_moteur?: eMoteur | null;
+  hadicap_moteur_grade?: egrade | null;
+  deficit_neurosensoriel?: edeficitneuro | null;
+  deficit_neurosensoriel_val?: edeficitneurosensorielval | null;
+  deficience_psychique?: edeficiencepsychique | null;
+  deficience_psychique_val?: edeficiencepsychiqueval | null;
+  autre_deficience_psychique?: string | null;
+  regime?: eregime | null;
+  regime_val?: eregimeval | null;
   pathologie?: Pick<IPathologie, 'id'> | null;
 }
 

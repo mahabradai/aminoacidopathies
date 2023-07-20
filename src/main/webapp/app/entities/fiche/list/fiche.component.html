@@ -284,6 +284,72 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
+          <th scope="col" jhiSortBy="handicap_mental">
+            <div class="d-flex">
+              <span>Handicap Mental</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="qi">
+            <div class="d-flex">
+              <span>Qi</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="handicap_moteur">
+            <div class="d-flex">
+              <span>Handicap Moteur</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="hadicap_moteur_grade">
+            <div class="d-flex">
+              <span>Hadicap Moteur Grade</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deficit_neurosensoriel">
+            <div class="d-flex">
+              <span>Deficit Neurosensoriel</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deficit_neurosensoriel_val">
+            <div class="d-flex">
+              <span>Deficit Neurosensoriel Val</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deficience_psychique">
+            <div class="d-flex">
+              <span>Deficience Psychique</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deficience_psychique_val">
+            <div class="d-flex">
+              <span>Deficience Psychique Val</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autre_deficience_psychique">
+            <div class="d-flex">
+              <span>Autre Deficience Psychique</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="regime">
+            <div class="d-flex">
+              <span>Regime</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="regime_val">
+            <div class="d-flex">
+              <span>Regime Val</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
           <th scope="col" jhiSortBy="pathologie.id">
             <div class="d-flex">
               <span>Pathologie</span>
@@ -339,6 +405,17 @@
           <td>{{ fiche.jours_premiere_consultation }}</td>
           <td>{{ fiche.date_derniere_evaluation | formatMediumDate }}</td>
           <td>{{ fiche.date_diagnostic | formatMediumDate }}</td>
+          <td>{{ fiche.handicap_mental }}</td>
+          <td>{{ fiche.qi }}</td>
+          <td>{{ fiche.handicap_moteur }}</td>
+          <td>{{ fiche.hadicap_moteur_grade }}</td>
+          <td>{{ fiche.deficit_neurosensoriel }}</td>
+          <td>{{ fiche.deficit_neurosensoriel_val }}</td>
+          <td>{{ fiche.deficience_psychique }}</td>
+          <td>{{ fiche.deficience_psychique_val }}</td>
+          <td>{{ fiche.autre_deficience_psychique }}</td>
+          <td>{{ fiche.regime }}</td>
+          <td>{{ fiche.regime_val }}</td>
           <td>
             <div *ngIf="fiche.pathologie">
               <a [routerLink]="['/pathologie', fiche.pathologie.id, 'view']">{{ fiche.pathologie.id }}</a>

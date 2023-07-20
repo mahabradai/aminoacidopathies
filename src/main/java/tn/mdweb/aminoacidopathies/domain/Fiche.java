@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eMoteur;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eQI;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eage_premier_symptome;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eagepremiereconsultation;
@@ -15,10 +17,18 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edecesbasage;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychique;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychiqueval;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneuro;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneurosensorielval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
+import tn.mdweb.aminoacidopathies.domain.enumeration.egrade;
+import tn.mdweb.aminoacidopathies.domain.enumeration.ehandicapmental;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eniveauscolarisation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eregime;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eregimeval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.escolarisetype;
 import tn.mdweb.aminoacidopathies.domain.enumeration.esexe;
 import tn.mdweb.aminoacidopathies.domain.enumeration.estatut;
@@ -178,6 +188,49 @@ public class Fiche implements Serializable {
 
     @Column(name = "date_diagnostic")
     private LocalDate date_diagnostic;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "handicap_mental")
+    private ehandicapmental handicap_mental;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "qi")
+    private eQI qi;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "handicap_moteur")
+    private eMoteur handicap_moteur;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "hadicap_moteur_grade")
+    private egrade hadicap_moteur_grade;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "deficit_neurosensoriel")
+    private edeficitneuro deficit_neurosensoriel;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "deficit_neurosensoriel_val")
+    private edeficitneurosensorielval deficit_neurosensoriel_val;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "deficience_psychique")
+    private edeficiencepsychique deficience_psychique;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "deficience_psychique_val")
+    private edeficiencepsychiqueval deficience_psychique_val;
+
+    @Column(name = "autre_deficience_psychique")
+    private String autre_deficience_psychique;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "regime")
+    private eregime regime;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "regime_val")
+    private eregimeval regime_val;
 
     @ManyToOne(optional = false)
     @NotNull
@@ -731,6 +784,149 @@ public class Fiche implements Serializable {
         this.date_diagnostic = date_diagnostic;
     }
 
+    public ehandicapmental getHandicap_mental() {
+        return this.handicap_mental;
+    }
+
+    public Fiche handicap_mental(ehandicapmental handicap_mental) {
+        this.setHandicap_mental(handicap_mental);
+        return this;
+    }
+
+    public void setHandicap_mental(ehandicapmental handicap_mental) {
+        this.handicap_mental = handicap_mental;
+    }
+
+    public eQI getQi() {
+        return this.qi;
+    }
+
+    public Fiche qi(eQI qi) {
+        this.setQi(qi);
+        return this;
+    }
+
+    public void setQi(eQI qi) {
+        this.qi = qi;
+    }
+
+    public eMoteur getHandicap_moteur() {
+        return this.handicap_moteur;
+    }
+
+    public Fiche handicap_moteur(eMoteur handicap_moteur) {
+        this.setHandicap_moteur(handicap_moteur);
+        return this;
+    }
+
+    public void setHandicap_moteur(eMoteur handicap_moteur) {
+        this.handicap_moteur = handicap_moteur;
+    }
+
+    public egrade getHadicap_moteur_grade() {
+        return this.hadicap_moteur_grade;
+    }
+
+    public Fiche hadicap_moteur_grade(egrade hadicap_moteur_grade) {
+        this.setHadicap_moteur_grade(hadicap_moteur_grade);
+        return this;
+    }
+
+    public void setHadicap_moteur_grade(egrade hadicap_moteur_grade) {
+        this.hadicap_moteur_grade = hadicap_moteur_grade;
+    }
+
+    public edeficitneuro getDeficit_neurosensoriel() {
+        return this.deficit_neurosensoriel;
+    }
+
+    public Fiche deficit_neurosensoriel(edeficitneuro deficit_neurosensoriel) {
+        this.setDeficit_neurosensoriel(deficit_neurosensoriel);
+        return this;
+    }
+
+    public void setDeficit_neurosensoriel(edeficitneuro deficit_neurosensoriel) {
+        this.deficit_neurosensoriel = deficit_neurosensoriel;
+    }
+
+    public edeficitneurosensorielval getDeficit_neurosensoriel_val() {
+        return this.deficit_neurosensoriel_val;
+    }
+
+    public Fiche deficit_neurosensoriel_val(edeficitneurosensorielval deficit_neurosensoriel_val) {
+        this.setDeficit_neurosensoriel_val(deficit_neurosensoriel_val);
+        return this;
+    }
+
+    public void setDeficit_neurosensoriel_val(edeficitneurosensorielval deficit_neurosensoriel_val) {
+        this.deficit_neurosensoriel_val = deficit_neurosensoriel_val;
+    }
+
+    public edeficiencepsychique getDeficience_psychique() {
+        return this.deficience_psychique;
+    }
+
+    public Fiche deficience_psychique(edeficiencepsychique deficience_psychique) {
+        this.setDeficience_psychique(deficience_psychique);
+        return this;
+    }
+
+    public void setDeficience_psychique(edeficiencepsychique deficience_psychique) {
+        this.deficience_psychique = deficience_psychique;
+    }
+
+    public edeficiencepsychiqueval getDeficience_psychique_val() {
+        return this.deficience_psychique_val;
+    }
+
+    public Fiche deficience_psychique_val(edeficiencepsychiqueval deficience_psychique_val) {
+        this.setDeficience_psychique_val(deficience_psychique_val);
+        return this;
+    }
+
+    public void setDeficience_psychique_val(edeficiencepsychiqueval deficience_psychique_val) {
+        this.deficience_psychique_val = deficience_psychique_val;
+    }
+
+    public String getAutre_deficience_psychique() {
+        return this.autre_deficience_psychique;
+    }
+
+    public Fiche autre_deficience_psychique(String autre_deficience_psychique) {
+        this.setAutre_deficience_psychique(autre_deficience_psychique);
+        return this;
+    }
+
+    public void setAutre_deficience_psychique(String autre_deficience_psychique) {
+        this.autre_deficience_psychique = autre_deficience_psychique;
+    }
+
+    public eregime getRegime() {
+        return this.regime;
+    }
+
+    public Fiche regime(eregime regime) {
+        this.setRegime(regime);
+        return this;
+    }
+
+    public void setRegime(eregime regime) {
+        this.regime = regime;
+    }
+
+    public eregimeval getRegime_val() {
+        return this.regime_val;
+    }
+
+    public Fiche regime_val(eregimeval regime_val) {
+        this.setRegime_val(regime_val);
+        return this;
+    }
+
+    public void setRegime_val(eregimeval regime_val) {
+        this.regime_val = regime_val;
+    }
+
     public Pathologie getPathologie() {
         return this.pathologie;
     }
@@ -809,6 +1005,17 @@ public class Fiche implements Serializable {
             ", jours_premiere_consultation=" + getJours_premiere_consultation() +
             ", date_derniere_evaluation='" + getDate_derniere_evaluation() + "'" +
             ", date_diagnostic='" + getDate_diagnostic() + "'" +
+            ", handicap_mental='" + getHandicap_mental() + "'" +
+            ", qi='" + getQi() + "'" +
+            ", handicap_moteur='" + getHandicap_moteur() + "'" +
+            ", hadicap_moteur_grade='" + getHadicap_moteur_grade() + "'" +
+            ", deficit_neurosensoriel='" + getDeficit_neurosensoriel() + "'" +
+            ", deficit_neurosensoriel_val='" + getDeficit_neurosensoriel_val() + "'" +
+            ", deficience_psychique='" + getDeficience_psychique() + "'" +
+            ", deficience_psychique_val='" + getDeficience_psychique_val() + "'" +
+            ", autre_deficience_psychique='" + getAutre_deficience_psychique() + "'" +
+            ", regime='" + getRegime() + "'" +
+            ", regime_val='" + getRegime_val() + "'" +
             "}";
     }
 }

@@ -25,6 +25,16 @@ import { edecesbasage } from 'app/entities/enumerations/edecesbasage.model';
 import { ecircondecouverte } from 'app/entities/enumerations/ecircondecouverte.model';
 import { eage_premier_symptome } from 'app/entities/enumerations/eage-premier-symptome.model';
 import { eagepremiereconsultation } from 'app/entities/enumerations/eagepremiereconsultation.model';
+import { ehandicapmental } from 'app/entities/enumerations/ehandicapmental.model';
+import { eQI } from 'app/entities/enumerations/e-qi.model';
+import { eMoteur } from 'app/entities/enumerations/e-moteur.model';
+import { egrade } from 'app/entities/enumerations/egrade.model';
+import { edeficitneuro } from 'app/entities/enumerations/edeficitneuro.model';
+import { edeficitneurosensorielval } from 'app/entities/enumerations/edeficitneurosensorielval.model';
+import { edeficiencepsychique } from 'app/entities/enumerations/edeficiencepsychique.model';
+import { edeficiencepsychiqueval } from 'app/entities/enumerations/edeficiencepsychiqueval.model';
+import { eregime } from 'app/entities/enumerations/eregime.model';
+import { eregimeval } from 'app/entities/enumerations/eregimeval.model';
 
 @Component({
   selector: 'jhi-fiche-update',
@@ -49,6 +59,16 @@ export class FicheUpdateComponent implements OnInit {
   ecircondecouverteValues = Object.keys(ecircondecouverte);
   eage_premier_symptomeValues = Object.keys(eage_premier_symptome);
   eagepremiereconsultationValues = Object.keys(eagepremiereconsultation);
+  ehandicapmentalValues = Object.keys(ehandicapmental);
+  eQIValues = Object.keys(eQI);
+  eMoteurValues = Object.keys(eMoteur);
+  egradeValues = Object.keys(egrade);
+  edeficitneuroValues = Object.keys(edeficitneuro);
+  edeficitneurosensorielvalValues = Object.keys(edeficitneurosensorielval);
+  edeficiencepsychiqueValues = Object.keys(edeficiencepsychique);
+  edeficiencepsychiquevalValues = Object.keys(edeficiencepsychiqueval);
+  eregimeValues = Object.keys(eregime);
+  eregimevalValues = Object.keys(eregimeval);
 
   pathologiesSharedCollection: IPathologie[] = [];
 

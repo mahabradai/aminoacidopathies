@@ -182,6 +182,60 @@
     {
       "fieldName": "date_diagnostic",
       "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "handicap_mental",
+      "fieldType": "ehandicapmental",
+      "fieldValues": "NP,OUI,NON"
+    },
+    {
+      "fieldName": "qi",
+      "fieldType": "eQI",
+      "fieldValues": "NON_EVALUE,QI_50_69,QI_35_49,QI_20_34,INFERIEUR_20"
+    },
+    {
+      "fieldName": "handicap_moteur",
+      "fieldType": "eMoteur",
+      "fieldValues": "NP,NON,OUI"
+    },
+    {
+      "fieldName": "hadicap_moteur_grade",
+      "fieldType": "egrade",
+      "fieldValues": "LEGER,MOYEN,GRAND,TRESGRAND"
+    },
+    {
+      "fieldName": "deficit_neurosensoriel",
+      "fieldType": "edeficitneuro",
+      "fieldValues": "NON,OUI,NP"
+    },
+    {
+      "fieldName": "deficit_neurosensoriel_val",
+      "fieldType": "edeficitneurosensorielval",
+      "fieldValues": "AUDITIF,VISUEL,NP"
+    },
+    {
+      "fieldName": "deficience_psychique",
+      "fieldType": "edeficiencepsychique",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "deficience_psychique_val",
+      "fieldType": "edeficiencepsychiqueval",
+      "fieldValues": "TROUBLES_COMMUNICATION_LANGUAGE,TROUBLES_COMPORTEMENT,TROUBLES_HUMEUR,AUTRE,NP"
+    },
+    {
+      "fieldName": "autre_deficience_psychique",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regime",
+      "fieldType": "eregime",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "regime_val",
+      "fieldType": "eregimeval",
+      "fieldValues": "HYPOPROTIDIQUE,CONTROLE_EN_ACIDE_AMINE,NP"
     }
   ],
   "jpaMetamodelFiltering": false,

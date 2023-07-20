@@ -538,6 +538,146 @@
         </div>
 
         <div class="row mb-3">
+          <label class="form-label" for="field_handicap_mental">Handicap Mental</label>
+          <select
+            class="form-control"
+            name="handicap_mental"
+            formControlName="handicap_mental"
+            id="field_handicap_mental"
+            data-cy="handicap_mental"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let ehandicapmental of ehandicapmentalValues" [value]="ehandicapmental">ehandicapmental</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_qi">Qi</label>
+          <select class="form-control" name="qi" formControlName="qi" id="field_qi" data-cy="qi">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eQI of eQIValues" [value]="eQI">eQI</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_handicap_moteur">Handicap Moteur</label>
+          <select
+            class="form-control"
+            name="handicap_moteur"
+            formControlName="handicap_moteur"
+            id="field_handicap_moteur"
+            data-cy="handicap_moteur"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eMoteur of eMoteurValues" [value]="eMoteur">eMoteur</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_hadicap_moteur_grade">Hadicap Moteur Grade</label>
+          <select
+            class="form-control"
+            name="hadicap_moteur_grade"
+            formControlName="hadicap_moteur_grade"
+            id="field_hadicap_moteur_grade"
+            data-cy="hadicap_moteur_grade"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let egrade of egradeValues" [value]="egrade">egrade</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_deficit_neurosensoriel">Deficit Neurosensoriel</label>
+          <select
+            class="form-control"
+            name="deficit_neurosensoriel"
+            formControlName="deficit_neurosensoriel"
+            id="field_deficit_neurosensoriel"
+            data-cy="deficit_neurosensoriel"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let edeficitneuro of edeficitneuroValues" [value]="edeficitneuro">edeficitneuro</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_deficit_neurosensoriel_val">Deficit Neurosensoriel Val</label>
+          <select
+            class="form-control"
+            name="deficit_neurosensoriel_val"
+            formControlName="deficit_neurosensoriel_val"
+            id="field_deficit_neurosensoriel_val"
+            data-cy="deficit_neurosensoriel_val"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let edeficitneurosensorielval of edeficitneurosensorielvalValues" [value]="edeficitneurosensorielval">
+              edeficitneurosensorielval
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_deficience_psychique">Deficience Psychique</label>
+          <select
+            class="form-control"
+            name="deficience_psychique"
+            formControlName="deficience_psychique"
+            id="field_deficience_psychique"
+            data-cy="deficience_psychique"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let edeficiencepsychique of edeficiencepsychiqueValues" [value]="edeficiencepsychique">
+              edeficiencepsychique
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_deficience_psychique_val">Deficience Psychique Val</label>
+          <select
+            class="form-control"
+            name="deficience_psychique_val"
+            formControlName="deficience_psychique_val"
+            id="field_deficience_psychique_val"
+            data-cy="deficience_psychique_val"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let edeficiencepsychiqueval of edeficiencepsychiquevalValues" [value]="edeficiencepsychiqueval">
+              edeficiencepsychiqueval
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_autre_deficience_psychique">Autre Deficience Psychique</label>
+          <input
+            type="text"
+            class="form-control"
+            name="autre_deficience_psychique"
+            id="field_autre_deficience_psychique"
+            data-cy="autre_deficience_psychique"
+            formControlName="autre_deficience_psychique"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_regime">Regime</label>
+          <select class="form-control" name="regime" formControlName="regime" id="field_regime" data-cy="regime">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eregime of eregimeValues" [value]="eregime">eregime</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_regime_val">Regime Val</label>
+          <select class="form-control" name="regime_val" formControlName="regime_val" id="field_regime_val" data-cy="regime_val">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eregimeval of eregimevalValues" [value]="eregimeval">eregimeval</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
           <label class="form-label" for="field_pathologie">Pathologie</label>
           <select
             class="form-control"

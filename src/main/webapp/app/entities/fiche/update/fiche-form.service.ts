@@ -59,6 +59,17 @@ type FicheFormGroupContent = {
   jours_premiere_consultation: FormControl<IFiche['jours_premiere_consultation']>;
   date_derniere_evaluation: FormControl<IFiche['date_derniere_evaluation']>;
   date_diagnostic: FormControl<IFiche['date_diagnostic']>;
+  handicap_mental: FormControl<IFiche['handicap_mental']>;
+  qi: FormControl<IFiche['qi']>;
+  handicap_moteur: FormControl<IFiche['handicap_moteur']>;
+  hadicap_moteur_grade: FormControl<IFiche['hadicap_moteur_grade']>;
+  deficit_neurosensoriel: FormControl<IFiche['deficit_neurosensoriel']>;
+  deficit_neurosensoriel_val: FormControl<IFiche['deficit_neurosensoriel_val']>;
+  deficience_psychique: FormControl<IFiche['deficience_psychique']>;
+  deficience_psychique_val: FormControl<IFiche['deficience_psychique_val']>;
+  autre_deficience_psychique: FormControl<IFiche['autre_deficience_psychique']>;
+  regime: FormControl<IFiche['regime']>;
+  regime_val: FormControl<IFiche['regime_val']>;
   pathologie: FormControl<IFiche['pathologie']>;
 };
 
@@ -122,6 +133,17 @@ export class FicheFormService {
       jours_premiere_consultation: new FormControl(ficheRawValue.jours_premiere_consultation),
       date_derniere_evaluation: new FormControl(ficheRawValue.date_derniere_evaluation),
       date_diagnostic: new FormControl(ficheRawValue.date_diagnostic),
+      handicap_mental: new FormControl(ficheRawValue.handicap_mental),
+      qi: new FormControl(ficheRawValue.qi),
+      handicap_moteur: new FormControl(ficheRawValue.handicap_moteur),
+      hadicap_moteur_grade: new FormControl(ficheRawValue.hadicap_moteur_grade),
+      deficit_neurosensoriel: new FormControl(ficheRawValue.deficit_neurosensoriel),
+      deficit_neurosensoriel_val: new FormControl(ficheRawValue.deficit_neurosensoriel_val),
+      deficience_psychique: new FormControl(ficheRawValue.deficience_psychique),
+      deficience_psychique_val: new FormControl(ficheRawValue.deficience_psychique_val),
+      autre_deficience_psychique: new FormControl(ficheRawValue.autre_deficience_psychique),
+      regime: new FormControl(ficheRawValue.regime),
+      regime_val: new FormControl(ficheRawValue.regime_val),
       pathologie: new FormControl(ficheRawValue.pathologie, {
         validators: [Validators.required],
       }),
