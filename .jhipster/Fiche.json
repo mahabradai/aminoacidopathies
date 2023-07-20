@@ -126,6 +126,15 @@
     {
       "fieldName": "nbcasdecedes",
       "fieldType": "Integer"
+    },
+    {
+      "fieldName": "deces_en_bas_age",
+      "fieldType": "edecesbasage",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "nbcas_deces_age_bas",
+      "fieldType": "Integer"
     }
   ],
   "jpaMetamodelFiltering": false,

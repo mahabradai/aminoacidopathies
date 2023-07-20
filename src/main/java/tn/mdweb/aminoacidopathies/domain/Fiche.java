@@ -11,6 +11,7 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edecesbasage;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
@@ -131,6 +132,13 @@ public class Fiche implements Serializable {
 
     @Column(name = "nbcasdecedes")
     private Integer nbcasdecedes;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "deces_en_bas_age")
+    private edecesbasage deces_en_bas_age;
+
+    @Column(name = "nbcas_deces_age_bas")
+    private Integer nbcas_deces_age_bas;
 
     @ManyToOne(optional = false)
     @NotNull
@@ -515,6 +523,32 @@ public class Fiche implements Serializable {
         this.nbcasdecedes = nbcasdecedes;
     }
 
+    public edecesbasage getDeces_en_bas_age() {
+        return this.deces_en_bas_age;
+    }
+
+    public Fiche deces_en_bas_age(edecesbasage deces_en_bas_age) {
+        this.setDeces_en_bas_age(deces_en_bas_age);
+        return this;
+    }
+
+    public void setDeces_en_bas_age(edecesbasage deces_en_bas_age) {
+        this.deces_en_bas_age = deces_en_bas_age;
+    }
+
+    public Integer getNbcas_deces_age_bas() {
+        return this.nbcas_deces_age_bas;
+    }
+
+    public Fiche nbcas_deces_age_bas(Integer nbcas_deces_age_bas) {
+        this.setNbcas_deces_age_bas(nbcas_deces_age_bas);
+        return this;
+    }
+
+    public void setNbcas_deces_age_bas(Integer nbcas_deces_age_bas) {
+        this.nbcas_deces_age_bas = nbcas_deces_age_bas;
+    }
+
     public Pathologie getPathologie() {
         return this.pathologie;
     }
@@ -580,6 +614,8 @@ public class Fiche implements Serializable {
             ", nbcasconfirme=" + getNbcasconfirme() +
             ", nbcassuspectes=" + getNbcassuspectes() +
             ", nbcasdecedes=" + getNbcasdecedes() +
+            ", deces_en_bas_age='" + getDeces_en_bas_age() + "'" +
+            ", nbcas_deces_age_bas=" + getNbcas_deces_age_bas() +
             "}";
     }
 }

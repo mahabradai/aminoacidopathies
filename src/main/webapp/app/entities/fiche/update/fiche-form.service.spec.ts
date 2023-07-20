@@ -48,6 +48,8 @@ describe('Fiche Form Service', () => {
             nbcasconfirme: expect.any(Object),
             nbcassuspectes: expect.any(Object),
             nbcasdecedes: expect.any(Object),
+            deces_en_bas_age: expect.any(Object),
+            nbcas_deces_age_bas: expect.any(Object),
             pathologie: expect.any(Object),
           })
         );
@@ -87,6 +89,8 @@ describe('Fiche Form Service', () => {
             nbcasconfirme: expect.any(Object),
             nbcassuspectes: expect.any(Object),
             nbcasdecedes: expect.any(Object),
+            deces_en_bas_age: expect.any(Object),
+            nbcas_deces_age_bas: expect.any(Object),
             pathologie: expect.any(Object),
           })
         );

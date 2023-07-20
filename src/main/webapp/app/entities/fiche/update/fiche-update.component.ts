@@ -21,6 +21,7 @@ import { eactivite } from 'app/entities/enumerations/eactivite.model';
 import { escolarisetype } from 'app/entities/enumerations/escolarisetype.model';
 import { eniveauscolarisation } from 'app/entities/enumerations/eniveauscolarisation.model';
 import { ecasfamiliaux } from 'app/entities/enumerations/ecasfamiliaux.model';
+import { edecesbasage } from 'app/entities/enumerations/edecesbasage.model';
 
 @Component({
   selector: 'jhi-fiche-update',
@@ -41,6 +42,7 @@ export class FicheUpdateComponent implements OnInit {
   escolarisetypeValues = Object.keys(escolarisetype);
   eniveauscolarisationValues = Object.keys(eniveauscolarisation);
   ecasfamiliauxValues = Object.keys(ecasfamiliaux);
+  edecesbasageValues = Object.keys(edecesbasage);
 
   pathologiesSharedCollection: IPathologie[] = [];
 

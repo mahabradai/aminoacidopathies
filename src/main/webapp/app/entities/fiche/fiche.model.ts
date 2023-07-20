@@ -12,6 +12,7 @@ import { eactivite } from 'app/entities/enumerations/eactivite.model';
 import { escolarisetype } from 'app/entities/enumerations/escolarisetype.model';
 import { eniveauscolarisation } from 'app/entities/enumerations/eniveauscolarisation.model';
 import { ecasfamiliaux } from 'app/entities/enumerations/ecasfamiliaux.model';
+import { edecesbasage } from 'app/entities/enumerations/edecesbasage.model';
 
 export interface IFiche {
   id: number;
@@ -43,6 +44,8 @@ export interface IFiche {
   nbcasconfirme?: number | null;
   nbcassuspectes?: number | null;
   nbcasdecedes?: number | null;
+  deces_en_bas_age?: edecesbasage | null;
+  nbcas_deces_age_bas?: number | null;
   pathologie?: Pick<IPathologie, 'id'> | null;
 }
 

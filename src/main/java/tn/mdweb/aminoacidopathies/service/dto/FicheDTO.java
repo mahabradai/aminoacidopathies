@@ -9,6 +9,7 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edecesbasage;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
@@ -81,6 +82,10 @@ public class FicheDTO implements Serializable {
     private Integer nbcassuspectes;
 
     private Integer nbcasdecedes;
+
+    private edecesbasage deces_en_bas_age;
+
+    private Integer nbcas_deces_age_bas;
 
     private PathologieDTO pathologie;
 
@@ -316,6 +321,22 @@ public class FicheDTO implements Serializable {
         this.nbcasdecedes = nbcasdecedes;
     }
 
+    public edecesbasage getDeces_en_bas_age() {
+        return deces_en_bas_age;
+    }
+
+    public void setDeces_en_bas_age(edecesbasage deces_en_bas_age) {
+        this.deces_en_bas_age = deces_en_bas_age;
+    }
+
+    public Integer getNbcas_deces_age_bas() {
+        return nbcas_deces_age_bas;
+    }
+
+    public void setNbcas_deces_age_bas(Integer nbcas_deces_age_bas) {
+        this.nbcas_deces_age_bas = nbcas_deces_age_bas;
+    }
+
     public PathologieDTO getPathologie() {
         return pathologie;
     }
@@ -378,6 +399,8 @@ public class FicheDTO implements Serializable {
             ", nbcasconfirme=" + getNbcasconfirme() +
             ", nbcassuspectes=" + getNbcassuspectes() +
             ", nbcasdecedes=" + getNbcasdecedes() +
+            ", deces_en_bas_age='" + getDeces_en_bas_age() + "'" +
+            ", nbcas_deces_age_bas=" + getNbcas_deces_age_bas() +
             ", pathologie=" + getPathologie() +
             "}";
     }

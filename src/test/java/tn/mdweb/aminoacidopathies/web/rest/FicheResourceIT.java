@@ -27,6 +27,7 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edecesbasage;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
@@ -130,6 +131,12 @@ class FicheResourceIT {
     private static final Integer DEFAULT_NBCASDECEDES = 1;
     private static final Integer UPDATED_NBCASDECEDES = 2;
 
+    private static final edecesbasage DEFAULT_DECES_EN_BAS_AGE = edecesbasage.OUI;
+    private static final edecesbasage UPDATED_DECES_EN_BAS_AGE = edecesbasage.NON;
+
+    private static final Integer DEFAULT_NBCAS_DECES_AGE_BAS = 1;
+    private static final Integer UPDATED_NBCAS_DECES_AGE_BAS = 2;
+
     private static final String ENTITY_API_URL = "/api/fiches";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -185,7 +192,9 @@ class FicheResourceIT {
             .cas_familiaux(DEFAULT_CAS_FAMILIAUX)
             .nbcasconfirme(DEFAULT_NBCASCONFIRME)
             .nbcassuspectes(DEFAULT_NBCASSUSPECTES)
-            .nbcasdecedes(DEFAULT_NBCASDECEDES);
+            .nbcasdecedes(DEFAULT_NBCASDECEDES)
+            .deces_en_bas_age(DEFAULT_DECES_EN_BAS_AGE)
+            .nbcas_deces_age_bas(DEFAULT_NBCAS_DECES_AGE_BAS);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -234,7 +243,9 @@ class FicheResourceIT {
             .cas_familiaux(UPDATED_CAS_FAMILIAUX)
             .nbcasconfirme(UPDATED_NBCASCONFIRME)
             .nbcassuspectes(UPDATED_NBCASSUSPECTES)
-            .nbcasdecedes(UPDATED_NBCASDECEDES);
+            .nbcasdecedes(UPDATED_NBCASDECEDES)
+            .deces_en_bas_age(UPDATED_DECES_EN_BAS_AGE)
+            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -295,6 +306,8 @@ class FicheResourceIT {
         assertThat(testFiche.getNbcasconfirme()).isEqualTo(DEFAULT_NBCASCONFIRME);
         assertThat(testFiche.getNbcassuspectes()).isEqualTo(DEFAULT_NBCASSUSPECTES);
         assertThat(testFiche.getNbcasdecedes()).isEqualTo(DEFAULT_NBCASDECEDES);
+        assertThat(testFiche.getDeces_en_bas_age()).isEqualTo(DEFAULT_DECES_EN_BAS_AGE);
+        assertThat(testFiche.getNbcas_deces_age_bas()).isEqualTo(DEFAULT_NBCAS_DECES_AGE_BAS);
     }
 
     @Test
@@ -373,7 +386,9 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.[*].cas_familiaux").value(hasItem(DEFAULT_CAS_FAMILIAUX.toString())))
             .andExpect(jsonPath("$.[*].nbcasconfirme").value(hasItem(DEFAULT_NBCASCONFIRME)))
             .andExpect(jsonPath("$.[*].nbcassuspectes").value(hasItem(DEFAULT_NBCASSUSPECTES)))
-            .andExpect(jsonPath("$.[*].nbcasdecedes").value(hasItem(DEFAULT_NBCASDECEDES)));
+            .andExpect(jsonPath("$.[*].nbcasdecedes").value(hasItem(DEFAULT_NBCASDECEDES)))
+            .andExpect(jsonPath("$.[*].deces_en_bas_age").value(hasItem(DEFAULT_DECES_EN_BAS_AGE.toString())))
+            .andExpect(jsonPath("$.[*].nbcas_deces_age_bas").value(hasItem(DEFAULT_NBCAS_DECES_AGE_BAS)));
     }
 
     @Test
@@ -415,7 +430,9 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.cas_familiaux").value(DEFAULT_CAS_FAMILIAUX.toString()))
             .andExpect(jsonPath("$.nbcasconfirme").value(DEFAULT_NBCASCONFIRME))
             .andExpect(jsonPath("$.nbcassuspectes").value(DEFAULT_NBCASSUSPECTES))
-            .andExpect(jsonPath("$.nbcasdecedes").value(DEFAULT_NBCASDECEDES));
+            .andExpect(jsonPath("$.nbcasdecedes").value(DEFAULT_NBCASDECEDES))
+            .andExpect(jsonPath("$.deces_en_bas_age").value(DEFAULT_DECES_EN_BAS_AGE.toString()))
+            .andExpect(jsonPath("$.nbcas_deces_age_bas").value(DEFAULT_NBCAS_DECES_AGE_BAS));
     }
 
     @Test
@@ -465,7 +482,9 @@ class FicheResourceIT {
             .cas_familiaux(UPDATED_CAS_FAMILIAUX)
             .nbcasconfirme(UPDATED_NBCASCONFIRME)
             .nbcassuspectes(UPDATED_NBCASSUSPECTES)
-            .nbcasdecedes(UPDATED_NBCASDECEDES);
+            .nbcasdecedes(UPDATED_NBCASDECEDES)
+            .deces_en_bas_age(UPDATED_DECES_EN_BAS_AGE)
+            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS);
         FicheDTO ficheDTO = ficheMapper.toDto(updatedFiche);
 
         restFicheMockMvc
@@ -508,6 +527,8 @@ class FicheResourceIT {
         assertThat(testFiche.getNbcasconfirme()).isEqualTo(UPDATED_NBCASCONFIRME);
         assertThat(testFiche.getNbcassuspectes()).isEqualTo(UPDATED_NBCASSUSPECTES);
         assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
+        assertThat(testFiche.getDeces_en_bas_age()).isEqualTo(UPDATED_DECES_EN_BAS_AGE);
+        assertThat(testFiche.getNbcas_deces_age_bas()).isEqualTo(UPDATED_NBCAS_DECES_AGE_BAS);
     }
 
     @Test
@@ -646,6 +667,8 @@ class FicheResourceIT {
         assertThat(testFiche.getNbcasconfirme()).isEqualTo(DEFAULT_NBCASCONFIRME);
         assertThat(testFiche.getNbcassuspectes()).isEqualTo(UPDATED_NBCASSUSPECTES);
         assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
+        assertThat(testFiche.getDeces_en_bas_age()).isEqualTo(DEFAULT_DECES_EN_BAS_AGE);
+        assertThat(testFiche.getNbcas_deces_age_bas()).isEqualTo(DEFAULT_NBCAS_DECES_AGE_BAS);
     }
 
     @Test
@@ -688,7 +711,9 @@ class FicheResourceIT {
             .cas_familiaux(UPDATED_CAS_FAMILIAUX)
             .nbcasconfirme(UPDATED_NBCASCONFIRME)
             .nbcassuspectes(UPDATED_NBCASSUSPECTES)
-            .nbcasdecedes(UPDATED_NBCASDECEDES);
+            .nbcasdecedes(UPDATED_NBCASDECEDES)
+            .deces_en_bas_age(UPDATED_DECES_EN_BAS_AGE)
+            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS);
 
         restFicheMockMvc
             .perform(
@@ -730,6 +755,8 @@ class FicheResourceIT {
         assertThat(testFiche.getNbcasconfirme()).isEqualTo(UPDATED_NBCASCONFIRME);
         assertThat(testFiche.getNbcassuspectes()).isEqualTo(UPDATED_NBCASSUSPECTES);
         assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
+        assertThat(testFiche.getDeces_en_bas_age()).isEqualTo(UPDATED_DECES_EN_BAS_AGE);
+        assertThat(testFiche.getNbcas_deces_age_bas()).isEqualTo(UPDATED_NBCAS_DECES_AGE_BAS);
     }
 
     @Test

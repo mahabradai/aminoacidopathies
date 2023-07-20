@@ -356,6 +356,32 @@
         </div>
 
         <div class="row mb-3">
+          <label class="form-label" for="field_deces_en_bas_age">Deces En Bas Age</label>
+          <select
+            class="form-control"
+            name="deces_en_bas_age"
+            formControlName="deces_en_bas_age"
+            id="field_deces_en_bas_age"
+            data-cy="deces_en_bas_age"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let edecesbasage of edecesbasageValues" [value]="edecesbasage">edecesbasage</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nbcas_deces_age_bas">Nbcas Deces Age Bas</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nbcas_deces_age_bas"
+            id="field_nbcas_deces_age_bas"
+            data-cy="nbcas_deces_age_bas"
+            formControlName="nbcas_deces_age_bas"
+          />
+        </div>
+
+        <div class="row mb-3">
           <label class="form-label" for="field_pathologie">Pathologie</label>
           <select
             class="form-control"

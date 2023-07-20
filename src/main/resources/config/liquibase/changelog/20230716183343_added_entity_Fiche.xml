@@ -98,6 +98,12 @@
             <column name="nbcasdecedes" type="integer">
                 <constraints nullable="true" />
             </column>
+            <column name="deces_en_bas_age" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nbcas_deces_age_bas" type="integer">
+                <constraints nullable="true" />
+            </column>
             <column name="pathologie_id" type="bigint">
                 <constraints nullable="false" />
             </column>
@@ -150,6 +156,8 @@
             <column name="nbcasconfirme" type="numeric"/>
             <column name="nbcassuspectes" type="numeric"/>
             <column name="nbcasdecedes" type="numeric"/>
+            <column name="deces_en_bas_age" type="string"/>
+            <column name="nbcas_deces_age_bas" type="numeric"/>
             <column name="pathologie_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

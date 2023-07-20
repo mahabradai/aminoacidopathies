@@ -46,6 +46,8 @@ type FicheFormGroupContent = {
   nbcasconfirme: FormControl<IFiche['nbcasconfirme']>;
   nbcassuspectes: FormControl<IFiche['nbcassuspectes']>;
   nbcasdecedes: FormControl<IFiche['nbcasdecedes']>;
+  deces_en_bas_age: FormControl<IFiche['deces_en_bas_age']>;
+  nbcas_deces_age_bas: FormControl<IFiche['nbcas_deces_age_bas']>;
   pathologie: FormControl<IFiche['pathologie']>;
 };
 
@@ -96,6 +98,8 @@ export class FicheFormService {
       nbcasconfirme: new FormControl(ficheRawValue.nbcasconfirme),
       nbcassuspectes: new FormControl(ficheRawValue.nbcassuspectes),
       nbcasdecedes: new FormControl(ficheRawValue.nbcasdecedes),
+      deces_en_bas_age: new FormControl(ficheRawValue.deces_en_bas_age),
+      nbcas_deces_age_bas: new FormControl(ficheRawValue.nbcas_deces_age_bas),
       pathologie: new FormControl(ficheRawValue.pathologie, {
         validators: [Validators.required],
       }),
