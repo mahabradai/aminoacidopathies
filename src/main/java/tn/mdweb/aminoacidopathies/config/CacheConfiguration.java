@@ -57,6 +57,7 @@ public class CacheConfiguration {
             createCache(cm, tn.mdweb.aminoacidopathies.domain.Structurefiche.class.getName());
             createCache(cm, tn.mdweb.aminoacidopathies.domain.Casconfirme.class.getName());
             createCache(cm, tn.mdweb.aminoacidopathies.domain.Cassuspecte.class.getName());
+            createCache(cm, tn.mdweb.aminoacidopathies.domain.Casdecesbasage.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

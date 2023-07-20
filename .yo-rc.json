@@ -28,14 +28,15 @@
       "Fiche",
       "Structurefiche",
       "Casconfirme",
-      "Cassuspecte"
+      "Cassuspecte",
+      "Casdecesbasage"
     ],
     "entitySuffix": "",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "7.9.3",
     "jwtSecretKey": "YWMyMzcyMjI1ODRiODkyYjFmYzUwNjdkZWZmM2M5NjdmNmE0ZjQ3Y2NmM2I1ZTg0N2JkMzRhN2Y4OTY4MWU0ZmUwMWZiM2RkYmQxNGVlMGZiOTYzMWQ5N2ZkZmViNDAxODg4MGYyMmYxNDRmMDRjYzA4ZTNkZTZmYTUwNWI4MWM=",
     "languages": ["en", "fr"],
-    "lastLiquibaseTimestamp": 1689681822000,
+    "lastLiquibaseTimestamp": 1689831749000,
     "messageBroker": false,
     "microfrontend": false,
     "microfrontends": [],
