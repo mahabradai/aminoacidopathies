@@ -218,6 +218,72 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
+          <th scope="col" jhiSortBy="circonstances_decouverte">
+            <div class="d-flex">
+              <span>Circonstances Decouverte</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="age_aux_premiers_symptomes">
+            <div class="d-flex">
+              <span>Age Aux Premiers Symptomes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="an_age_premiers_symptomes">
+            <div class="d-flex">
+              <span>An Age Premiers Symptomes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="mois_age_premiers_symptomes">
+            <div class="d-flex">
+              <span>Mois Age Premiers Symptomes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="jours_premiers_symptomes">
+            <div class="d-flex">
+              <span>Jours Premiers Symptomes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="age_premiere_consultation">
+            <div class="d-flex">
+              <span>Age Premiere Consultation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="an_age_premiere_consultation">
+            <div class="d-flex">
+              <span>An Age Premiere Consultation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="mois_age_premiere_consultation">
+            <div class="d-flex">
+              <span>Mois Age Premiere Consultation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="jours_premiere_consultation">
+            <div class="d-flex">
+              <span>Jours Premiere Consultation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="date_derniere_evaluation">
+            <div class="d-flex">
+              <span>Date Derniere Evaluation</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="date_diagnostic">
+            <div class="d-flex">
+              <span>Date Diagnostic</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
           <th scope="col" jhiSortBy="pathologie.id">
             <div class="d-flex">
               <span>Pathologie</span>
@@ -262,6 +328,17 @@
           <td>{{ fiche.nbcasdecedes }}</td>
           <td>{{ fiche.deces_en_bas_age }}</td>
           <td>{{ fiche.nbcas_deces_age_bas }}</td>
+          <td>{{ fiche.circonstances_decouverte }}</td>
+          <td>{{ fiche.age_aux_premiers_symptomes }}</td>
+          <td>{{ fiche.an_age_premiers_symptomes }}</td>
+          <td>{{ fiche.mois_age_premiers_symptomes }}</td>
+          <td>{{ fiche.jours_premiers_symptomes }}</td>
+          <td>{{ fiche.age_premiere_consultation }}</td>
+          <td>{{ fiche.an_age_premiere_consultation }}</td>
+          <td>{{ fiche.mois_age_premiere_consultation }}</td>
+          <td>{{ fiche.jours_premiere_consultation }}</td>
+          <td>{{ fiche.date_derniere_evaluation | formatMediumDate }}</td>
+          <td>{{ fiche.date_diagnostic | formatMediumDate }}</td>
           <td>
             <div *ngIf="fiche.pathologie">
               <a [routerLink]="['/pathologie', fiche.pathologie.id, 'view']">{{ fiche.pathologie.id }}</a>

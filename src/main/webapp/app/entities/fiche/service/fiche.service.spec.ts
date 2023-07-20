@@ -13,6 +13,8 @@ const requireRestSample: RestFiche = {
   date_enregistrement: sampleWithRequiredData.date_enregistrement?.format(DATE_FORMAT),
   date_naissance: sampleWithRequiredData.date_naissance?.format(DATE_FORMAT),
   date_deces: sampleWithRequiredData.date_deces?.format(DATE_FORMAT),
+  date_derniere_evaluation: sampleWithRequiredData.date_derniere_evaluation?.format(DATE_FORMAT),
+  date_diagnostic: sampleWithRequiredData.date_diagnostic?.format(DATE_FORMAT),
 };
 
 describe('Fiche Service', () => {

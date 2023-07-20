@@ -135,6 +135,53 @@
     {
       "fieldName": "nbcas_deces_age_bas",
       "fieldType": "Integer"
+    },
+    {
+      "fieldName": "circonstances_decouverte",
+      "fieldType": "ecircondecouverte",
+      "fieldValues": "SYMPTOMATIQUE,DIAGNOSTIC_PRENATAL,ENQUETE_FAMILIALE,FORTUITE,DEPISTAGE"
+    },
+    {
+      "fieldName": "age_aux_premiers_symptomes",
+      "fieldType": "eage_premier_symptome",
+      "fieldValues": "NON_CONNU,CONNU"
+    },
+    {
+      "fieldName": "an_age_premiers_symptomes",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mois_age_premiers_symptomes",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "jours_premiers_symptomes",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "age_premiere_consultation",
+      "fieldType": "eagepremiereconsultation",
+      "fieldValues": "NON_CONNU,CONNU"
+    },
+    {
+      "fieldName": "an_age_premiere_consultation",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mois_age_premiere_consultation",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "jours_premiere_consultation",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "date_derniere_evaluation",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "date_diagnostic",
+      "fieldType": "LocalDate"
     }
   ],
   "jpaMetamodelFiltering": false,

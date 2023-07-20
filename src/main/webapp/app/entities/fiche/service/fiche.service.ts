@@ -12,11 +12,16 @@ import { IFiche, NewFiche } from '../fiche.model';
 
 export type PartialUpdateFiche = Partial<IFiche> & Pick<IFiche, 'id'>;
 
-type RestOf<T extends IFiche | NewFiche> = Omit<T, 'datemaj' | 'date_enregistrement' | 'date_naissance' | 'date_deces'> & {
+type RestOf<T extends IFiche | NewFiche> = Omit<
+  T,
+  'datemaj' | 'date_enregistrement' | 'date_naissance' | 'date_deces' | 'date_derniere_evaluation' | 'date_diagnostic'
+> & {
   datemaj?: string | null;
   date_enregistrement?: string | null;
   date_naissance?: string | null;
   date_deces?: string | null;
+  date_derniere_evaluation?: string | null;
+  date_diagnostic?: string | null;
 };
 
 export type RestFiche = RestOf<IFiche>;
@@ -105,6 +110,8 @@ export class FicheService {
       date_enregistrement: fiche.date_enregistrement?.format(DATE_FORMAT) ?? null,
       date_naissance: fiche.date_naissance?.format(DATE_FORMAT) ?? null,
       date_deces: fiche.date_deces?.format(DATE_FORMAT) ?? null,
+      date_derniere_evaluation: fiche.date_derniere_evaluation?.format(DATE_FORMAT) ?? null,
+      date_diagnostic: fiche.date_diagnostic?.format(DATE_FORMAT) ?? null,
     };
   }
 
@@ -115,6 +122,8 @@ export class FicheService {
       date_enregistrement: restFiche.date_enregistrement ? dayjs(restFiche.date_enregistrement) : undefined,
       date_naissance: restFiche.date_naissance ? dayjs(restFiche.date_naissance) : undefined,
       date_deces: restFiche.date_deces ? dayjs(restFiche.date_deces) : undefined,
+      date_derniere_evaluation: restFiche.date_derniere_evaluation ? dayjs(restFiche.date_derniere_evaluation) : undefined,
+      date_diagnostic: restFiche.date_diagnostic ? dayjs(restFiche.date_diagnostic) : undefined,
     };
   }
 

@@ -5,7 +5,10 @@ import java.time.LocalDate;
 import java.util.Objects;
 import javax.validation.constraints.*;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eage_premier_symptome;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eagepremiereconsultation;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
+import tn.mdweb.aminoacidopathies.domain.enumeration.ecircondecouverte;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
@@ -86,6 +89,28 @@ public class FicheDTO implements Serializable {
     private edecesbasage deces_en_bas_age;
 
     private Integer nbcas_deces_age_bas;
+
+    private ecircondecouverte circonstances_decouverte;
+
+    private eage_premier_symptome age_aux_premiers_symptomes;
+
+    private Integer an_age_premiers_symptomes;
+
+    private Integer mois_age_premiers_symptomes;
+
+    private Integer jours_premiers_symptomes;
+
+    private eagepremiereconsultation age_premiere_consultation;
+
+    private Integer an_age_premiere_consultation;
+
+    private Integer mois_age_premiere_consultation;
+
+    private Integer jours_premiere_consultation;
+
+    private LocalDate date_derniere_evaluation;
+
+    private LocalDate date_diagnostic;
 
     private PathologieDTO pathologie;
 
@@ -337,6 +362,94 @@ public class FicheDTO implements Serializable {
         this.nbcas_deces_age_bas = nbcas_deces_age_bas;
     }
 
+    public ecircondecouverte getCirconstances_decouverte() {
+        return circonstances_decouverte;
+    }
+
+    public void setCirconstances_decouverte(ecircondecouverte circonstances_decouverte) {
+        this.circonstances_decouverte = circonstances_decouverte;
+    }
+
+    public eage_premier_symptome getAge_aux_premiers_symptomes() {
+        return age_aux_premiers_symptomes;
+    }
+
+    public void setAge_aux_premiers_symptomes(eage_premier_symptome age_aux_premiers_symptomes) {
+        this.age_aux_premiers_symptomes = age_aux_premiers_symptomes;
+    }
+
+    public Integer getAn_age_premiers_symptomes() {
+        return an_age_premiers_symptomes;
+    }
+
+    public void setAn_age_premiers_symptomes(Integer an_age_premiers_symptomes) {
+        this.an_age_premiers_symptomes = an_age_premiers_symptomes;
+    }
+
+    public Integer getMois_age_premiers_symptomes() {
+        return mois_age_premiers_symptomes;
+    }
+
+    public void setMois_age_premiers_symptomes(Integer mois_age_premiers_symptomes) {
+        this.mois_age_premiers_symptomes = mois_age_premiers_symptomes;
+    }
+
+    public Integer getJours_premiers_symptomes() {
+        return jours_premiers_symptomes;
+    }
+
+    public void setJours_premiers_symptomes(Integer jours_premiers_symptomes) {
+        this.jours_premiers_symptomes = jours_premiers_symptomes;
+    }
+
+    public eagepremiereconsultation getAge_premiere_consultation() {
+        return age_premiere_consultation;
+    }
+
+    public void setAge_premiere_consultation(eagepremiereconsultation age_premiere_consultation) {
+        this.age_premiere_consultation = age_premiere_consultation;
+    }
+
+    public Integer getAn_age_premiere_consultation() {
+        return an_age_premiere_consultation;
+    }
+
+    public void setAn_age_premiere_consultation(Integer an_age_premiere_consultation) {
+        this.an_age_premiere_consultation = an_age_premiere_consultation;
+    }
+
+    public Integer getMois_age_premiere_consultation() {
+        return mois_age_premiere_consultation;
+    }
+
+    public void setMois_age_premiere_consultation(Integer mois_age_premiere_consultation) {
+        this.mois_age_premiere_consultation = mois_age_premiere_consultation;
+    }
+
+    public Integer getJours_premiere_consultation() {
+        return jours_premiere_consultation;
+    }
+
+    public void setJours_premiere_consultation(Integer jours_premiere_consultation) {
+        this.jours_premiere_consultation = jours_premiere_consultation;
+    }
+
+    public LocalDate getDate_derniere_evaluation() {
+        return date_derniere_evaluation;
+    }
+
+    public void setDate_derniere_evaluation(LocalDate date_derniere_evaluation) {
+        this.date_derniere_evaluation = date_derniere_evaluation;
+    }
+
+    public LocalDate getDate_diagnostic() {
+        return date_diagnostic;
+    }
+
+    public void setDate_diagnostic(LocalDate date_diagnostic) {
+        this.date_diagnostic = date_diagnostic;
+    }
+
     public PathologieDTO getPathologie() {
         return pathologie;
     }
@@ -401,6 +514,17 @@ public class FicheDTO implements Serializable {
             ", nbcasdecedes=" + getNbcasdecedes() +
             ", deces_en_bas_age='" + getDeces_en_bas_age() + "'" +
             ", nbcas_deces_age_bas=" + getNbcas_deces_age_bas() +
+            ", circonstances_decouverte='" + getCirconstances_decouverte() + "'" +
+            ", age_aux_premiers_symptomes='" + getAge_aux_premiers_symptomes() + "'" +
+            ", an_age_premiers_symptomes=" + getAn_age_premiers_symptomes() +
+            ", mois_age_premiers_symptomes=" + getMois_age_premiers_symptomes() +
+            ", jours_premiers_symptomes=" + getJours_premiers_symptomes() +
+            ", age_premiere_consultation='" + getAge_premiere_consultation() + "'" +
+            ", an_age_premiere_consultation=" + getAn_age_premiere_consultation() +
+            ", mois_age_premiere_consultation=" + getMois_age_premiere_consultation() +
+            ", jours_premiere_consultation=" + getJours_premiere_consultation() +
+            ", date_derniere_evaluation='" + getDate_derniere_evaluation() + "'" +
+            ", date_diagnostic='" + getDate_diagnostic() + "'" +
             ", pathologie=" + getPathologie() +
             "}";
     }

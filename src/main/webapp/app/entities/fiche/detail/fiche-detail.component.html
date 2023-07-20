@@ -134,6 +134,50 @@
         <dd>
           <span>{{ fiche.nbcas_deces_age_bas }}</span>
         </dd>
+        <dt><span>Circonstances Decouverte</span></dt>
+        <dd>
+          <span>{{ fiche.circonstances_decouverte }}</span>
+        </dd>
+        <dt><span>Age Aux Premiers Symptomes</span></dt>
+        <dd>
+          <span>{{ fiche.age_aux_premiers_symptomes }}</span>
+        </dd>
+        <dt><span>An Age Premiers Symptomes</span></dt>
+        <dd>
+          <span>{{ fiche.an_age_premiers_symptomes }}</span>
+        </dd>
+        <dt><span>Mois Age Premiers Symptomes</span></dt>
+        <dd>
+          <span>{{ fiche.mois_age_premiers_symptomes }}</span>
+        </dd>
+        <dt><span>Jours Premiers Symptomes</span></dt>
+        <dd>
+          <span>{{ fiche.jours_premiers_symptomes }}</span>
+        </dd>
+        <dt><span>Age Premiere Consultation</span></dt>
+        <dd>
+          <span>{{ fiche.age_premiere_consultation }}</span>
+        </dd>
+        <dt><span>An Age Premiere Consultation</span></dt>
+        <dd>
+          <span>{{ fiche.an_age_premiere_consultation }}</span>
+        </dd>
+        <dt><span>Mois Age Premiere Consultation</span></dt>
+        <dd>
+          <span>{{ fiche.mois_age_premiere_consultation }}</span>
+        </dd>
+        <dt><span>Jours Premiere Consultation</span></dt>
+        <dd>
+          <span>{{ fiche.jours_premiere_consultation }}</span>
+        </dd>
+        <dt><span>Date Derniere Evaluation</span></dt>
+        <dd>
+          <span>{{ fiche.date_derniere_evaluation | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Date Diagnostic</span></dt>
+        <dd>
+          <span>{{ fiche.date_diagnostic | formatMediumDate }}</span>
+        </dd>
         <dt><span>Pathologie</span></dt>
         <dd>
           <div *ngIf="fiche.pathologie">

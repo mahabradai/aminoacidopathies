@@ -5,5 +5,6 @@ package tn.mdweb.aminoacidopathies.domain.enumeration;
  */
 public enum elieudeces {
     DOMICILE,
-    STRUCTURE_SANTE_PUBLIQUE_NP,
+    STRUCTURE_SANTE_PUBLIQUE,
+    NP,
 }

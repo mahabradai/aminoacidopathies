@@ -23,7 +23,10 @@ import tn.mdweb.aminoacidopathies.IntegrationTest;
 import tn.mdweb.aminoacidopathies.domain.Fiche;
 import tn.mdweb.aminoacidopathies.domain.Pathologie;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eage_premier_symptome;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eagepremiereconsultation;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
+import tn.mdweb.aminoacidopathies.domain.enumeration.ecircondecouverte;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
 import tn.mdweb.aminoacidopathies.domain.enumeration.econsanguinite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecouverture;
@@ -137,6 +140,39 @@ class FicheResourceIT {
     private static final Integer DEFAULT_NBCAS_DECES_AGE_BAS = 1;
     private static final Integer UPDATED_NBCAS_DECES_AGE_BAS = 2;
 
+    private static final ecircondecouverte DEFAULT_CIRCONSTANCES_DECOUVERTE = ecircondecouverte.SYMPTOMATIQUE;
+    private static final ecircondecouverte UPDATED_CIRCONSTANCES_DECOUVERTE = ecircondecouverte.DIAGNOSTIC_PRENATAL;
+
+    private static final eage_premier_symptome DEFAULT_AGE_AUX_PREMIERS_SYMPTOMES = eage_premier_symptome.NON_CONNU;
+    private static final eage_premier_symptome UPDATED_AGE_AUX_PREMIERS_SYMPTOMES = eage_premier_symptome.CONNU;
+
+    private static final Integer DEFAULT_AN_AGE_PREMIERS_SYMPTOMES = 1;
+    private static final Integer UPDATED_AN_AGE_PREMIERS_SYMPTOMES = 2;
+
+    private static final Integer DEFAULT_MOIS_AGE_PREMIERS_SYMPTOMES = 1;
+    private static final Integer UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES = 2;
+
+    private static final Integer DEFAULT_JOURS_PREMIERS_SYMPTOMES = 1;
+    private static final Integer UPDATED_JOURS_PREMIERS_SYMPTOMES = 2;
+
+    private static final eagepremiereconsultation DEFAULT_AGE_PREMIERE_CONSULTATION = eagepremiereconsultation.NON_CONNU;
+    private static final eagepremiereconsultation UPDATED_AGE_PREMIERE_CONSULTATION = eagepremiereconsultation.CONNU;
+
+    private static final Integer DEFAULT_AN_AGE_PREMIERE_CONSULTATION = 1;
+    private static final Integer UPDATED_AN_AGE_PREMIERE_CONSULTATION = 2;
+
+    private static final Integer DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION = 1;
+    private static final Integer UPDATED_MOIS_AGE_PREMIERE_CONSULTATION = 2;
+
+    private static final Integer DEFAULT_JOURS_PREMIERE_CONSULTATION = 1;
+    private static final Integer UPDATED_JOURS_PREMIERE_CONSULTATION = 2;
+
+    private static final LocalDate DEFAULT_DATE_DERNIERE_EVALUATION = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE_DERNIERE_EVALUATION = LocalDate.now(ZoneId.systemDefault());
+
+    private static final LocalDate DEFAULT_DATE_DIAGNOSTIC = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE_DIAGNOSTIC = LocalDate.now(ZoneId.systemDefault());
+
     private static final String ENTITY_API_URL = "/api/fiches";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -194,7 +230,18 @@ class FicheResourceIT {
             .nbcassuspectes(DEFAULT_NBCASSUSPECTES)
             .nbcasdecedes(DEFAULT_NBCASDECEDES)
             .deces_en_bas_age(DEFAULT_DECES_EN_BAS_AGE)
-            .nbcas_deces_age_bas(DEFAULT_NBCAS_DECES_AGE_BAS);
+            .nbcas_deces_age_bas(DEFAULT_NBCAS_DECES_AGE_BAS)
+            .circonstances_decouverte(DEFAULT_CIRCONSTANCES_DECOUVERTE)
+            .age_aux_premiers_symptomes(DEFAULT_AGE_AUX_PREMIERS_SYMPTOMES)
+            .an_age_premiers_symptomes(DEFAULT_AN_AGE_PREMIERS_SYMPTOMES)
+            .mois_age_premiers_symptomes(DEFAULT_MOIS_AGE_PREMIERS_SYMPTOMES)
+            .jours_premiers_symptomes(DEFAULT_JOURS_PREMIERS_SYMPTOMES)
+            .age_premiere_consultation(DEFAULT_AGE_PREMIERE_CONSULTATION)
+            .an_age_premiere_consultation(DEFAULT_AN_AGE_PREMIERE_CONSULTATION)
+            .mois_age_premiere_consultation(DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION)
+            .jours_premiere_consultation(DEFAULT_JOURS_PREMIERE_CONSULTATION)
+            .date_derniere_evaluation(DEFAULT_DATE_DERNIERE_EVALUATION)
+            .date_diagnostic(DEFAULT_DATE_DIAGNOSTIC);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -245,7 +292,18 @@ class FicheResourceIT {
             .nbcassuspectes(UPDATED_NBCASSUSPECTES)
             .nbcasdecedes(UPDATED_NBCASDECEDES)
             .deces_en_bas_age(UPDATED_DECES_EN_BAS_AGE)
-            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS);
+            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS)
+            .circonstances_decouverte(UPDATED_CIRCONSTANCES_DECOUVERTE)
+            .age_aux_premiers_symptomes(UPDATED_AGE_AUX_PREMIERS_SYMPTOMES)
+            .an_age_premiers_symptomes(UPDATED_AN_AGE_PREMIERS_SYMPTOMES)
+            .mois_age_premiers_symptomes(UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES)
+            .jours_premiers_symptomes(UPDATED_JOURS_PREMIERS_SYMPTOMES)
+            .age_premiere_consultation(UPDATED_AGE_PREMIERE_CONSULTATION)
+            .an_age_premiere_consultation(UPDATED_AN_AGE_PREMIERE_CONSULTATION)
+            .mois_age_premiere_consultation(UPDATED_MOIS_AGE_PREMIERE_CONSULTATION)
+            .jours_premiere_consultation(UPDATED_JOURS_PREMIERE_CONSULTATION)
+            .date_derniere_evaluation(UPDATED_DATE_DERNIERE_EVALUATION)
+            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -308,6 +366,17 @@ class FicheResourceIT {
         assertThat(testFiche.getNbcasdecedes()).isEqualTo(DEFAULT_NBCASDECEDES);
         assertThat(testFiche.getDeces_en_bas_age()).isEqualTo(DEFAULT_DECES_EN_BAS_AGE);
         assertThat(testFiche.getNbcas_deces_age_bas()).isEqualTo(DEFAULT_NBCAS_DECES_AGE_BAS);
+        assertThat(testFiche.getCirconstances_decouverte()).isEqualTo(DEFAULT_CIRCONSTANCES_DECOUVERTE);
+        assertThat(testFiche.getAge_aux_premiers_symptomes()).isEqualTo(DEFAULT_AGE_AUX_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getAn_age_premiers_symptomes()).isEqualTo(DEFAULT_AN_AGE_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getMois_age_premiers_symptomes()).isEqualTo(DEFAULT_MOIS_AGE_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getJours_premiers_symptomes()).isEqualTo(DEFAULT_JOURS_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getAge_premiere_consultation()).isEqualTo(DEFAULT_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getAn_age_premiere_consultation()).isEqualTo(DEFAULT_AN_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getMois_age_premiere_consultation()).isEqualTo(DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getJours_premiere_consultation()).isEqualTo(DEFAULT_JOURS_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getDate_derniere_evaluation()).isEqualTo(DEFAULT_DATE_DERNIERE_EVALUATION);
+        assertThat(testFiche.getDate_diagnostic()).isEqualTo(DEFAULT_DATE_DIAGNOSTIC);
     }
 
     @Test
@@ -388,7 +457,18 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.[*].nbcassuspectes").value(hasItem(DEFAULT_NBCASSUSPECTES)))
             .andExpect(jsonPath("$.[*].nbcasdecedes").value(hasItem(DEFAULT_NBCASDECEDES)))
             .andExpect(jsonPath("$.[*].deces_en_bas_age").value(hasItem(DEFAULT_DECES_EN_BAS_AGE.toString())))
-            .andExpect(jsonPath("$.[*].nbcas_deces_age_bas").value(hasItem(DEFAULT_NBCAS_DECES_AGE_BAS)));
+            .andExpect(jsonPath("$.[*].nbcas_deces_age_bas").value(hasItem(DEFAULT_NBCAS_DECES_AGE_BAS)))
+            .andExpect(jsonPath("$.[*].circonstances_decouverte").value(hasItem(DEFAULT_CIRCONSTANCES_DECOUVERTE.toString())))
+            .andExpect(jsonPath("$.[*].age_aux_premiers_symptomes").value(hasItem(DEFAULT_AGE_AUX_PREMIERS_SYMPTOMES.toString())))
+            .andExpect(jsonPath("$.[*].an_age_premiers_symptomes").value(hasItem(DEFAULT_AN_AGE_PREMIERS_SYMPTOMES)))
+            .andExpect(jsonPath("$.[*].mois_age_premiers_symptomes").value(hasItem(DEFAULT_MOIS_AGE_PREMIERS_SYMPTOMES)))
+            .andExpect(jsonPath("$.[*].jours_premiers_symptomes").value(hasItem(DEFAULT_JOURS_PREMIERS_SYMPTOMES)))
+            .andExpect(jsonPath("$.[*].age_premiere_consultation").value(hasItem(DEFAULT_AGE_PREMIERE_CONSULTATION.toString())))
+            .andExpect(jsonPath("$.[*].an_age_premiere_consultation").value(hasItem(DEFAULT_AN_AGE_PREMIERE_CONSULTATION)))
+            .andExpect(jsonPath("$.[*].mois_age_premiere_consultation").value(hasItem(DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION)))
+            .andExpect(jsonPath("$.[*].jours_premiere_consultation").value(hasItem(DEFAULT_JOURS_PREMIERE_CONSULTATION)))
+            .andExpect(jsonPath("$.[*].date_derniere_evaluation").value(hasItem(DEFAULT_DATE_DERNIERE_EVALUATION.toString())))
+            .andExpect(jsonPath("$.[*].date_diagnostic").value(hasItem(DEFAULT_DATE_DIAGNOSTIC.toString())));
     }
 
     @Test
@@ -432,7 +512,18 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.nbcassuspectes").value(DEFAULT_NBCASSUSPECTES))
             .andExpect(jsonPath("$.nbcasdecedes").value(DEFAULT_NBCASDECEDES))
             .andExpect(jsonPath("$.deces_en_bas_age").value(DEFAULT_DECES_EN_BAS_AGE.toString()))
-            .andExpect(jsonPath("$.nbcas_deces_age_bas").value(DEFAULT_NBCAS_DECES_AGE_BAS));
+            .andExpect(jsonPath("$.nbcas_deces_age_bas").value(DEFAULT_NBCAS_DECES_AGE_BAS))
+            .andExpect(jsonPath("$.circonstances_decouverte").value(DEFAULT_CIRCONSTANCES_DECOUVERTE.toString()))
+            .andExpect(jsonPath("$.age_aux_premiers_symptomes").value(DEFAULT_AGE_AUX_PREMIERS_SYMPTOMES.toString()))
+            .andExpect(jsonPath("$.an_age_premiers_symptomes").value(DEFAULT_AN_AGE_PREMIERS_SYMPTOMES))
+            .andExpect(jsonPath("$.mois_age_premiers_symptomes").value(DEFAULT_MOIS_AGE_PREMIERS_SYMPTOMES))
+            .andExpect(jsonPath("$.jours_premiers_symptomes").value(DEFAULT_JOURS_PREMIERS_SYMPTOMES))
+            .andExpect(jsonPath("$.age_premiere_consultation").value(DEFAULT_AGE_PREMIERE_CONSULTATION.toString()))
+            .andExpect(jsonPath("$.an_age_premiere_consultation").value(DEFAULT_AN_AGE_PREMIERE_CONSULTATION))
+            .andExpect(jsonPath("$.mois_age_premiere_consultation").value(DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION))
+            .andExpect(jsonPath("$.jours_premiere_consultation").value(DEFAULT_JOURS_PREMIERE_CONSULTATION))
+            .andExpect(jsonPath("$.date_derniere_evaluation").value(DEFAULT_DATE_DERNIERE_EVALUATION.toString()))
+            .andExpect(jsonPath("$.date_diagnostic").value(DEFAULT_DATE_DIAGNOSTIC.toString()));
     }
 
     @Test
@@ -484,7 +575,18 @@ class FicheResourceIT {
             .nbcassuspectes(UPDATED_NBCASSUSPECTES)
             .nbcasdecedes(UPDATED_NBCASDECEDES)
             .deces_en_bas_age(UPDATED_DECES_EN_BAS_AGE)
-            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS);
+            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS)
+            .circonstances_decouverte(UPDATED_CIRCONSTANCES_DECOUVERTE)
+            .age_aux_premiers_symptomes(UPDATED_AGE_AUX_PREMIERS_SYMPTOMES)
+            .an_age_premiers_symptomes(UPDATED_AN_AGE_PREMIERS_SYMPTOMES)
+            .mois_age_premiers_symptomes(UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES)
+            .jours_premiers_symptomes(UPDATED_JOURS_PREMIERS_SYMPTOMES)
+            .age_premiere_consultation(UPDATED_AGE_PREMIERE_CONSULTATION)
+            .an_age_premiere_consultation(UPDATED_AN_AGE_PREMIERE_CONSULTATION)
+            .mois_age_premiere_consultation(UPDATED_MOIS_AGE_PREMIERE_CONSULTATION)
+            .jours_premiere_consultation(UPDATED_JOURS_PREMIERE_CONSULTATION)
+            .date_derniere_evaluation(UPDATED_DATE_DERNIERE_EVALUATION)
+            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC);
         FicheDTO ficheDTO = ficheMapper.toDto(updatedFiche);
 
         restFicheMockMvc
@@ -529,6 +631,17 @@ class FicheResourceIT {
         assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
         assertThat(testFiche.getDeces_en_bas_age()).isEqualTo(UPDATED_DECES_EN_BAS_AGE);
         assertThat(testFiche.getNbcas_deces_age_bas()).isEqualTo(UPDATED_NBCAS_DECES_AGE_BAS);
+        assertThat(testFiche.getCirconstances_decouverte()).isEqualTo(UPDATED_CIRCONSTANCES_DECOUVERTE);
+        assertThat(testFiche.getAge_aux_premiers_symptomes()).isEqualTo(UPDATED_AGE_AUX_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getAn_age_premiers_symptomes()).isEqualTo(UPDATED_AN_AGE_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getMois_age_premiers_symptomes()).isEqualTo(UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getJours_premiers_symptomes()).isEqualTo(UPDATED_JOURS_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getAge_premiere_consultation()).isEqualTo(UPDATED_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getAn_age_premiere_consultation()).isEqualTo(UPDATED_AN_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getMois_age_premiere_consultation()).isEqualTo(UPDATED_MOIS_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getJours_premiere_consultation()).isEqualTo(UPDATED_JOURS_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getDate_derniere_evaluation()).isEqualTo(UPDATED_DATE_DERNIERE_EVALUATION);
+        assertThat(testFiche.getDate_diagnostic()).isEqualTo(UPDATED_DATE_DIAGNOSTIC);
     }
 
     @Test
@@ -625,7 +738,12 @@ class FicheResourceIT {
             .niveau_scolarisation(UPDATED_NIVEAU_SCOLARISATION)
             .cas_familiaux(UPDATED_CAS_FAMILIAUX)
             .nbcassuspectes(UPDATED_NBCASSUSPECTES)
-            .nbcasdecedes(UPDATED_NBCASDECEDES);
+            .nbcasdecedes(UPDATED_NBCASDECEDES)
+            .age_aux_premiers_symptomes(UPDATED_AGE_AUX_PREMIERS_SYMPTOMES)
+            .mois_age_premiers_symptomes(UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES)
+            .jours_premiers_symptomes(UPDATED_JOURS_PREMIERS_SYMPTOMES)
+            .age_premiere_consultation(UPDATED_AGE_PREMIERE_CONSULTATION)
+            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC);
 
         restFicheMockMvc
             .perform(
@@ -669,6 +787,17 @@ class FicheResourceIT {
         assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
         assertThat(testFiche.getDeces_en_bas_age()).isEqualTo(DEFAULT_DECES_EN_BAS_AGE);
         assertThat(testFiche.getNbcas_deces_age_bas()).isEqualTo(DEFAULT_NBCAS_DECES_AGE_BAS);
+        assertThat(testFiche.getCirconstances_decouverte()).isEqualTo(DEFAULT_CIRCONSTANCES_DECOUVERTE);
+        assertThat(testFiche.getAge_aux_premiers_symptomes()).isEqualTo(UPDATED_AGE_AUX_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getAn_age_premiers_symptomes()).isEqualTo(DEFAULT_AN_AGE_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getMois_age_premiers_symptomes()).isEqualTo(UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getJours_premiers_symptomes()).isEqualTo(UPDATED_JOURS_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getAge_premiere_consultation()).isEqualTo(UPDATED_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getAn_age_premiere_consultation()).isEqualTo(DEFAULT_AN_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getMois_age_premiere_consultation()).isEqualTo(DEFAULT_MOIS_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getJours_premiere_consultation()).isEqualTo(DEFAULT_JOURS_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getDate_derniere_evaluation()).isEqualTo(DEFAULT_DATE_DERNIERE_EVALUATION);
+        assertThat(testFiche.getDate_diagnostic()).isEqualTo(UPDATED_DATE_DIAGNOSTIC);
     }
 
     @Test
@@ -713,7 +842,18 @@ class FicheResourceIT {
             .nbcassuspectes(UPDATED_NBCASSUSPECTES)
             .nbcasdecedes(UPDATED_NBCASDECEDES)
             .deces_en_bas_age(UPDATED_DECES_EN_BAS_AGE)
-            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS);
+            .nbcas_deces_age_bas(UPDATED_NBCAS_DECES_AGE_BAS)
+            .circonstances_decouverte(UPDATED_CIRCONSTANCES_DECOUVERTE)
+            .age_aux_premiers_symptomes(UPDATED_AGE_AUX_PREMIERS_SYMPTOMES)
+            .an_age_premiers_symptomes(UPDATED_AN_AGE_PREMIERS_SYMPTOMES)
+            .mois_age_premiers_symptomes(UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES)
+            .jours_premiers_symptomes(UPDATED_JOURS_PREMIERS_SYMPTOMES)
+            .age_premiere_consultation(UPDATED_AGE_PREMIERE_CONSULTATION)
+            .an_age_premiere_consultation(UPDATED_AN_AGE_PREMIERE_CONSULTATION)
+            .mois_age_premiere_consultation(UPDATED_MOIS_AGE_PREMIERE_CONSULTATION)
+            .jours_premiere_consultation(UPDATED_JOURS_PREMIERE_CONSULTATION)
+            .date_derniere_evaluation(UPDATED_DATE_DERNIERE_EVALUATION)
+            .date_diagnostic(UPDATED_DATE_DIAGNOSTIC);
 
         restFicheMockMvc
             .perform(
@@ -757,6 +897,17 @@ class FicheResourceIT {
         assertThat(testFiche.getNbcasdecedes()).isEqualTo(UPDATED_NBCASDECEDES);
         assertThat(testFiche.getDeces_en_bas_age()).isEqualTo(UPDATED_DECES_EN_BAS_AGE);
         assertThat(testFiche.getNbcas_deces_age_bas()).isEqualTo(UPDATED_NBCAS_DECES_AGE_BAS);
+        assertThat(testFiche.getCirconstances_decouverte()).isEqualTo(UPDATED_CIRCONSTANCES_DECOUVERTE);
+        assertThat(testFiche.getAge_aux_premiers_symptomes()).isEqualTo(UPDATED_AGE_AUX_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getAn_age_premiers_symptomes()).isEqualTo(UPDATED_AN_AGE_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getMois_age_premiers_symptomes()).isEqualTo(UPDATED_MOIS_AGE_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getJours_premiers_symptomes()).isEqualTo(UPDATED_JOURS_PREMIERS_SYMPTOMES);
+        assertThat(testFiche.getAge_premiere_consultation()).isEqualTo(UPDATED_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getAn_age_premiere_consultation()).isEqualTo(UPDATED_AN_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getMois_age_premiere_consultation()).isEqualTo(UPDATED_MOIS_AGE_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getJours_premiere_consultation()).isEqualTo(UPDATED_JOURS_PREMIERE_CONSULTATION);
+        assertThat(testFiche.getDate_derniere_evaluation()).isEqualTo(UPDATED_DATE_DERNIERE_EVALUATION);
+        assertThat(testFiche.getDate_diagnostic()).isEqualTo(UPDATED_DATE_DIAGNOSTIC);
     }
 
     @Test

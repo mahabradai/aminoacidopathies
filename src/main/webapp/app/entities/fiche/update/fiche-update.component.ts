@@ -22,6 +22,9 @@ import { escolarisetype } from 'app/entities/enumerations/escolarisetype.model';
 import { eniveauscolarisation } from 'app/entities/enumerations/eniveauscolarisation.model';
 import { ecasfamiliaux } from 'app/entities/enumerations/ecasfamiliaux.model';
 import { edecesbasage } from 'app/entities/enumerations/edecesbasage.model';
+import { ecircondecouverte } from 'app/entities/enumerations/ecircondecouverte.model';
+import { eage_premier_symptome } from 'app/entities/enumerations/eage-premier-symptome.model';
+import { eagepremiereconsultation } from 'app/entities/enumerations/eagepremiereconsultation.model';
 
 @Component({
   selector: 'jhi-fiche-update',
@@ -43,6 +46,9 @@ export class FicheUpdateComponent implements OnInit {
   eniveauscolarisationValues = Object.keys(eniveauscolarisation);
   ecasfamiliauxValues = Object.keys(ecasfamiliaux);
   edecesbasageValues = Object.keys(edecesbasage);
+  ecircondecouverteValues = Object.keys(ecircondecouverte);
+  eage_premier_symptomeValues = Object.keys(eage_premier_symptome);
+  eagepremiereconsultationValues = Object.keys(eagepremiereconsultation);
 
   pathologiesSharedCollection: IPathologie[] = [];
 

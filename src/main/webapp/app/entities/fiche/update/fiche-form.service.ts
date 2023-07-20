@@ -48,6 +48,17 @@ type FicheFormGroupContent = {
   nbcasdecedes: FormControl<IFiche['nbcasdecedes']>;
   deces_en_bas_age: FormControl<IFiche['deces_en_bas_age']>;
   nbcas_deces_age_bas: FormControl<IFiche['nbcas_deces_age_bas']>;
+  circonstances_decouverte: FormControl<IFiche['circonstances_decouverte']>;
+  age_aux_premiers_symptomes: FormControl<IFiche['age_aux_premiers_symptomes']>;
+  an_age_premiers_symptomes: FormControl<IFiche['an_age_premiers_symptomes']>;
+  mois_age_premiers_symptomes: FormControl<IFiche['mois_age_premiers_symptomes']>;
+  jours_premiers_symptomes: FormControl<IFiche['jours_premiers_symptomes']>;
+  age_premiere_consultation: FormControl<IFiche['age_premiere_consultation']>;
+  an_age_premiere_consultation: FormControl<IFiche['an_age_premiere_consultation']>;
+  mois_age_premiere_consultation: FormControl<IFiche['mois_age_premiere_consultation']>;
+  jours_premiere_consultation: FormControl<IFiche['jours_premiere_consultation']>;
+  date_derniere_evaluation: FormControl<IFiche['date_derniere_evaluation']>;
+  date_diagnostic: FormControl<IFiche['date_diagnostic']>;
   pathologie: FormControl<IFiche['pathologie']>;
 };
 
@@ -100,6 +111,17 @@ export class FicheFormService {
       nbcasdecedes: new FormControl(ficheRawValue.nbcasdecedes),
       deces_en_bas_age: new FormControl(ficheRawValue.deces_en_bas_age),
       nbcas_deces_age_bas: new FormControl(ficheRawValue.nbcas_deces_age_bas),
+      circonstances_decouverte: new FormControl(ficheRawValue.circonstances_decouverte),
+      age_aux_premiers_symptomes: new FormControl(ficheRawValue.age_aux_premiers_symptomes),
+      an_age_premiers_symptomes: new FormControl(ficheRawValue.an_age_premiers_symptomes),
+      mois_age_premiers_symptomes: new FormControl(ficheRawValue.mois_age_premiers_symptomes),
+      jours_premiers_symptomes: new FormControl(ficheRawValue.jours_premiers_symptomes),
+      age_premiere_consultation: new FormControl(ficheRawValue.age_premiere_consultation),
+      an_age_premiere_consultation: new FormControl(ficheRawValue.an_age_premiere_consultation),
+      mois_age_premiere_consultation: new FormControl(ficheRawValue.mois_age_premiere_consultation),
+      jours_premiere_consultation: new FormControl(ficheRawValue.jours_premiere_consultation),
+      date_derniere_evaluation: new FormControl(ficheRawValue.date_derniere_evaluation),
+      date_diagnostic: new FormControl(ficheRawValue.date_diagnostic),
       pathologie: new FormControl(ficheRawValue.pathologie, {
         validators: [Validators.required],
       }),

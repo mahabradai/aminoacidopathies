@@ -13,6 +13,9 @@ import { escolarisetype } from 'app/entities/enumerations/escolarisetype.model';
 import { eniveauscolarisation } from 'app/entities/enumerations/eniveauscolarisation.model';
 import { ecasfamiliaux } from 'app/entities/enumerations/ecasfamiliaux.model';
 import { edecesbasage } from 'app/entities/enumerations/edecesbasage.model';
+import { ecircondecouverte } from 'app/entities/enumerations/ecircondecouverte.model';
+import { eage_premier_symptome } from 'app/entities/enumerations/eage-premier-symptome.model';
+import { eagepremiereconsultation } from 'app/entities/enumerations/eagepremiereconsultation.model';
 
 export interface IFiche {
   id: number;
@@ -46,6 +49,17 @@ export interface IFiche {
   nbcasdecedes?: number | null;
   deces_en_bas_age?: edecesbasage | null;
   nbcas_deces_age_bas?: number | null;
+  circonstances_decouverte?: ecircondecouverte | null;
+  age_aux_premiers_symptomes?: eage_premier_symptome | null;
+  an_age_premiers_symptomes?: number | null;
+  mois_age_premiers_symptomes?: number | null;
+  jours_premiers_symptomes?: number | null;
+  age_premiere_consultation?: eagepremiereconsultation | null;
+  an_age_premiere_consultation?: number | null;
+  mois_age_premiere_consultation?: number | null;
+  jours_premiere_consultation?: number | null;
+  date_derniere_evaluation?: dayjs.Dayjs | null;
+  date_diagnostic?: dayjs.Dayjs | null;
   pathologie?: Pick<IPathologie, 'id'> | null;
 }
 

@@ -382,6 +382,162 @@
         </div>
 
         <div class="row mb-3">
+          <label class="form-label" for="field_circonstances_decouverte">Circonstances Decouverte</label>
+          <select
+            class="form-control"
+            name="circonstances_decouverte"
+            formControlName="circonstances_decouverte"
+            id="field_circonstances_decouverte"
+            data-cy="circonstances_decouverte"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let ecircondecouverte of ecircondecouverteValues" [value]="ecircondecouverte">ecircondecouverte</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_age_aux_premiers_symptomes">Age Aux Premiers Symptomes</label>
+          <select
+            class="form-control"
+            name="age_aux_premiers_symptomes"
+            formControlName="age_aux_premiers_symptomes"
+            id="field_age_aux_premiers_symptomes"
+            data-cy="age_aux_premiers_symptomes"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eage_premier_symptome of eage_premier_symptomeValues" [value]="eage_premier_symptome">
+              eage_premier_symptome
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_an_age_premiers_symptomes">An Age Premiers Symptomes</label>
+          <input
+            type="number"
+            class="form-control"
+            name="an_age_premiers_symptomes"
+            id="field_an_age_premiers_symptomes"
+            data-cy="an_age_premiers_symptomes"
+            formControlName="an_age_premiers_symptomes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_mois_age_premiers_symptomes">Mois Age Premiers Symptomes</label>
+          <input
+            type="number"
+            class="form-control"
+            name="mois_age_premiers_symptomes"
+            id="field_mois_age_premiers_symptomes"
+            data-cy="mois_age_premiers_symptomes"
+            formControlName="mois_age_premiers_symptomes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_jours_premiers_symptomes">Jours Premiers Symptomes</label>
+          <input
+            type="number"
+            class="form-control"
+            name="jours_premiers_symptomes"
+            id="field_jours_premiers_symptomes"
+            data-cy="jours_premiers_symptomes"
+            formControlName="jours_premiers_symptomes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_age_premiere_consultation">Age Premiere Consultation</label>
+          <select
+            class="form-control"
+            name="age_premiere_consultation"
+            formControlName="age_premiere_consultation"
+            id="field_age_premiere_consultation"
+            data-cy="age_premiere_consultation"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eagepremiereconsultation of eagepremiereconsultationValues" [value]="eagepremiereconsultation">
+              eagepremiereconsultation
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_an_age_premiere_consultation">An Age Premiere Consultation</label>
+          <input
+            type="number"
+            class="form-control"
+            name="an_age_premiere_consultation"
+            id="field_an_age_premiere_consultation"
+            data-cy="an_age_premiere_consultation"
+            formControlName="an_age_premiere_consultation"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_mois_age_premiere_consultation">Mois Age Premiere Consultation</label>
+          <input
+            type="number"
+            class="form-control"
+            name="mois_age_premiere_consultation"
+            id="field_mois_age_premiere_consultation"
+            data-cy="mois_age_premiere_consultation"
+            formControlName="mois_age_premiere_consultation"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_jours_premiere_consultation">Jours Premiere Consultation</label>
+          <input
+            type="number"
+            class="form-control"
+            name="jours_premiere_consultation"
+            id="field_jours_premiere_consultation"
+            data-cy="jours_premiere_consultation"
+            formControlName="jours_premiere_consultation"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_date_derniere_evaluation">Date Derniere Evaluation</label>
+          <div class="input-group">
+            <input
+              id="field_date_derniere_evaluation"
+              data-cy="date_derniere_evaluation"
+              type="text"
+              class="form-control"
+              name="date_derniere_evaluation"
+              ngbDatepicker
+              #date_derniere_evaluationDp="ngbDatepicker"
+              formControlName="date_derniere_evaluation"
+            />
+            <button type="button" class="btn btn-secondary" (click)="date_derniere_evaluationDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_date_diagnostic">Date Diagnostic</label>
+          <div class="input-group">
+            <input
+              id="field_date_diagnostic"
+              data-cy="date_diagnostic"
+              type="text"
+              class="form-control"
+              name="date_diagnostic"
+              ngbDatepicker
+              #date_diagnosticDp="ngbDatepicker"
+              formControlName="date_diagnostic"
+            />
+            <button type="button" class="btn btn-secondary" (click)="date_diagnosticDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
           <label class="form-label" for="field_pathologie">Pathologie</label>
           <select
             class="form-control"
