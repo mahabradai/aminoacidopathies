@@ -170,6 +170,27 @@
             <column name="regime_val" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="medicament_specifique" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="medicament_specifique_val" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="autre_medicament_specifique" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vitamines" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vitamines_val" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="greffehepatique" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="reeducation_fonctionnelle" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="pathologie_id" type="bigint">
                 <constraints nullable="false" />
             </column>
@@ -246,6 +267,13 @@
             <column name="autre_deficience_psychique" type="string"/>
             <column name="regime" type="string"/>
             <column name="regime_val" type="string"/>
+            <column name="medicament_specifique" type="string"/>
+            <column name="medicament_specifique_val" type="string"/>
+            <column name="autre_medicament_specifique" type="string"/>
+            <column name="vitamines" type="string"/>
+            <column name="vitamines_val" type="string"/>
+            <column name="greffehepatique" type="string"/>
+            <column name="reeducation_fonctionnelle" type="string"/>
             <column name="pathologie_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

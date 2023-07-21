@@ -678,6 +678,102 @@
         </div>
 
         <div class="row mb-3">
+          <label class="form-label" for="field_medicament_specifique">Medicament Specifique</label>
+          <select
+            class="form-control"
+            name="medicament_specifique"
+            formControlName="medicament_specifique"
+            id="field_medicament_specifique"
+            data-cy="medicament_specifique"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let emedicamentspecifique of emedicamentspecifiqueValues" [value]="emedicamentspecifique">
+              emedicamentspecifique
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_medicament_specifique_val">Medicament Specifique Val</label>
+          <select
+            class="form-control"
+            name="medicament_specifique_val"
+            formControlName="medicament_specifique_val"
+            id="field_medicament_specifique_val"
+            data-cy="medicament_specifique_val"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let emedicamentspecifiqueval of emedicamentspecifiquevalValues" [value]="emedicamentspecifiqueval">
+              emedicamentspecifiqueval
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_autre_medicament_specifique">Autre Medicament Specifique</label>
+          <input
+            type="text"
+            class="form-control"
+            name="autre_medicament_specifique"
+            id="field_autre_medicament_specifique"
+            data-cy="autre_medicament_specifique"
+            formControlName="autre_medicament_specifique"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_vitamines">Vitamines</label>
+          <select class="form-control" name="vitamines" formControlName="vitamines" id="field_vitamines" data-cy="vitamines">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let evitamines of evitaminesValues" [value]="evitamines">evitamines</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_vitamines_val">Vitamines Val</label>
+          <select
+            class="form-control"
+            name="vitamines_val"
+            formControlName="vitamines_val"
+            id="field_vitamines_val"
+            data-cy="vitamines_val"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let evitamineval of evitaminevalValues" [value]="evitamineval">evitamineval</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_greffehepatique">Greffehepatique</label>
+          <select
+            class="form-control"
+            name="greffehepatique"
+            formControlName="greffehepatique"
+            id="field_greffehepatique"
+            data-cy="greffehepatique"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let egreffehepatique of egreffehepatiqueValues" [value]="egreffehepatique">egreffehepatique</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_reeducation_fonctionnelle">Reeducation Fonctionnelle</label>
+          <select
+            class="form-control"
+            name="reeducation_fonctionnelle"
+            formControlName="reeducation_fonctionnelle"
+            id="field_reeducation_fonctionnelle"
+            data-cy="reeducation_fonctionnelle"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let erededucationfonctionnelle of erededucationfonctionnelleValues" [value]="erededucationfonctionnelle">
+              erededucationfonctionnelle
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
           <label class="form-label" for="field_pathologie">Pathologie</label>
           <select
             class="form-control"

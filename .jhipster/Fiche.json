@@ -236,6 +236,40 @@
       "fieldName": "regime_val",
       "fieldType": "eregimeval",
       "fieldValues": "HYPOPROTIDIQUE,CONTROLE_EN_ACIDE_AMINE,NP"
+    },
+    {
+      "fieldName": "medicament_specifique",
+      "fieldType": "emedicamentspecifique",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "medicament_specifique_val",
+      "fieldType": "emedicamentspecifiqueval",
+      "fieldValues": "NTBC_NITISIN_ORFADIN,CITRATEDEBETAINE_CYSTADANE,BH4DICHLORYDRATEDESAPROPTERINE_JUVAN,AUTRE"
+    },
+    {
+      "fieldName": "autre_medicament_specifique",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vitamines",
+      "fieldType": "evitamines",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "vitamines_val",
+      "fieldType": "evitamineval",
+      "fieldValues": "VITAMINEB1_THIAMINE,VITAMINEB6_PYRIDOXINE,VITAMINEB9_ACIDEFOLIQUE,VITAMINEB12_COBALAMINE,VITAMINEC_ACIDEASCORBIQUE,NP"
+    },
+    {
+      "fieldName": "greffehepatique",
+      "fieldType": "egreffehepatique",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "reeducation_fonctionnelle",
+      "fieldType": "erededucationfonctionnelle",
+      "fieldValues": "OUI,NON,NP"
     }
   ],
   "jpaMetamodelFiltering": false,

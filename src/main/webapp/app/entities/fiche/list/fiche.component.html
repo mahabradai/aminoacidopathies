@@ -350,6 +350,48 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
+          <th scope="col" jhiSortBy="medicament_specifique">
+            <div class="d-flex">
+              <span>Medicament Specifique</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="medicament_specifique_val">
+            <div class="d-flex">
+              <span>Medicament Specifique Val</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autre_medicament_specifique">
+            <div class="d-flex">
+              <span>Autre Medicament Specifique</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="vitamines">
+            <div class="d-flex">
+              <span>Vitamines</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="vitamines_val">
+            <div class="d-flex">
+              <span>Vitamines Val</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="greffehepatique">
+            <div class="d-flex">
+              <span>Greffehepatique</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="reeducation_fonctionnelle">
+            <div class="d-flex">
+              <span>Reeducation Fonctionnelle</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
           <th scope="col" jhiSortBy="pathologie.id">
             <div class="d-flex">
               <span>Pathologie</span>
@@ -416,6 +458,13 @@
           <td>{{ fiche.autre_deficience_psychique }}</td>
           <td>{{ fiche.regime }}</td>
           <td>{{ fiche.regime_val }}</td>
+          <td>{{ fiche.medicament_specifique }}</td>
+          <td>{{ fiche.medicament_specifique_val }}</td>
+          <td>{{ fiche.autre_medicament_specifique }}</td>
+          <td>{{ fiche.vitamines }}</td>
+          <td>{{ fiche.vitamines_val }}</td>
+          <td>{{ fiche.greffehepatique }}</td>
+          <td>{{ fiche.reeducation_fonctionnelle }}</td>
           <td>
             <div *ngIf="fiche.pathologie">
               <a [routerLink]="['/pathologie', fiche.pathologie.id, 'view']">{{ fiche.pathologie.id }}</a>

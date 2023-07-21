@@ -26,6 +26,12 @@ import { edeficiencepsychique } from 'app/entities/enumerations/edeficiencepsych
 import { edeficiencepsychiqueval } from 'app/entities/enumerations/edeficiencepsychiqueval.model';
 import { eregime } from 'app/entities/enumerations/eregime.model';
 import { eregimeval } from 'app/entities/enumerations/eregimeval.model';
+import { emedicamentspecifique } from 'app/entities/enumerations/emedicamentspecifique.model';
+import { emedicamentspecifiqueval } from 'app/entities/enumerations/emedicamentspecifiqueval.model';
+import { evitamines } from 'app/entities/enumerations/evitamines.model';
+import { evitamineval } from 'app/entities/enumerations/evitamineval.model';
+import { egreffehepatique } from 'app/entities/enumerations/egreffehepatique.model';
+import { erededucationfonctionnelle } from 'app/entities/enumerations/erededucationfonctionnelle.model';
 
 export interface IFiche {
   id: number;
@@ -81,6 +87,13 @@ export interface IFiche {
   autre_deficience_psychique?: string | null;
   regime?: eregime | null;
   regime_val?: eregimeval | null;
+  medicament_specifique?: emedicamentspecifique | null;
+  medicament_specifique_val?: emedicamentspecifiqueval | null;
+  autre_medicament_specifique?: string | null;
+  vitamines?: evitamines | null;
+  vitamines_val?: evitamineval | null;
+  greffehepatique?: egreffehepatique | null;
+  reeducation_fonctionnelle?: erededucationfonctionnelle | null;
   pathologie?: Pick<IPathologie, 'id'> | null;
 }
 

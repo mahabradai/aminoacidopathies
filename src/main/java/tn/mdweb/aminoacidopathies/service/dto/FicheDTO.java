@@ -22,14 +22,20 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneurosensorielval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egrade;
+import tn.mdweb.aminoacidopathies.domain.enumeration.egreffehepatique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ehandicapmental;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
+import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifique;
+import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifiqueval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eniveauscolarisation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.erededucationfonctionnelle;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregime;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregimeval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.escolarisetype;
 import tn.mdweb.aminoacidopathies.domain.enumeration.esexe;
 import tn.mdweb.aminoacidopathies.domain.enumeration.estatut;
+import tn.mdweb.aminoacidopathies.domain.enumeration.evitamines;
+import tn.mdweb.aminoacidopathies.domain.enumeration.evitamineval;
 
 /**
  * A DTO for the {@link tn.mdweb.aminoacidopathies.domain.Fiche} entity.
@@ -143,6 +149,20 @@ public class FicheDTO implements Serializable {
     private eregime regime;
 
     private eregimeval regime_val;
+
+    private emedicamentspecifique medicament_specifique;
+
+    private emedicamentspecifiqueval medicament_specifique_val;
+
+    private String autre_medicament_specifique;
+
+    private evitamines vitamines;
+
+    private evitamineval vitamines_val;
+
+    private egreffehepatique greffehepatique;
+
+    private erededucationfonctionnelle reeducation_fonctionnelle;
 
     private PathologieDTO pathologie;
 
@@ -570,6 +590,62 @@ public class FicheDTO implements Serializable {
         this.regime_val = regime_val;
     }
 
+    public emedicamentspecifique getMedicament_specifique() {
+        return medicament_specifique;
+    }
+
+    public void setMedicament_specifique(emedicamentspecifique medicament_specifique) {
+        this.medicament_specifique = medicament_specifique;
+    }
+
+    public emedicamentspecifiqueval getMedicament_specifique_val() {
+        return medicament_specifique_val;
+    }
+
+    public void setMedicament_specifique_val(emedicamentspecifiqueval medicament_specifique_val) {
+        this.medicament_specifique_val = medicament_specifique_val;
+    }
+
+    public String getAutre_medicament_specifique() {
+        return autre_medicament_specifique;
+    }
+
+    public void setAutre_medicament_specifique(String autre_medicament_specifique) {
+        this.autre_medicament_specifique = autre_medicament_specifique;
+    }
+
+    public evitamines getVitamines() {
+        return vitamines;
+    }
+
+    public void setVitamines(evitamines vitamines) {
+        this.vitamines = vitamines;
+    }
+
+    public evitamineval getVitamines_val() {
+        return vitamines_val;
+    }
+
+    public void setVitamines_val(evitamineval vitamines_val) {
+        this.vitamines_val = vitamines_val;
+    }
+
+    public egreffehepatique getGreffehepatique() {
+        return greffehepatique;
+    }
+
+    public void setGreffehepatique(egreffehepatique greffehepatique) {
+        this.greffehepatique = greffehepatique;
+    }
+
+    public erededucationfonctionnelle getReeducation_fonctionnelle() {
+        return reeducation_fonctionnelle;
+    }
+
+    public void setReeducation_fonctionnelle(erededucationfonctionnelle reeducation_fonctionnelle) {
+        this.reeducation_fonctionnelle = reeducation_fonctionnelle;
+    }
+
     public PathologieDTO getPathologie() {
         return pathologie;
     }
@@ -656,6 +732,13 @@ public class FicheDTO implements Serializable {
             ", autre_deficience_psychique='" + getAutre_deficience_psychique() + "'" +
             ", regime='" + getRegime() + "'" +
             ", regime_val='" + getRegime_val() + "'" +
+            ", medicament_specifique='" + getMedicament_specifique() + "'" +
+            ", medicament_specifique_val='" + getMedicament_specifique_val() + "'" +
+            ", autre_medicament_specifique='" + getAutre_medicament_specifique() + "'" +
+            ", vitamines='" + getVitamines() + "'" +
+            ", vitamines_val='" + getVitamines_val() + "'" +
+            ", greffehepatique='" + getGreffehepatique() + "'" +
+            ", reeducation_fonctionnelle='" + getReeducation_fonctionnelle() + "'" +
             ", pathologie=" + getPathologie() +
             "}";
     }

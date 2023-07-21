@@ -70,6 +70,13 @@ type FicheFormGroupContent = {
   autre_deficience_psychique: FormControl<IFiche['autre_deficience_psychique']>;
   regime: FormControl<IFiche['regime']>;
   regime_val: FormControl<IFiche['regime_val']>;
+  medicament_specifique: FormControl<IFiche['medicament_specifique']>;
+  medicament_specifique_val: FormControl<IFiche['medicament_specifique_val']>;
+  autre_medicament_specifique: FormControl<IFiche['autre_medicament_specifique']>;
+  vitamines: FormControl<IFiche['vitamines']>;
+  vitamines_val: FormControl<IFiche['vitamines_val']>;
+  greffehepatique: FormControl<IFiche['greffehepatique']>;
+  reeducation_fonctionnelle: FormControl<IFiche['reeducation_fonctionnelle']>;
   pathologie: FormControl<IFiche['pathologie']>;
 };
 
@@ -144,6 +151,13 @@ export class FicheFormService {
       autre_deficience_psychique: new FormControl(ficheRawValue.autre_deficience_psychique),
       regime: new FormControl(ficheRawValue.regime),
       regime_val: new FormControl(ficheRawValue.regime_val),
+      medicament_specifique: new FormControl(ficheRawValue.medicament_specifique),
+      medicament_specifique_val: new FormControl(ficheRawValue.medicament_specifique_val),
+      autre_medicament_specifique: new FormControl(ficheRawValue.autre_medicament_specifique),
+      vitamines: new FormControl(ficheRawValue.vitamines),
+      vitamines_val: new FormControl(ficheRawValue.vitamines_val),
+      greffehepatique: new FormControl(ficheRawValue.greffehepatique),
+      reeducation_fonctionnelle: new FormControl(ficheRawValue.reeducation_fonctionnelle),
       pathologie: new FormControl(ficheRawValue.pathologie, {
         validators: [Validators.required],
       }),

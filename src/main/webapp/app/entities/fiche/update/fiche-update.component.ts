@@ -35,6 +35,12 @@ import { edeficiencepsychique } from 'app/entities/enumerations/edeficiencepsych
 import { edeficiencepsychiqueval } from 'app/entities/enumerations/edeficiencepsychiqueval.model';
 import { eregime } from 'app/entities/enumerations/eregime.model';
 import { eregimeval } from 'app/entities/enumerations/eregimeval.model';
+import { emedicamentspecifique } from 'app/entities/enumerations/emedicamentspecifique.model';
+import { emedicamentspecifiqueval } from 'app/entities/enumerations/emedicamentspecifiqueval.model';
+import { evitamines } from 'app/entities/enumerations/evitamines.model';
+import { evitamineval } from 'app/entities/enumerations/evitamineval.model';
+import { egreffehepatique } from 'app/entities/enumerations/egreffehepatique.model';
+import { erededucationfonctionnelle } from 'app/entities/enumerations/erededucationfonctionnelle.model';
 
 @Component({
   selector: 'jhi-fiche-update',
@@ -69,6 +75,12 @@ export class FicheUpdateComponent implements OnInit {
   edeficiencepsychiquevalValues = Object.keys(edeficiencepsychiqueval);
   eregimeValues = Object.keys(eregime);
   eregimevalValues = Object.keys(eregimeval);
+  emedicamentspecifiqueValues = Object.keys(emedicamentspecifique);
+  emedicamentspecifiquevalValues = Object.keys(emedicamentspecifiqueval);
+  evitaminesValues = Object.keys(evitamines);
+  evitaminevalValues = Object.keys(evitamineval);
+  egreffehepatiqueValues = Object.keys(egreffehepatique);
+  erededucationfonctionnelleValues = Object.keys(erededucationfonctionnelle);
 
   pathologiesSharedCollection: IPathologie[] = [];
 

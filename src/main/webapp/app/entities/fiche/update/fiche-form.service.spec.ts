@@ -72,6 +72,13 @@ describe('Fiche Form Service', () => {
             autre_deficience_psychique: expect.any(Object),
             regime: expect.any(Object),
             regime_val: expect.any(Object),
+            medicament_specifique: expect.any(Object),
+            medicament_specifique_val: expect.any(Object),
+            autre_medicament_specifique: expect.any(Object),
+            vitamines: expect.any(Object),
+            vitamines_val: expect.any(Object),
+            greffehepatique: expect.any(Object),
+            reeducation_fonctionnelle: expect.any(Object),
             pathologie: expect.any(Object),
           })
         );
@@ -135,6 +142,13 @@ describe('Fiche Form Service', () => {
             autre_deficience_psychique: expect.any(Object),
             regime: expect.any(Object),
             regime_val: expect.any(Object),
+            medicament_specifique: expect.any(Object),
+            medicament_specifique_val: expect.any(Object),
+            autre_medicament_specifique: expect.any(Object),
+            vitamines: expect.any(Object),
+            vitamines_val: expect.any(Object),
+            greffehepatique: expect.any(Object),
+            reeducation_fonctionnelle: expect.any(Object),
             pathologie: expect.any(Object),
           })
         );

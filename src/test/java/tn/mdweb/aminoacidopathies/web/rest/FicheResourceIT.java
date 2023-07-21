@@ -40,14 +40,20 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneurosensorielval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egrade;
+import tn.mdweb.aminoacidopathies.domain.enumeration.egreffehepatique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ehandicapmental;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
+import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifique;
+import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifiqueval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eniveauscolarisation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.erededucationfonctionnelle;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregime;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregimeval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.escolarisetype;
 import tn.mdweb.aminoacidopathies.domain.enumeration.esexe;
 import tn.mdweb.aminoacidopathies.domain.enumeration.estatut;
+import tn.mdweb.aminoacidopathies.domain.enumeration.evitamines;
+import tn.mdweb.aminoacidopathies.domain.enumeration.evitamineval;
 import tn.mdweb.aminoacidopathies.repository.FicheRepository;
 import tn.mdweb.aminoacidopathies.service.dto.FicheDTO;
 import tn.mdweb.aminoacidopathies.service.mapper.FicheMapper;
@@ -216,6 +222,27 @@ class FicheResourceIT {
     private static final eregimeval DEFAULT_REGIME_VAL = eregimeval.HYPOPROTIDIQUE;
     private static final eregimeval UPDATED_REGIME_VAL = eregimeval.CONTROLE_EN_ACIDE_AMINE;
 
+    private static final emedicamentspecifique DEFAULT_MEDICAMENT_SPECIFIQUE = emedicamentspecifique.OUI;
+    private static final emedicamentspecifique UPDATED_MEDICAMENT_SPECIFIQUE = emedicamentspecifique.NON;
+
+    private static final emedicamentspecifiqueval DEFAULT_MEDICAMENT_SPECIFIQUE_VAL = emedicamentspecifiqueval.NTBC_NITISIN_ORFADIN;
+    private static final emedicamentspecifiqueval UPDATED_MEDICAMENT_SPECIFIQUE_VAL = emedicamentspecifiqueval.CITRATEDEBETAINE_CYSTADANE;
+
+    private static final String DEFAULT_AUTRE_MEDICAMENT_SPECIFIQUE = "AAAAAAAAAA";
+    private static final String UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE = "BBBBBBBBBB";
+
+    private static final evitamines DEFAULT_VITAMINES = evitamines.OUI;
+    private static final evitamines UPDATED_VITAMINES = evitamines.NON;
+
+    private static final evitamineval DEFAULT_VITAMINES_VAL = evitamineval.VITAMINEB1_THIAMINE;
+    private static final evitamineval UPDATED_VITAMINES_VAL = evitamineval.VITAMINEB6_PYRIDOXINE;
+
+    private static final egreffehepatique DEFAULT_GREFFEHEPATIQUE = egreffehepatique.OUI;
+    private static final egreffehepatique UPDATED_GREFFEHEPATIQUE = egreffehepatique.NON;
+
+    private static final erededucationfonctionnelle DEFAULT_REEDUCATION_FONCTIONNELLE = erededucationfonctionnelle.OUI;
+    private static final erededucationfonctionnelle UPDATED_REEDUCATION_FONCTIONNELLE = erededucationfonctionnelle.NON;
+
     private static final String ENTITY_API_URL = "/api/fiches";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -295,7 +322,14 @@ class FicheResourceIT {
             .deficience_psychique_val(DEFAULT_DEFICIENCE_PSYCHIQUE_VAL)
             .autre_deficience_psychique(DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE)
             .regime(DEFAULT_REGIME)
-            .regime_val(DEFAULT_REGIME_VAL);
+            .regime_val(DEFAULT_REGIME_VAL)
+            .medicament_specifique(DEFAULT_MEDICAMENT_SPECIFIQUE)
+            .medicament_specifique_val(DEFAULT_MEDICAMENT_SPECIFIQUE_VAL)
+            .autre_medicament_specifique(DEFAULT_AUTRE_MEDICAMENT_SPECIFIQUE)
+            .vitamines(DEFAULT_VITAMINES)
+            .vitamines_val(DEFAULT_VITAMINES_VAL)
+            .greffehepatique(DEFAULT_GREFFEHEPATIQUE)
+            .reeducation_fonctionnelle(DEFAULT_REEDUCATION_FONCTIONNELLE);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -368,7 +402,14 @@ class FicheResourceIT {
             .deficience_psychique_val(UPDATED_DEFICIENCE_PSYCHIQUE_VAL)
             .autre_deficience_psychique(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE)
             .regime(UPDATED_REGIME)
-            .regime_val(UPDATED_REGIME_VAL);
+            .regime_val(UPDATED_REGIME_VAL)
+            .medicament_specifique(UPDATED_MEDICAMENT_SPECIFIQUE)
+            .medicament_specifique_val(UPDATED_MEDICAMENT_SPECIFIQUE_VAL)
+            .autre_medicament_specifique(UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE)
+            .vitamines(UPDATED_VITAMINES)
+            .vitamines_val(UPDATED_VITAMINES_VAL)
+            .greffehepatique(UPDATED_GREFFEHEPATIQUE)
+            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -453,6 +494,13 @@ class FicheResourceIT {
         assertThat(testFiche.getAutre_deficience_psychique()).isEqualTo(DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE);
         assertThat(testFiche.getRegime()).isEqualTo(DEFAULT_REGIME);
         assertThat(testFiche.getRegime_val()).isEqualTo(DEFAULT_REGIME_VAL);
+        assertThat(testFiche.getMedicament_specifique()).isEqualTo(DEFAULT_MEDICAMENT_SPECIFIQUE);
+        assertThat(testFiche.getMedicament_specifique_val()).isEqualTo(DEFAULT_MEDICAMENT_SPECIFIQUE_VAL);
+        assertThat(testFiche.getAutre_medicament_specifique()).isEqualTo(DEFAULT_AUTRE_MEDICAMENT_SPECIFIQUE);
+        assertThat(testFiche.getVitamines()).isEqualTo(DEFAULT_VITAMINES);
+        assertThat(testFiche.getVitamines_val()).isEqualTo(DEFAULT_VITAMINES_VAL);
+        assertThat(testFiche.getGreffehepatique()).isEqualTo(DEFAULT_GREFFEHEPATIQUE);
+        assertThat(testFiche.getReeducation_fonctionnelle()).isEqualTo(DEFAULT_REEDUCATION_FONCTIONNELLE);
     }
 
     @Test
@@ -555,7 +603,14 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.[*].deficience_psychique_val").value(hasItem(DEFAULT_DEFICIENCE_PSYCHIQUE_VAL.toString())))
             .andExpect(jsonPath("$.[*].autre_deficience_psychique").value(hasItem(DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE)))
             .andExpect(jsonPath("$.[*].regime").value(hasItem(DEFAULT_REGIME.toString())))
-            .andExpect(jsonPath("$.[*].regime_val").value(hasItem(DEFAULT_REGIME_VAL.toString())));
+            .andExpect(jsonPath("$.[*].regime_val").value(hasItem(DEFAULT_REGIME_VAL.toString())))
+            .andExpect(jsonPath("$.[*].medicament_specifique").value(hasItem(DEFAULT_MEDICAMENT_SPECIFIQUE.toString())))
+            .andExpect(jsonPath("$.[*].medicament_specifique_val").value(hasItem(DEFAULT_MEDICAMENT_SPECIFIQUE_VAL.toString())))
+            .andExpect(jsonPath("$.[*].autre_medicament_specifique").value(hasItem(DEFAULT_AUTRE_MEDICAMENT_SPECIFIQUE)))
+            .andExpect(jsonPath("$.[*].vitamines").value(hasItem(DEFAULT_VITAMINES.toString())))
+            .andExpect(jsonPath("$.[*].vitamines_val").value(hasItem(DEFAULT_VITAMINES_VAL.toString())))
+            .andExpect(jsonPath("$.[*].greffehepatique").value(hasItem(DEFAULT_GREFFEHEPATIQUE.toString())))
+            .andExpect(jsonPath("$.[*].reeducation_fonctionnelle").value(hasItem(DEFAULT_REEDUCATION_FONCTIONNELLE.toString())));
     }
 
     @Test
@@ -621,7 +676,14 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.deficience_psychique_val").value(DEFAULT_DEFICIENCE_PSYCHIQUE_VAL.toString()))
             .andExpect(jsonPath("$.autre_deficience_psychique").value(DEFAULT_AUTRE_DEFICIENCE_PSYCHIQUE))
             .andExpect(jsonPath("$.regime").value(DEFAULT_REGIME.toString()))
-            .andExpect(jsonPath("$.regime_val").value(DEFAULT_REGIME_VAL.toString()));
+            .andExpect(jsonPath("$.regime_val").value(DEFAULT_REGIME_VAL.toString()))
+            .andExpect(jsonPath("$.medicament_specifique").value(DEFAULT_MEDICAMENT_SPECIFIQUE.toString()))
+            .andExpect(jsonPath("$.medicament_specifique_val").value(DEFAULT_MEDICAMENT_SPECIFIQUE_VAL.toString()))
+            .andExpect(jsonPath("$.autre_medicament_specifique").value(DEFAULT_AUTRE_MEDICAMENT_SPECIFIQUE))
+            .andExpect(jsonPath("$.vitamines").value(DEFAULT_VITAMINES.toString()))
+            .andExpect(jsonPath("$.vitamines_val").value(DEFAULT_VITAMINES_VAL.toString()))
+            .andExpect(jsonPath("$.greffehepatique").value(DEFAULT_GREFFEHEPATIQUE.toString()))
+            .andExpect(jsonPath("$.reeducation_fonctionnelle").value(DEFAULT_REEDUCATION_FONCTIONNELLE.toString()));
     }
 
     @Test
@@ -695,7 +757,14 @@ class FicheResourceIT {
             .deficience_psychique_val(UPDATED_DEFICIENCE_PSYCHIQUE_VAL)
             .autre_deficience_psychique(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE)
             .regime(UPDATED_REGIME)
-            .regime_val(UPDATED_REGIME_VAL);
+            .regime_val(UPDATED_REGIME_VAL)
+            .medicament_specifique(UPDATED_MEDICAMENT_SPECIFIQUE)
+            .medicament_specifique_val(UPDATED_MEDICAMENT_SPECIFIQUE_VAL)
+            .autre_medicament_specifique(UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE)
+            .vitamines(UPDATED_VITAMINES)
+            .vitamines_val(UPDATED_VITAMINES_VAL)
+            .greffehepatique(UPDATED_GREFFEHEPATIQUE)
+            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE);
         FicheDTO ficheDTO = ficheMapper.toDto(updatedFiche);
 
         restFicheMockMvc
@@ -762,6 +831,13 @@ class FicheResourceIT {
         assertThat(testFiche.getAutre_deficience_psychique()).isEqualTo(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE);
         assertThat(testFiche.getRegime()).isEqualTo(UPDATED_REGIME);
         assertThat(testFiche.getRegime_val()).isEqualTo(UPDATED_REGIME_VAL);
+        assertThat(testFiche.getMedicament_specifique()).isEqualTo(UPDATED_MEDICAMENT_SPECIFIQUE);
+        assertThat(testFiche.getMedicament_specifique_val()).isEqualTo(UPDATED_MEDICAMENT_SPECIFIQUE_VAL);
+        assertThat(testFiche.getAutre_medicament_specifique()).isEqualTo(UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE);
+        assertThat(testFiche.getVitamines()).isEqualTo(UPDATED_VITAMINES);
+        assertThat(testFiche.getVitamines_val()).isEqualTo(UPDATED_VITAMINES_VAL);
+        assertThat(testFiche.getGreffehepatique()).isEqualTo(UPDATED_GREFFEHEPATIQUE);
+        assertThat(testFiche.getReeducation_fonctionnelle()).isEqualTo(UPDATED_REEDUCATION_FONCTIONNELLE);
     }
 
     @Test
@@ -871,7 +947,11 @@ class FicheResourceIT {
             .deficit_neurosensoriel_val(UPDATED_DEFICIT_NEUROSENSORIEL_VAL)
             .deficience_psychique(UPDATED_DEFICIENCE_PSYCHIQUE)
             .autre_deficience_psychique(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE)
-            .regime_val(UPDATED_REGIME_VAL);
+            .regime_val(UPDATED_REGIME_VAL)
+            .autre_medicament_specifique(UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE)
+            .vitamines_val(UPDATED_VITAMINES_VAL)
+            .greffehepatique(UPDATED_GREFFEHEPATIQUE)
+            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE);
 
         restFicheMockMvc
             .perform(
@@ -937,6 +1017,13 @@ class FicheResourceIT {
         assertThat(testFiche.getAutre_deficience_psychique()).isEqualTo(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE);
         assertThat(testFiche.getRegime()).isEqualTo(DEFAULT_REGIME);
         assertThat(testFiche.getRegime_val()).isEqualTo(UPDATED_REGIME_VAL);
+        assertThat(testFiche.getMedicament_specifique()).isEqualTo(DEFAULT_MEDICAMENT_SPECIFIQUE);
+        assertThat(testFiche.getMedicament_specifique_val()).isEqualTo(DEFAULT_MEDICAMENT_SPECIFIQUE_VAL);
+        assertThat(testFiche.getAutre_medicament_specifique()).isEqualTo(UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE);
+        assertThat(testFiche.getVitamines()).isEqualTo(DEFAULT_VITAMINES);
+        assertThat(testFiche.getVitamines_val()).isEqualTo(UPDATED_VITAMINES_VAL);
+        assertThat(testFiche.getGreffehepatique()).isEqualTo(UPDATED_GREFFEHEPATIQUE);
+        assertThat(testFiche.getReeducation_fonctionnelle()).isEqualTo(UPDATED_REEDUCATION_FONCTIONNELLE);
     }
 
     @Test
@@ -1003,7 +1090,14 @@ class FicheResourceIT {
             .deficience_psychique_val(UPDATED_DEFICIENCE_PSYCHIQUE_VAL)
             .autre_deficience_psychique(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE)
             .regime(UPDATED_REGIME)
-            .regime_val(UPDATED_REGIME_VAL);
+            .regime_val(UPDATED_REGIME_VAL)
+            .medicament_specifique(UPDATED_MEDICAMENT_SPECIFIQUE)
+            .medicament_specifique_val(UPDATED_MEDICAMENT_SPECIFIQUE_VAL)
+            .autre_medicament_specifique(UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE)
+            .vitamines(UPDATED_VITAMINES)
+            .vitamines_val(UPDATED_VITAMINES_VAL)
+            .greffehepatique(UPDATED_GREFFEHEPATIQUE)
+            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE);
 
         restFicheMockMvc
             .perform(
@@ -1069,6 +1163,13 @@ class FicheResourceIT {
         assertThat(testFiche.getAutre_deficience_psychique()).isEqualTo(UPDATED_AUTRE_DEFICIENCE_PSYCHIQUE);
         assertThat(testFiche.getRegime()).isEqualTo(UPDATED_REGIME);
         assertThat(testFiche.getRegime_val()).isEqualTo(UPDATED_REGIME_VAL);
+        assertThat(testFiche.getMedicament_specifique()).isEqualTo(UPDATED_MEDICAMENT_SPECIFIQUE);
+        assertThat(testFiche.getMedicament_specifique_val()).isEqualTo(UPDATED_MEDICAMENT_SPECIFIQUE_VAL);
+        assertThat(testFiche.getAutre_medicament_specifique()).isEqualTo(UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE);
+        assertThat(testFiche.getVitamines()).isEqualTo(UPDATED_VITAMINES);
+        assertThat(testFiche.getVitamines_val()).isEqualTo(UPDATED_VITAMINES_VAL);
+        assertThat(testFiche.getGreffehepatique()).isEqualTo(UPDATED_GREFFEHEPATIQUE);
+        assertThat(testFiche.getReeducation_fonctionnelle()).isEqualTo(UPDATED_REEDUCATION_FONCTIONNELLE);
     }
 
     @Test

@@ -24,14 +24,20 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneurosensorielval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egrade;
+import tn.mdweb.aminoacidopathies.domain.enumeration.egreffehepatique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ehandicapmental;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
+import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifique;
+import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifiqueval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eniveauscolarisation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.erededucationfonctionnelle;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregime;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregimeval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.escolarisetype;
 import tn.mdweb.aminoacidopathies.domain.enumeration.esexe;
 import tn.mdweb.aminoacidopathies.domain.enumeration.estatut;
+import tn.mdweb.aminoacidopathies.domain.enumeration.evitamines;
+import tn.mdweb.aminoacidopathies.domain.enumeration.evitamineval;
 
 /**
  * A Fiche.
@@ -231,6 +237,33 @@ public class Fiche implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "regime_val")
     private eregimeval regime_val;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "medicament_specifique")
+    private emedicamentspecifique medicament_specifique;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "medicament_specifique_val")
+    private emedicamentspecifiqueval medicament_specifique_val;
+
+    @Column(name = "autre_medicament_specifique")
+    private String autre_medicament_specifique;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "vitamines")
+    private evitamines vitamines;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "vitamines_val")
+    private evitamineval vitamines_val;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "greffehepatique")
+    private egreffehepatique greffehepatique;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "reeducation_fonctionnelle")
+    private erededucationfonctionnelle reeducation_fonctionnelle;
 
     @ManyToOne(optional = false)
     @NotNull
@@ -927,6 +960,97 @@ public class Fiche implements Serializable {
         this.regime_val = regime_val;
     }
 
+    public emedicamentspecifique getMedicament_specifique() {
+        return this.medicament_specifique;
+    }
+
+    public Fiche medicament_specifique(emedicamentspecifique medicament_specifique) {
+        this.setMedicament_specifique(medicament_specifique);
+        return this;
+    }
+
+    public void setMedicament_specifique(emedicamentspecifique medicament_specifique) {
+        this.medicament_specifique = medicament_specifique;
+    }
+
+    public emedicamentspecifiqueval getMedicament_specifique_val() {
+        return this.medicament_specifique_val;
+    }
+
+    public Fiche medicament_specifique_val(emedicamentspecifiqueval medicament_specifique_val) {
+        this.setMedicament_specifique_val(medicament_specifique_val);
+        return this;
+    }
+
+    public void setMedicament_specifique_val(emedicamentspecifiqueval medicament_specifique_val) {
+        this.medicament_specifique_val = medicament_specifique_val;
+    }
+
+    public String getAutre_medicament_specifique() {
+        return this.autre_medicament_specifique;
+    }
+
+    public Fiche autre_medicament_specifique(String autre_medicament_specifique) {
+        this.setAutre_medicament_specifique(autre_medicament_specifique);
+        return this;
+    }
+
+    public void setAutre_medicament_specifique(String autre_medicament_specifique) {
+        this.autre_medicament_specifique = autre_medicament_specifique;
+    }
+
+    public evitamines getVitamines() {
+        return this.vitamines;
+    }
+
+    public Fiche vitamines(evitamines vitamines) {
+        this.setVitamines(vitamines);
+        return this;
+    }
+
+    public void setVitamines(evitamines vitamines) {
+        this.vitamines = vitamines;
+    }
+
+    public evitamineval getVitamines_val() {
+        return this.vitamines_val;
+    }
+
+    public Fiche vitamines_val(evitamineval vitamines_val) {
+        this.setVitamines_val(vitamines_val);
+        return this;
+    }
+
+    public void setVitamines_val(evitamineval vitamines_val) {
+        this.vitamines_val = vitamines_val;
+    }
+
+    public egreffehepatique getGreffehepatique() {
+        return this.greffehepatique;
+    }
+
+    public Fiche greffehepatique(egreffehepatique greffehepatique) {
+        this.setGreffehepatique(greffehepatique);
+        return this;
+    }
+
+    public void setGreffehepatique(egreffehepatique greffehepatique) {
+        this.greffehepatique = greffehepatique;
+    }
+
+    public erededucationfonctionnelle getReeducation_fonctionnelle() {
+        return this.reeducation_fonctionnelle;
+    }
+
+    public Fiche reeducation_fonctionnelle(erededucationfonctionnelle reeducation_fonctionnelle) {
+        this.setReeducation_fonctionnelle(reeducation_fonctionnelle);
+        return this;
+    }
+
+    public void setReeducation_fonctionnelle(erededucationfonctionnelle reeducation_fonctionnelle) {
+        this.reeducation_fonctionnelle = reeducation_fonctionnelle;
+    }
+
     public Pathologie getPathologie() {
         return this.pathologie;
     }
@@ -1016,6 +1140,13 @@ public class Fiche implements Serializable {
             ", autre_deficience_psychique='" + getAutre_deficience_psychique() + "'" +
             ", regime='" + getRegime() + "'" +
             ", regime_val='" + getRegime_val() + "'" +
+            ", medicament_specifique='" + getMedicament_specifique() + "'" +
+            ", medicament_specifique_val='" + getMedicament_specifique_val() + "'" +
+            ", autre_medicament_specifique='" + getAutre_medicament_specifique() + "'" +
+            ", vitamines='" + getVitamines() + "'" +
+            ", vitamines_val='" + getVitamines_val() + "'" +
+            ", greffehepatique='" + getGreffehepatique() + "'" +
+            ", reeducation_fonctionnelle='" + getReeducation_fonctionnelle() + "'" +
             "}";
     }
 }
