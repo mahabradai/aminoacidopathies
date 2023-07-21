@@ -774,6 +774,244 @@
         </div>
 
         <div class="row mb-3">
+          <label class="form-label" for="field_appareillage">Appareillage</label>
+          <select class="form-control" name="appareillage" formControlName="appareillage" id="field_appareillage" data-cy="appareillage">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eappareillage of eappareillageValues" [value]="eappareillage">eappareillage</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_psuchologie">Psuchologie</label>
+          <select class="form-control" name="psuchologie" formControlName="psuchologie" id="field_psuchologie" data-cy="psuchologie">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let epsychologie of epsychologieValues" [value]="epsychologie">epsychologie</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_ergotherapie">Ergotherapie</label>
+          <select class="form-control" name="ergotherapie" formControlName="ergotherapie" id="field_ergotherapie" data-cy="ergotherapie">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eergotherapie of eergotherapieValues" [value]="eergotherapie">eergotherapie</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_depistage_post_natal_oriente">Depistage Post Natal Oriente</label>
+          <select
+            class="form-control"
+            name="depistage_post_natal_oriente"
+            formControlName="depistage_post_natal_oriente"
+            id="field_depistage_post_natal_oriente"
+            data-cy="depistage_post_natal_oriente"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              *ngFor="let edepistage_post_natal_oriente of edepistage_post_natal_orienteValues"
+              [value]="edepistage_post_natal_oriente"
+            >
+              edepistage_post_natal_oriente
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_echelle_depistage">Echelle Depistage</label>
+          <select
+            class="form-control"
+            name="echelle_depistage"
+            formControlName="echelle_depistage"
+            id="field_echelle_depistage"
+            data-cy="echelle_depistage"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let eechelledepistage of eechelledepistageValues" [value]="eechelledepistage">eechelledepistage</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nombre_individus_depistes">Nombre Individus Depistes</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nombre_individus_depistes"
+            id="field_nombre_individus_depistes"
+            data-cy="nombre_individus_depistes"
+            formControlName="nombre_individus_depistes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nouveaux_cas_depistes">Nouveaux Cas Depistes</label>
+          <select
+            class="form-control"
+            name="nouveaux_cas_depistes"
+            formControlName="nouveaux_cas_depistes"
+            id="field_nouveaux_cas_depistes"
+            data-cy="nouveaux_cas_depistes"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let enouveaux_cas_depistes of enouveaux_cas_depistesValues" [value]="enouveaux_cas_depistes">
+              enouveaux_cas_depistes
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nombre_nouveaux_cas_depistes">Nombre Nouveaux Cas Depistes</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nombre_nouveaux_cas_depistes"
+            id="field_nombre_nouveaux_cas_depistes"
+            data-cy="nombre_nouveaux_cas_depistes"
+            formControlName="nombre_nouveaux_cas_depistes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_code_registre1_cas_depistes">Code Registre 1 Cas Depistes</label>
+          <input
+            type="text"
+            class="form-control"
+            name="code_registre1_cas_depistes"
+            id="field_code_registre1_cas_depistes"
+            data-cy="code_registre1_cas_depistes"
+            formControlName="code_registre1_cas_depistes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_lien_parente1_cas_depistes">Lien Parente 1 Cas Depistes</label>
+          <select
+            class="form-control"
+            name="lien_parente1_cas_depistes"
+            formControlName="lien_parente1_cas_depistes"
+            id="field_lien_parente1_cas_depistes"
+            data-cy="lien_parente1_cas_depistes"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let elienparente1 of elienparente1Values" [value]="elienparente1">elienparente1</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_autre_lien_parente1">Autre Lien Parente 1</label>
+          <input
+            type="text"
+            class="form-control"
+            name="autre_lien_parente1"
+            id="field_autre_lien_parente1"
+            data-cy="autre_lien_parente1"
+            formControlName="autre_lien_parente1"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_code_registre2_cas_depistes">Code Registre 2 Cas Depistes</label>
+          <input
+            type="text"
+            class="form-control"
+            name="code_registre2_cas_depistes"
+            id="field_code_registre2_cas_depistes"
+            data-cy="code_registre2_cas_depistes"
+            formControlName="code_registre2_cas_depistes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_lien_parente2_cas_depistes">Lien Parente 2 Cas Depistes</label>
+          <select
+            class="form-control"
+            name="lien_parente2_cas_depistes"
+            formControlName="lien_parente2_cas_depistes"
+            id="field_lien_parente2_cas_depistes"
+            data-cy="lien_parente2_cas_depistes"
+          >
+            <option [ngValue]="null"></option>
+            <option *ngFor="let elienparente2 of elienparente2Values" [value]="elienparente2">elienparente2</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_autre_lien_parente2">Autre Lien Parente 2</label>
+          <input
+            type="text"
+            class="form-control"
+            name="autre_lien_parente2"
+            id="field_autre_lien_parente2"
+            data-cy="autre_lien_parente2"
+            formControlName="autre_lien_parente2"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nombre_de_grossesse_ulterieures">Nombre De Grossesse Ulterieures</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nombre_de_grossesse_ulterieures"
+            id="field_nombre_de_grossesse_ulterieures"
+            data-cy="nombre_de_grossesse_ulterieures"
+            formControlName="nombre_de_grossesse_ulterieures"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nomre_DPN">Nomre DPN</label>
+          <input type="number" class="form-control" name="nomre_DPN" id="field_nomre_DPN" data-cy="nomre_DPN" formControlName="nomre_DPN" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nombre_nouveaux_cas_diagnostiques">Nombre Nouveaux Cas Diagnostiques</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nombre_nouveaux_cas_diagnostiques"
+            id="field_nombre_nouveaux_cas_diagnostiques"
+            data-cy="nombre_nouveaux_cas_diagnostiques"
+            formControlName="nombre_nouveaux_cas_diagnostiques"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nombre_ITG">Nombre ITG</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nombre_ITG"
+            id="field_nombre_ITG"
+            data-cy="nombre_ITG"
+            formControlName="nombre_ITG"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nomre_de_grossesses_poursuivies">Nomre De Grossesses Poursuivies</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nomre_de_grossesses_poursuivies"
+            id="field_nomre_de_grossesses_poursuivies"
+            data-cy="nomre_de_grossesses_poursuivies"
+            formControlName="nomre_de_grossesses_poursuivies"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_nombre_de_foetus_sains">Nombre De Foetus Sains</label>
+          <input
+            type="number"
+            class="form-control"
+            name="nombre_de_foetus_sains"
+            id="field_nombre_de_foetus_sains"
+            data-cy="nombre_de_foetus_sains"
+            formControlName="nombre_de_foetus_sains"
+          />
+        </div>
+
+        <div class="row mb-3">
           <label class="form-label" for="field_pathologie">Pathologie</label>
           <select
             class="form-control"

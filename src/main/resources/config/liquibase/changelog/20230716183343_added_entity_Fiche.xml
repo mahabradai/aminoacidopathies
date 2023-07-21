@@ -191,6 +191,66 @@
             <column name="reeducation_fonctionnelle" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="appareillage" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="psuchologie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ergotherapie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="depistage_post_natal_oriente" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="echelle_depistage" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nombre_individus_depistes" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="nouveaux_cas_depistes" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nombre_nouveaux_cas_depistes" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="code_registre_1_cas_depistes" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lien_parente_1_cas_depistes" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="autre_lien_parente_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="code_registre_2_cas_depistes" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lien_parente_2_cas_depistes" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="autre_lien_parente_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nombre_de_grossesse_ulterieures" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="nomre_dpn" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="nombre_nouveaux_cas_diagnostiques" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="nombre_itg" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="nomre_de_grossesses_poursuivies" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="nombre_de_foetus_sains" type="integer">
+                <constraints nullable="true" />
+            </column>
             <column name="pathologie_id" type="bigint">
                 <constraints nullable="false" />
             </column>
@@ -274,6 +334,26 @@
             <column name="vitamines_val" type="string"/>
             <column name="greffehepatique" type="string"/>
             <column name="reeducation_fonctionnelle" type="string"/>
+            <column name="appareillage" type="string"/>
+            <column name="psuchologie" type="string"/>
+            <column name="ergotherapie" type="string"/>
+            <column name="depistage_post_natal_oriente" type="string"/>
+            <column name="echelle_depistage" type="string"/>
+            <column name="nombre_individus_depistes" type="numeric"/>
+            <column name="nouveaux_cas_depistes" type="string"/>
+            <column name="nombre_nouveaux_cas_depistes" type="numeric"/>
+            <column name="code_registre_1_cas_depistes" type="string"/>
+            <column name="lien_parente_1_cas_depistes" type="string"/>
+            <column name="autre_lien_parente_1" type="string"/>
+            <column name="code_registre_2_cas_depistes" type="string"/>
+            <column name="lien_parente_2_cas_depistes" type="string"/>
+            <column name="autre_lien_parente_2" type="string"/>
+            <column name="nombre_de_grossesse_ulterieures" type="numeric"/>
+            <column name="nomre_dpn" type="numeric"/>
+            <column name="nombre_nouveaux_cas_diagnostiques" type="numeric"/>
+            <column name="nombre_itg" type="numeric"/>
+            <column name="nomre_de_grossesses_poursuivies" type="numeric"/>
+            <column name="nombre_de_foetus_sains" type="numeric"/>
             <column name="pathologie_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

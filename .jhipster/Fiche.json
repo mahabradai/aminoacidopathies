@@ -270,6 +270,95 @@
       "fieldName": "reeducation_fonctionnelle",
       "fieldType": "erededucationfonctionnelle",
       "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "appareillage",
+      "fieldType": "eappareillage",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "psuchologie",
+      "fieldType": "epsychologie",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "ergotherapie",
+      "fieldType": "eergotherapie",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "depistage_post_natal_oriente",
+      "fieldType": "edepistage_post_natal_oriente",
+      "fieldValues": "OUI,NON,NP"
+    },
+    {
+      "fieldName": "echelle_depistage",
+      "fieldType": "eechelledepistage",
+      "fieldValues": "FAMILLE_NUCLEAIRE,AU_DELA,NP"
+    },
+    {
+      "fieldName": "nombre_individus_depistes",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nouveaux_cas_depistes",
+      "fieldType": "enouveaux_cas_depistes",
+      "fieldValues": "OUI,NON,EN_COURS,NP"
+    },
+    {
+      "fieldName": "nombre_nouveaux_cas_depistes",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "code_registre1_cas_depistes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lien_parente1_cas_depistes",
+      "fieldType": "elienparente1",
+      "fieldValues": "FRATERIE,COUSINS,AUTRE"
+    },
+    {
+      "fieldName": "autre_lien_parente1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "code_registre2_cas_depistes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lien_parente2_cas_depistes",
+      "fieldType": "elienparente2",
+      "fieldValues": "FRATERIE,COUSINS,AUTRE"
+    },
+    {
+      "fieldName": "autre_lien_parente2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nombre_de_grossesse_ulterieures",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nomre_DPN",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nombre_nouveaux_cas_diagnostiques",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nombre_ITG",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nomre_de_grossesses_poursuivies",
+      "fieldType": "Integer",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "nombre_de_foetus_sains",
+      "fieldType": "Integer"
     }
   ],
   "jpaMetamodelFiltering": false,

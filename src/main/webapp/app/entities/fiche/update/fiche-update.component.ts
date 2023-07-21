@@ -41,6 +41,14 @@ import { evitamines } from 'app/entities/enumerations/evitamines.model';
 import { evitamineval } from 'app/entities/enumerations/evitamineval.model';
 import { egreffehepatique } from 'app/entities/enumerations/egreffehepatique.model';
 import { erededucationfonctionnelle } from 'app/entities/enumerations/erededucationfonctionnelle.model';
+import { eappareillage } from 'app/entities/enumerations/eappareillage.model';
+import { epsychologie } from 'app/entities/enumerations/epsychologie.model';
+import { eergotherapie } from 'app/entities/enumerations/eergotherapie.model';
+import { edepistage_post_natal_oriente } from 'app/entities/enumerations/edepistage-post-natal-oriente.model';
+import { eechelledepistage } from 'app/entities/enumerations/eechelledepistage.model';
+import { enouveaux_cas_depistes } from 'app/entities/enumerations/enouveaux-cas-depistes.model';
+import { elienparente1 } from 'app/entities/enumerations/elienparente-1.model';
+import { elienparente2 } from 'app/entities/enumerations/elienparente-2.model';
 
 @Component({
   selector: 'jhi-fiche-update',
@@ -81,6 +89,14 @@ export class FicheUpdateComponent implements OnInit {
   evitaminevalValues = Object.keys(evitamineval);
   egreffehepatiqueValues = Object.keys(egreffehepatique);
   erededucationfonctionnelleValues = Object.keys(erededucationfonctionnelle);
+  eappareillageValues = Object.keys(eappareillage);
+  epsychologieValues = Object.keys(epsychologie);
+  eergotherapieValues = Object.keys(eergotherapie);
+  edepistage_post_natal_orienteValues = Object.keys(edepistage_post_natal_oriente);
+  eechelledepistageValues = Object.keys(eechelledepistage);
+  enouveaux_cas_depistesValues = Object.keys(enouveaux_cas_depistes);
+  elienparente1Values = Object.keys(elienparente1);
+  elienparente2Values = Object.keys(elienparente2);
 
   pathologiesSharedCollection: IPathologie[] = [];
 

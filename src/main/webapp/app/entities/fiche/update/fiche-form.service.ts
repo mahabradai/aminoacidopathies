@@ -77,6 +77,26 @@ type FicheFormGroupContent = {
   vitamines_val: FormControl<IFiche['vitamines_val']>;
   greffehepatique: FormControl<IFiche['greffehepatique']>;
   reeducation_fonctionnelle: FormControl<IFiche['reeducation_fonctionnelle']>;
+  appareillage: FormControl<IFiche['appareillage']>;
+  psuchologie: FormControl<IFiche['psuchologie']>;
+  ergotherapie: FormControl<IFiche['ergotherapie']>;
+  depistage_post_natal_oriente: FormControl<IFiche['depistage_post_natal_oriente']>;
+  echelle_depistage: FormControl<IFiche['echelle_depistage']>;
+  nombre_individus_depistes: FormControl<IFiche['nombre_individus_depistes']>;
+  nouveaux_cas_depistes: FormControl<IFiche['nouveaux_cas_depistes']>;
+  nombre_nouveaux_cas_depistes: FormControl<IFiche['nombre_nouveaux_cas_depistes']>;
+  code_registre1_cas_depistes: FormControl<IFiche['code_registre1_cas_depistes']>;
+  lien_parente1_cas_depistes: FormControl<IFiche['lien_parente1_cas_depistes']>;
+  autre_lien_parente1: FormControl<IFiche['autre_lien_parente1']>;
+  code_registre2_cas_depistes: FormControl<IFiche['code_registre2_cas_depistes']>;
+  lien_parente2_cas_depistes: FormControl<IFiche['lien_parente2_cas_depistes']>;
+  autre_lien_parente2: FormControl<IFiche['autre_lien_parente2']>;
+  nombre_de_grossesse_ulterieures: FormControl<IFiche['nombre_de_grossesse_ulterieures']>;
+  nomre_DPN: FormControl<IFiche['nomre_DPN']>;
+  nombre_nouveaux_cas_diagnostiques: FormControl<IFiche['nombre_nouveaux_cas_diagnostiques']>;
+  nombre_ITG: FormControl<IFiche['nombre_ITG']>;
+  nomre_de_grossesses_poursuivies: FormControl<IFiche['nomre_de_grossesses_poursuivies']>;
+  nombre_de_foetus_sains: FormControl<IFiche['nombre_de_foetus_sains']>;
   pathologie: FormControl<IFiche['pathologie']>;
 };
 
@@ -158,6 +178,26 @@ export class FicheFormService {
       vitamines_val: new FormControl(ficheRawValue.vitamines_val),
       greffehepatique: new FormControl(ficheRawValue.greffehepatique),
       reeducation_fonctionnelle: new FormControl(ficheRawValue.reeducation_fonctionnelle),
+      appareillage: new FormControl(ficheRawValue.appareillage),
+      psuchologie: new FormControl(ficheRawValue.psuchologie),
+      ergotherapie: new FormControl(ficheRawValue.ergotherapie),
+      depistage_post_natal_oriente: new FormControl(ficheRawValue.depistage_post_natal_oriente),
+      echelle_depistage: new FormControl(ficheRawValue.echelle_depistage),
+      nombre_individus_depistes: new FormControl(ficheRawValue.nombre_individus_depistes),
+      nouveaux_cas_depistes: new FormControl(ficheRawValue.nouveaux_cas_depistes),
+      nombre_nouveaux_cas_depistes: new FormControl(ficheRawValue.nombre_nouveaux_cas_depistes),
+      code_registre1_cas_depistes: new FormControl(ficheRawValue.code_registre1_cas_depistes),
+      lien_parente1_cas_depistes: new FormControl(ficheRawValue.lien_parente1_cas_depistes),
+      autre_lien_parente1: new FormControl(ficheRawValue.autre_lien_parente1),
+      code_registre2_cas_depistes: new FormControl(ficheRawValue.code_registre2_cas_depistes),
+      lien_parente2_cas_depistes: new FormControl(ficheRawValue.lien_parente2_cas_depistes),
+      autre_lien_parente2: new FormControl(ficheRawValue.autre_lien_parente2),
+      nombre_de_grossesse_ulterieures: new FormControl(ficheRawValue.nombre_de_grossesse_ulterieures),
+      nomre_DPN: new FormControl(ficheRawValue.nomre_DPN),
+      nombre_nouveaux_cas_diagnostiques: new FormControl(ficheRawValue.nombre_nouveaux_cas_diagnostiques),
+      nombre_ITG: new FormControl(ficheRawValue.nombre_ITG),
+      nomre_de_grossesses_poursuivies: new FormControl(ficheRawValue.nomre_de_grossesses_poursuivies),
+      nombre_de_foetus_sains: new FormControl(ficheRawValue.nombre_de_foetus_sains),
       pathologie: new FormControl(ficheRawValue.pathologie, {
         validators: [Validators.required],
       }),

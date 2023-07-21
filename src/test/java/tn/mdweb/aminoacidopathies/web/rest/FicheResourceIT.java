@@ -27,6 +27,7 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.eQI;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eage_premier_symptome;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eagepremiereconsultation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eappareillage;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecircondecouverte;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
@@ -37,15 +38,22 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychiqueval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneuro;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneurosensorielval;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edepistage_post_natal_oriente;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eechelledepistage;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eergotherapie;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egrade;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egreffehepatique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ehandicapmental;
+import tn.mdweb.aminoacidopathies.domain.enumeration.elienparente1;
+import tn.mdweb.aminoacidopathies.domain.enumeration.elienparente2;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
 import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifiqueval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eniveauscolarisation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.enouveaux_cas_depistes;
+import tn.mdweb.aminoacidopathies.domain.enumeration.epsychologie;
 import tn.mdweb.aminoacidopathies.domain.enumeration.erededucationfonctionnelle;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregime;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregimeval;
@@ -243,6 +251,66 @@ class FicheResourceIT {
     private static final erededucationfonctionnelle DEFAULT_REEDUCATION_FONCTIONNELLE = erededucationfonctionnelle.OUI;
     private static final erededucationfonctionnelle UPDATED_REEDUCATION_FONCTIONNELLE = erededucationfonctionnelle.NON;
 
+    private static final eappareillage DEFAULT_APPAREILLAGE = eappareillage.OUI;
+    private static final eappareillage UPDATED_APPAREILLAGE = eappareillage.NON;
+
+    private static final epsychologie DEFAULT_PSUCHOLOGIE = epsychologie.OUI;
+    private static final epsychologie UPDATED_PSUCHOLOGIE = epsychologie.NON;
+
+    private static final eergotherapie DEFAULT_ERGOTHERAPIE = eergotherapie.OUI;
+    private static final eergotherapie UPDATED_ERGOTHERAPIE = eergotherapie.NON;
+
+    private static final edepistage_post_natal_oriente DEFAULT_DEPISTAGE_POST_NATAL_ORIENTE = edepistage_post_natal_oriente.OUI;
+    private static final edepistage_post_natal_oriente UPDATED_DEPISTAGE_POST_NATAL_ORIENTE = edepistage_post_natal_oriente.NON;
+
+    private static final eechelledepistage DEFAULT_ECHELLE_DEPISTAGE = eechelledepistage.FAMILLE_NUCLEAIRE;
+    private static final eechelledepistage UPDATED_ECHELLE_DEPISTAGE = eechelledepistage.AU_DELA;
+
+    private static final Integer DEFAULT_NOMBRE_INDIVIDUS_DEPISTES = 1;
+    private static final Integer UPDATED_NOMBRE_INDIVIDUS_DEPISTES = 2;
+
+    private static final enouveaux_cas_depistes DEFAULT_NOUVEAUX_CAS_DEPISTES = enouveaux_cas_depistes.OUI;
+    private static final enouveaux_cas_depistes UPDATED_NOUVEAUX_CAS_DEPISTES = enouveaux_cas_depistes.NON;
+
+    private static final Integer DEFAULT_NOMBRE_NOUVEAUX_CAS_DEPISTES = 1;
+    private static final Integer UPDATED_NOMBRE_NOUVEAUX_CAS_DEPISTES = 2;
+
+    private static final String DEFAULT_CODE_REGISTRE_1_CAS_DEPISTES = "AAAAAAAAAA";
+    private static final String UPDATED_CODE_REGISTRE_1_CAS_DEPISTES = "BBBBBBBBBB";
+
+    private static final elienparente1 DEFAULT_LIEN_PARENTE_1_CAS_DEPISTES = elienparente1.FRATERIE;
+    private static final elienparente1 UPDATED_LIEN_PARENTE_1_CAS_DEPISTES = elienparente1.COUSINS;
+
+    private static final String DEFAULT_AUTRE_LIEN_PARENTE_1 = "AAAAAAAAAA";
+    private static final String UPDATED_AUTRE_LIEN_PARENTE_1 = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CODE_REGISTRE_2_CAS_DEPISTES = "AAAAAAAAAA";
+    private static final String UPDATED_CODE_REGISTRE_2_CAS_DEPISTES = "BBBBBBBBBB";
+
+    private static final elienparente2 DEFAULT_LIEN_PARENTE_2_CAS_DEPISTES = elienparente2.FRATERIE;
+    private static final elienparente2 UPDATED_LIEN_PARENTE_2_CAS_DEPISTES = elienparente2.COUSINS;
+
+    private static final String DEFAULT_AUTRE_LIEN_PARENTE_2 = "AAAAAAAAAA";
+    private static final String UPDATED_AUTRE_LIEN_PARENTE_2 = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_NOMBRE_DE_GROSSESSE_ULTERIEURES = 1;
+    private static final Integer UPDATED_NOMBRE_DE_GROSSESSE_ULTERIEURES = 2;
+
+    private static final Integer DEFAULT_NOMRE_DPN = 1;
+    private static final Integer UPDATED_NOMRE_DPN = 2;
+
+    private static final Integer DEFAULT_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES = 1;
+    private static final Integer UPDATED_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES = 2;
+
+    private static final Integer DEFAULT_NOMBRE_ITG = 1;
+    private static final Integer UPDATED_NOMBRE_ITG = 2;
+
+    private static final Integer DEFAULT_NOMRE_DE_GROSSESSES_POURSUIVIES = 1;
+    private static final Integer UPDATED_NOMRE_DE_GROSSESSES_POURSUIVIES = 2;
+
+    private static final Integer DEFAULT_NOMBRE_DE_FOETUS_SAINS = 1;
+    private static final Integer UPDATED_NOMBRE_DE_FOETUS_SAINS = 2;
+
     private static final String ENTITY_API_URL = "/api/fiches";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -329,7 +397,27 @@ class FicheResourceIT {
             .vitamines(DEFAULT_VITAMINES)
             .vitamines_val(DEFAULT_VITAMINES_VAL)
             .greffehepatique(DEFAULT_GREFFEHEPATIQUE)
-            .reeducation_fonctionnelle(DEFAULT_REEDUCATION_FONCTIONNELLE);
+            .reeducation_fonctionnelle(DEFAULT_REEDUCATION_FONCTIONNELLE)
+            .appareillage(DEFAULT_APPAREILLAGE)
+            .psuchologie(DEFAULT_PSUCHOLOGIE)
+            .ergotherapie(DEFAULT_ERGOTHERAPIE)
+            .depistage_post_natal_oriente(DEFAULT_DEPISTAGE_POST_NATAL_ORIENTE)
+            .echelle_depistage(DEFAULT_ECHELLE_DEPISTAGE)
+            .nombre_individus_depistes(DEFAULT_NOMBRE_INDIVIDUS_DEPISTES)
+            .nouveaux_cas_depistes(DEFAULT_NOUVEAUX_CAS_DEPISTES)
+            .nombre_nouveaux_cas_depistes(DEFAULT_NOMBRE_NOUVEAUX_CAS_DEPISTES)
+            .code_registre1_cas_depistes(DEFAULT_CODE_REGISTRE_1_CAS_DEPISTES)
+            .lien_parente1_cas_depistes(DEFAULT_LIEN_PARENTE_1_CAS_DEPISTES)
+            .autre_lien_parente1(DEFAULT_AUTRE_LIEN_PARENTE_1)
+            .code_registre2_cas_depistes(DEFAULT_CODE_REGISTRE_2_CAS_DEPISTES)
+            .lien_parente2_cas_depistes(DEFAULT_LIEN_PARENTE_2_CAS_DEPISTES)
+            .autre_lien_parente2(DEFAULT_AUTRE_LIEN_PARENTE_2)
+            .nombre_de_grossesse_ulterieures(DEFAULT_NOMBRE_DE_GROSSESSE_ULTERIEURES)
+            .nomre_DPN(DEFAULT_NOMRE_DPN)
+            .nombre_nouveaux_cas_diagnostiques(DEFAULT_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES)
+            .nombre_ITG(DEFAULT_NOMBRE_ITG)
+            .nomre_de_grossesses_poursuivies(DEFAULT_NOMRE_DE_GROSSESSES_POURSUIVIES)
+            .nombre_de_foetus_sains(DEFAULT_NOMBRE_DE_FOETUS_SAINS);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -409,7 +497,27 @@ class FicheResourceIT {
             .vitamines(UPDATED_VITAMINES)
             .vitamines_val(UPDATED_VITAMINES_VAL)
             .greffehepatique(UPDATED_GREFFEHEPATIQUE)
-            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE);
+            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE)
+            .appareillage(UPDATED_APPAREILLAGE)
+            .psuchologie(UPDATED_PSUCHOLOGIE)
+            .ergotherapie(UPDATED_ERGOTHERAPIE)
+            .depistage_post_natal_oriente(UPDATED_DEPISTAGE_POST_NATAL_ORIENTE)
+            .echelle_depistage(UPDATED_ECHELLE_DEPISTAGE)
+            .nombre_individus_depistes(UPDATED_NOMBRE_INDIVIDUS_DEPISTES)
+            .nouveaux_cas_depistes(UPDATED_NOUVEAUX_CAS_DEPISTES)
+            .nombre_nouveaux_cas_depistes(UPDATED_NOMBRE_NOUVEAUX_CAS_DEPISTES)
+            .code_registre1_cas_depistes(UPDATED_CODE_REGISTRE_1_CAS_DEPISTES)
+            .lien_parente1_cas_depistes(UPDATED_LIEN_PARENTE_1_CAS_DEPISTES)
+            .autre_lien_parente1(UPDATED_AUTRE_LIEN_PARENTE_1)
+            .code_registre2_cas_depistes(UPDATED_CODE_REGISTRE_2_CAS_DEPISTES)
+            .lien_parente2_cas_depistes(UPDATED_LIEN_PARENTE_2_CAS_DEPISTES)
+            .autre_lien_parente2(UPDATED_AUTRE_LIEN_PARENTE_2)
+            .nombre_de_grossesse_ulterieures(UPDATED_NOMBRE_DE_GROSSESSE_ULTERIEURES)
+            .nomre_DPN(UPDATED_NOMRE_DPN)
+            .nombre_nouveaux_cas_diagnostiques(UPDATED_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES)
+            .nombre_ITG(UPDATED_NOMBRE_ITG)
+            .nomre_de_grossesses_poursuivies(UPDATED_NOMRE_DE_GROSSESSES_POURSUIVIES)
+            .nombre_de_foetus_sains(UPDATED_NOMBRE_DE_FOETUS_SAINS);
         // Add required entity
         Pathologie pathologie;
         if (TestUtil.findAll(em, Pathologie.class).isEmpty()) {
@@ -501,6 +609,26 @@ class FicheResourceIT {
         assertThat(testFiche.getVitamines_val()).isEqualTo(DEFAULT_VITAMINES_VAL);
         assertThat(testFiche.getGreffehepatique()).isEqualTo(DEFAULT_GREFFEHEPATIQUE);
         assertThat(testFiche.getReeducation_fonctionnelle()).isEqualTo(DEFAULT_REEDUCATION_FONCTIONNELLE);
+        assertThat(testFiche.getAppareillage()).isEqualTo(DEFAULT_APPAREILLAGE);
+        assertThat(testFiche.getPsuchologie()).isEqualTo(DEFAULT_PSUCHOLOGIE);
+        assertThat(testFiche.getErgotherapie()).isEqualTo(DEFAULT_ERGOTHERAPIE);
+        assertThat(testFiche.getDepistage_post_natal_oriente()).isEqualTo(DEFAULT_DEPISTAGE_POST_NATAL_ORIENTE);
+        assertThat(testFiche.getEchelle_depistage()).isEqualTo(DEFAULT_ECHELLE_DEPISTAGE);
+        assertThat(testFiche.getNombre_individus_depistes()).isEqualTo(DEFAULT_NOMBRE_INDIVIDUS_DEPISTES);
+        assertThat(testFiche.getNouveaux_cas_depistes()).isEqualTo(DEFAULT_NOUVEAUX_CAS_DEPISTES);
+        assertThat(testFiche.getNombre_nouveaux_cas_depistes()).isEqualTo(DEFAULT_NOMBRE_NOUVEAUX_CAS_DEPISTES);
+        assertThat(testFiche.getCode_registre1_cas_depistes()).isEqualTo(DEFAULT_CODE_REGISTRE_1_CAS_DEPISTES);
+        assertThat(testFiche.getLien_parente1_cas_depistes()).isEqualTo(DEFAULT_LIEN_PARENTE_1_CAS_DEPISTES);
+        assertThat(testFiche.getAutre_lien_parente1()).isEqualTo(DEFAULT_AUTRE_LIEN_PARENTE_1);
+        assertThat(testFiche.getCode_registre2_cas_depistes()).isEqualTo(DEFAULT_CODE_REGISTRE_2_CAS_DEPISTES);
+        assertThat(testFiche.getLien_parente2_cas_depistes()).isEqualTo(DEFAULT_LIEN_PARENTE_2_CAS_DEPISTES);
+        assertThat(testFiche.getAutre_lien_parente2()).isEqualTo(DEFAULT_AUTRE_LIEN_PARENTE_2);
+        assertThat(testFiche.getNombre_de_grossesse_ulterieures()).isEqualTo(DEFAULT_NOMBRE_DE_GROSSESSE_ULTERIEURES);
+        assertThat(testFiche.getNomre_DPN()).isEqualTo(DEFAULT_NOMRE_DPN);
+        assertThat(testFiche.getNombre_nouveaux_cas_diagnostiques()).isEqualTo(DEFAULT_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES);
+        assertThat(testFiche.getNombre_ITG()).isEqualTo(DEFAULT_NOMBRE_ITG);
+        assertThat(testFiche.getNomre_de_grossesses_poursuivies()).isEqualTo(DEFAULT_NOMRE_DE_GROSSESSES_POURSUIVIES);
+        assertThat(testFiche.getNombre_de_foetus_sains()).isEqualTo(DEFAULT_NOMBRE_DE_FOETUS_SAINS);
     }
 
     @Test
@@ -610,7 +738,27 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.[*].vitamines").value(hasItem(DEFAULT_VITAMINES.toString())))
             .andExpect(jsonPath("$.[*].vitamines_val").value(hasItem(DEFAULT_VITAMINES_VAL.toString())))
             .andExpect(jsonPath("$.[*].greffehepatique").value(hasItem(DEFAULT_GREFFEHEPATIQUE.toString())))
-            .andExpect(jsonPath("$.[*].reeducation_fonctionnelle").value(hasItem(DEFAULT_REEDUCATION_FONCTIONNELLE.toString())));
+            .andExpect(jsonPath("$.[*].reeducation_fonctionnelle").value(hasItem(DEFAULT_REEDUCATION_FONCTIONNELLE.toString())))
+            .andExpect(jsonPath("$.[*].appareillage").value(hasItem(DEFAULT_APPAREILLAGE.toString())))
+            .andExpect(jsonPath("$.[*].psuchologie").value(hasItem(DEFAULT_PSUCHOLOGIE.toString())))
+            .andExpect(jsonPath("$.[*].ergotherapie").value(hasItem(DEFAULT_ERGOTHERAPIE.toString())))
+            .andExpect(jsonPath("$.[*].depistage_post_natal_oriente").value(hasItem(DEFAULT_DEPISTAGE_POST_NATAL_ORIENTE.toString())))
+            .andExpect(jsonPath("$.[*].echelle_depistage").value(hasItem(DEFAULT_ECHELLE_DEPISTAGE.toString())))
+            .andExpect(jsonPath("$.[*].nombre_individus_depistes").value(hasItem(DEFAULT_NOMBRE_INDIVIDUS_DEPISTES)))
+            .andExpect(jsonPath("$.[*].nouveaux_cas_depistes").value(hasItem(DEFAULT_NOUVEAUX_CAS_DEPISTES.toString())))
+            .andExpect(jsonPath("$.[*].nombre_nouveaux_cas_depistes").value(hasItem(DEFAULT_NOMBRE_NOUVEAUX_CAS_DEPISTES)))
+            .andExpect(jsonPath("$.[*].code_registre1_cas_depistes").value(hasItem(DEFAULT_CODE_REGISTRE_1_CAS_DEPISTES)))
+            .andExpect(jsonPath("$.[*].lien_parente1_cas_depistes").value(hasItem(DEFAULT_LIEN_PARENTE_1_CAS_DEPISTES.toString())))
+            .andExpect(jsonPath("$.[*].autre_lien_parente1").value(hasItem(DEFAULT_AUTRE_LIEN_PARENTE_1)))
+            .andExpect(jsonPath("$.[*].code_registre2_cas_depistes").value(hasItem(DEFAULT_CODE_REGISTRE_2_CAS_DEPISTES)))
+            .andExpect(jsonPath("$.[*].lien_parente2_cas_depistes").value(hasItem(DEFAULT_LIEN_PARENTE_2_CAS_DEPISTES.toString())))
+            .andExpect(jsonPath("$.[*].autre_lien_parente2").value(hasItem(DEFAULT_AUTRE_LIEN_PARENTE_2)))
+            .andExpect(jsonPath("$.[*].nombre_de_grossesse_ulterieures").value(hasItem(DEFAULT_NOMBRE_DE_GROSSESSE_ULTERIEURES)))
+            .andExpect(jsonPath("$.[*].nomre_DPN").value(hasItem(DEFAULT_NOMRE_DPN)))
+            .andExpect(jsonPath("$.[*].nombre_nouveaux_cas_diagnostiques").value(hasItem(DEFAULT_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES)))
+            .andExpect(jsonPath("$.[*].nombre_ITG").value(hasItem(DEFAULT_NOMBRE_ITG)))
+            .andExpect(jsonPath("$.[*].nomre_de_grossesses_poursuivies").value(hasItem(DEFAULT_NOMRE_DE_GROSSESSES_POURSUIVIES)))
+            .andExpect(jsonPath("$.[*].nombre_de_foetus_sains").value(hasItem(DEFAULT_NOMBRE_DE_FOETUS_SAINS)));
     }
 
     @Test
@@ -683,7 +831,27 @@ class FicheResourceIT {
             .andExpect(jsonPath("$.vitamines").value(DEFAULT_VITAMINES.toString()))
             .andExpect(jsonPath("$.vitamines_val").value(DEFAULT_VITAMINES_VAL.toString()))
             .andExpect(jsonPath("$.greffehepatique").value(DEFAULT_GREFFEHEPATIQUE.toString()))
-            .andExpect(jsonPath("$.reeducation_fonctionnelle").value(DEFAULT_REEDUCATION_FONCTIONNELLE.toString()));
+            .andExpect(jsonPath("$.reeducation_fonctionnelle").value(DEFAULT_REEDUCATION_FONCTIONNELLE.toString()))
+            .andExpect(jsonPath("$.appareillage").value(DEFAULT_APPAREILLAGE.toString()))
+            .andExpect(jsonPath("$.psuchologie").value(DEFAULT_PSUCHOLOGIE.toString()))
+            .andExpect(jsonPath("$.ergotherapie").value(DEFAULT_ERGOTHERAPIE.toString()))
+            .andExpect(jsonPath("$.depistage_post_natal_oriente").value(DEFAULT_DEPISTAGE_POST_NATAL_ORIENTE.toString()))
+            .andExpect(jsonPath("$.echelle_depistage").value(DEFAULT_ECHELLE_DEPISTAGE.toString()))
+            .andExpect(jsonPath("$.nombre_individus_depistes").value(DEFAULT_NOMBRE_INDIVIDUS_DEPISTES))
+            .andExpect(jsonPath("$.nouveaux_cas_depistes").value(DEFAULT_NOUVEAUX_CAS_DEPISTES.toString()))
+            .andExpect(jsonPath("$.nombre_nouveaux_cas_depistes").value(DEFAULT_NOMBRE_NOUVEAUX_CAS_DEPISTES))
+            .andExpect(jsonPath("$.code_registre1_cas_depistes").value(DEFAULT_CODE_REGISTRE_1_CAS_DEPISTES))
+            .andExpect(jsonPath("$.lien_parente1_cas_depistes").value(DEFAULT_LIEN_PARENTE_1_CAS_DEPISTES.toString()))
+            .andExpect(jsonPath("$.autre_lien_parente1").value(DEFAULT_AUTRE_LIEN_PARENTE_1))
+            .andExpect(jsonPath("$.code_registre2_cas_depistes").value(DEFAULT_CODE_REGISTRE_2_CAS_DEPISTES))
+            .andExpect(jsonPath("$.lien_parente2_cas_depistes").value(DEFAULT_LIEN_PARENTE_2_CAS_DEPISTES.toString()))
+            .andExpect(jsonPath("$.autre_lien_parente2").value(DEFAULT_AUTRE_LIEN_PARENTE_2))
+            .andExpect(jsonPath("$.nombre_de_grossesse_ulterieures").value(DEFAULT_NOMBRE_DE_GROSSESSE_ULTERIEURES))
+            .andExpect(jsonPath("$.nomre_DPN").value(DEFAULT_NOMRE_DPN))
+            .andExpect(jsonPath("$.nombre_nouveaux_cas_diagnostiques").value(DEFAULT_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES))
+            .andExpect(jsonPath("$.nombre_ITG").value(DEFAULT_NOMBRE_ITG))
+            .andExpect(jsonPath("$.nomre_de_grossesses_poursuivies").value(DEFAULT_NOMRE_DE_GROSSESSES_POURSUIVIES))
+            .andExpect(jsonPath("$.nombre_de_foetus_sains").value(DEFAULT_NOMBRE_DE_FOETUS_SAINS));
     }
 
     @Test
@@ -764,7 +932,27 @@ class FicheResourceIT {
             .vitamines(UPDATED_VITAMINES)
             .vitamines_val(UPDATED_VITAMINES_VAL)
             .greffehepatique(UPDATED_GREFFEHEPATIQUE)
-            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE);
+            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE)
+            .appareillage(UPDATED_APPAREILLAGE)
+            .psuchologie(UPDATED_PSUCHOLOGIE)
+            .ergotherapie(UPDATED_ERGOTHERAPIE)
+            .depistage_post_natal_oriente(UPDATED_DEPISTAGE_POST_NATAL_ORIENTE)
+            .echelle_depistage(UPDATED_ECHELLE_DEPISTAGE)
+            .nombre_individus_depistes(UPDATED_NOMBRE_INDIVIDUS_DEPISTES)
+            .nouveaux_cas_depistes(UPDATED_NOUVEAUX_CAS_DEPISTES)
+            .nombre_nouveaux_cas_depistes(UPDATED_NOMBRE_NOUVEAUX_CAS_DEPISTES)
+            .code_registre1_cas_depistes(UPDATED_CODE_REGISTRE_1_CAS_DEPISTES)
+            .lien_parente1_cas_depistes(UPDATED_LIEN_PARENTE_1_CAS_DEPISTES)
+            .autre_lien_parente1(UPDATED_AUTRE_LIEN_PARENTE_1)
+            .code_registre2_cas_depistes(UPDATED_CODE_REGISTRE_2_CAS_DEPISTES)
+            .lien_parente2_cas_depistes(UPDATED_LIEN_PARENTE_2_CAS_DEPISTES)
+            .autre_lien_parente2(UPDATED_AUTRE_LIEN_PARENTE_2)
+            .nombre_de_grossesse_ulterieures(UPDATED_NOMBRE_DE_GROSSESSE_ULTERIEURES)
+            .nomre_DPN(UPDATED_NOMRE_DPN)
+            .nombre_nouveaux_cas_diagnostiques(UPDATED_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES)
+            .nombre_ITG(UPDATED_NOMBRE_ITG)
+            .nomre_de_grossesses_poursuivies(UPDATED_NOMRE_DE_GROSSESSES_POURSUIVIES)
+            .nombre_de_foetus_sains(UPDATED_NOMBRE_DE_FOETUS_SAINS);
         FicheDTO ficheDTO = ficheMapper.toDto(updatedFiche);
 
         restFicheMockMvc
@@ -838,6 +1026,26 @@ class FicheResourceIT {
         assertThat(testFiche.getVitamines_val()).isEqualTo(UPDATED_VITAMINES_VAL);
         assertThat(testFiche.getGreffehepatique()).isEqualTo(UPDATED_GREFFEHEPATIQUE);
         assertThat(testFiche.getReeducation_fonctionnelle()).isEqualTo(UPDATED_REEDUCATION_FONCTIONNELLE);
+        assertThat(testFiche.getAppareillage()).isEqualTo(UPDATED_APPAREILLAGE);
+        assertThat(testFiche.getPsuchologie()).isEqualTo(UPDATED_PSUCHOLOGIE);
+        assertThat(testFiche.getErgotherapie()).isEqualTo(UPDATED_ERGOTHERAPIE);
+        assertThat(testFiche.getDepistage_post_natal_oriente()).isEqualTo(UPDATED_DEPISTAGE_POST_NATAL_ORIENTE);
+        assertThat(testFiche.getEchelle_depistage()).isEqualTo(UPDATED_ECHELLE_DEPISTAGE);
+        assertThat(testFiche.getNombre_individus_depistes()).isEqualTo(UPDATED_NOMBRE_INDIVIDUS_DEPISTES);
+        assertThat(testFiche.getNouveaux_cas_depistes()).isEqualTo(UPDATED_NOUVEAUX_CAS_DEPISTES);
+        assertThat(testFiche.getNombre_nouveaux_cas_depistes()).isEqualTo(UPDATED_NOMBRE_NOUVEAUX_CAS_DEPISTES);
+        assertThat(testFiche.getCode_registre1_cas_depistes()).isEqualTo(UPDATED_CODE_REGISTRE_1_CAS_DEPISTES);
+        assertThat(testFiche.getLien_parente1_cas_depistes()).isEqualTo(UPDATED_LIEN_PARENTE_1_CAS_DEPISTES);
+        assertThat(testFiche.getAutre_lien_parente1()).isEqualTo(UPDATED_AUTRE_LIEN_PARENTE_1);
+        assertThat(testFiche.getCode_registre2_cas_depistes()).isEqualTo(UPDATED_CODE_REGISTRE_2_CAS_DEPISTES);
+        assertThat(testFiche.getLien_parente2_cas_depistes()).isEqualTo(UPDATED_LIEN_PARENTE_2_CAS_DEPISTES);
+        assertThat(testFiche.getAutre_lien_parente2()).isEqualTo(UPDATED_AUTRE_LIEN_PARENTE_2);
+        assertThat(testFiche.getNombre_de_grossesse_ulterieures()).isEqualTo(UPDATED_NOMBRE_DE_GROSSESSE_ULTERIEURES);
+        assertThat(testFiche.getNomre_DPN()).isEqualTo(UPDATED_NOMRE_DPN);
+        assertThat(testFiche.getNombre_nouveaux_cas_diagnostiques()).isEqualTo(UPDATED_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES);
+        assertThat(testFiche.getNombre_ITG()).isEqualTo(UPDATED_NOMBRE_ITG);
+        assertThat(testFiche.getNomre_de_grossesses_poursuivies()).isEqualTo(UPDATED_NOMRE_DE_GROSSESSES_POURSUIVIES);
+        assertThat(testFiche.getNombre_de_foetus_sains()).isEqualTo(UPDATED_NOMBRE_DE_FOETUS_SAINS);
     }
 
     @Test
@@ -951,7 +1159,18 @@ class FicheResourceIT {
             .autre_medicament_specifique(UPDATED_AUTRE_MEDICAMENT_SPECIFIQUE)
             .vitamines_val(UPDATED_VITAMINES_VAL)
             .greffehepatique(UPDATED_GREFFEHEPATIQUE)
-            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE);
+            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE)
+            .psuchologie(UPDATED_PSUCHOLOGIE)
+            .ergotherapie(UPDATED_ERGOTHERAPIE)
+            .nombre_individus_depistes(UPDATED_NOMBRE_INDIVIDUS_DEPISTES)
+            .nouveaux_cas_depistes(UPDATED_NOUVEAUX_CAS_DEPISTES)
+            .code_registre1_cas_depistes(UPDATED_CODE_REGISTRE_1_CAS_DEPISTES)
+            .lien_parente1_cas_depistes(UPDATED_LIEN_PARENTE_1_CAS_DEPISTES)
+            .code_registre2_cas_depistes(UPDATED_CODE_REGISTRE_2_CAS_DEPISTES)
+            .lien_parente2_cas_depistes(UPDATED_LIEN_PARENTE_2_CAS_DEPISTES)
+            .autre_lien_parente2(UPDATED_AUTRE_LIEN_PARENTE_2)
+            .nombre_de_grossesse_ulterieures(UPDATED_NOMBRE_DE_GROSSESSE_ULTERIEURES)
+            .nombre_nouveaux_cas_diagnostiques(UPDATED_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES);
 
         restFicheMockMvc
             .perform(
@@ -1024,6 +1243,26 @@ class FicheResourceIT {
         assertThat(testFiche.getVitamines_val()).isEqualTo(UPDATED_VITAMINES_VAL);
         assertThat(testFiche.getGreffehepatique()).isEqualTo(UPDATED_GREFFEHEPATIQUE);
         assertThat(testFiche.getReeducation_fonctionnelle()).isEqualTo(UPDATED_REEDUCATION_FONCTIONNELLE);
+        assertThat(testFiche.getAppareillage()).isEqualTo(DEFAULT_APPAREILLAGE);
+        assertThat(testFiche.getPsuchologie()).isEqualTo(UPDATED_PSUCHOLOGIE);
+        assertThat(testFiche.getErgotherapie()).isEqualTo(UPDATED_ERGOTHERAPIE);
+        assertThat(testFiche.getDepistage_post_natal_oriente()).isEqualTo(DEFAULT_DEPISTAGE_POST_NATAL_ORIENTE);
+        assertThat(testFiche.getEchelle_depistage()).isEqualTo(DEFAULT_ECHELLE_DEPISTAGE);
+        assertThat(testFiche.getNombre_individus_depistes()).isEqualTo(UPDATED_NOMBRE_INDIVIDUS_DEPISTES);
+        assertThat(testFiche.getNouveaux_cas_depistes()).isEqualTo(UPDATED_NOUVEAUX_CAS_DEPISTES);
+        assertThat(testFiche.getNombre_nouveaux_cas_depistes()).isEqualTo(DEFAULT_NOMBRE_NOUVEAUX_CAS_DEPISTES);
+        assertThat(testFiche.getCode_registre1_cas_depistes()).isEqualTo(UPDATED_CODE_REGISTRE_1_CAS_DEPISTES);
+        assertThat(testFiche.getLien_parente1_cas_depistes()).isEqualTo(UPDATED_LIEN_PARENTE_1_CAS_DEPISTES);
+        assertThat(testFiche.getAutre_lien_parente1()).isEqualTo(DEFAULT_AUTRE_LIEN_PARENTE_1);
+        assertThat(testFiche.getCode_registre2_cas_depistes()).isEqualTo(UPDATED_CODE_REGISTRE_2_CAS_DEPISTES);
+        assertThat(testFiche.getLien_parente2_cas_depistes()).isEqualTo(UPDATED_LIEN_PARENTE_2_CAS_DEPISTES);
+        assertThat(testFiche.getAutre_lien_parente2()).isEqualTo(UPDATED_AUTRE_LIEN_PARENTE_2);
+        assertThat(testFiche.getNombre_de_grossesse_ulterieures()).isEqualTo(UPDATED_NOMBRE_DE_GROSSESSE_ULTERIEURES);
+        assertThat(testFiche.getNomre_DPN()).isEqualTo(DEFAULT_NOMRE_DPN);
+        assertThat(testFiche.getNombre_nouveaux_cas_diagnostiques()).isEqualTo(UPDATED_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES);
+        assertThat(testFiche.getNombre_ITG()).isEqualTo(DEFAULT_NOMBRE_ITG);
+        assertThat(testFiche.getNomre_de_grossesses_poursuivies()).isEqualTo(DEFAULT_NOMRE_DE_GROSSESSES_POURSUIVIES);
+        assertThat(testFiche.getNombre_de_foetus_sains()).isEqualTo(DEFAULT_NOMBRE_DE_FOETUS_SAINS);
     }
 
     @Test
@@ -1097,7 +1336,27 @@ class FicheResourceIT {
             .vitamines(UPDATED_VITAMINES)
             .vitamines_val(UPDATED_VITAMINES_VAL)
             .greffehepatique(UPDATED_GREFFEHEPATIQUE)
-            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE);
+            .reeducation_fonctionnelle(UPDATED_REEDUCATION_FONCTIONNELLE)
+            .appareillage(UPDATED_APPAREILLAGE)
+            .psuchologie(UPDATED_PSUCHOLOGIE)
+            .ergotherapie(UPDATED_ERGOTHERAPIE)
+            .depistage_post_natal_oriente(UPDATED_DEPISTAGE_POST_NATAL_ORIENTE)
+            .echelle_depistage(UPDATED_ECHELLE_DEPISTAGE)
+            .nombre_individus_depistes(UPDATED_NOMBRE_INDIVIDUS_DEPISTES)
+            .nouveaux_cas_depistes(UPDATED_NOUVEAUX_CAS_DEPISTES)
+            .nombre_nouveaux_cas_depistes(UPDATED_NOMBRE_NOUVEAUX_CAS_DEPISTES)
+            .code_registre1_cas_depistes(UPDATED_CODE_REGISTRE_1_CAS_DEPISTES)
+            .lien_parente1_cas_depistes(UPDATED_LIEN_PARENTE_1_CAS_DEPISTES)
+            .autre_lien_parente1(UPDATED_AUTRE_LIEN_PARENTE_1)
+            .code_registre2_cas_depistes(UPDATED_CODE_REGISTRE_2_CAS_DEPISTES)
+            .lien_parente2_cas_depistes(UPDATED_LIEN_PARENTE_2_CAS_DEPISTES)
+            .autre_lien_parente2(UPDATED_AUTRE_LIEN_PARENTE_2)
+            .nombre_de_grossesse_ulterieures(UPDATED_NOMBRE_DE_GROSSESSE_ULTERIEURES)
+            .nomre_DPN(UPDATED_NOMRE_DPN)
+            .nombre_nouveaux_cas_diagnostiques(UPDATED_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES)
+            .nombre_ITG(UPDATED_NOMBRE_ITG)
+            .nomre_de_grossesses_poursuivies(UPDATED_NOMRE_DE_GROSSESSES_POURSUIVIES)
+            .nombre_de_foetus_sains(UPDATED_NOMBRE_DE_FOETUS_SAINS);
 
         restFicheMockMvc
             .perform(
@@ -1170,6 +1429,26 @@ class FicheResourceIT {
         assertThat(testFiche.getVitamines_val()).isEqualTo(UPDATED_VITAMINES_VAL);
         assertThat(testFiche.getGreffehepatique()).isEqualTo(UPDATED_GREFFEHEPATIQUE);
         assertThat(testFiche.getReeducation_fonctionnelle()).isEqualTo(UPDATED_REEDUCATION_FONCTIONNELLE);
+        assertThat(testFiche.getAppareillage()).isEqualTo(UPDATED_APPAREILLAGE);
+        assertThat(testFiche.getPsuchologie()).isEqualTo(UPDATED_PSUCHOLOGIE);
+        assertThat(testFiche.getErgotherapie()).isEqualTo(UPDATED_ERGOTHERAPIE);
+        assertThat(testFiche.getDepistage_post_natal_oriente()).isEqualTo(UPDATED_DEPISTAGE_POST_NATAL_ORIENTE);
+        assertThat(testFiche.getEchelle_depistage()).isEqualTo(UPDATED_ECHELLE_DEPISTAGE);
+        assertThat(testFiche.getNombre_individus_depistes()).isEqualTo(UPDATED_NOMBRE_INDIVIDUS_DEPISTES);
+        assertThat(testFiche.getNouveaux_cas_depistes()).isEqualTo(UPDATED_NOUVEAUX_CAS_DEPISTES);
+        assertThat(testFiche.getNombre_nouveaux_cas_depistes()).isEqualTo(UPDATED_NOMBRE_NOUVEAUX_CAS_DEPISTES);
+        assertThat(testFiche.getCode_registre1_cas_depistes()).isEqualTo(UPDATED_CODE_REGISTRE_1_CAS_DEPISTES);
+        assertThat(testFiche.getLien_parente1_cas_depistes()).isEqualTo(UPDATED_LIEN_PARENTE_1_CAS_DEPISTES);
+        assertThat(testFiche.getAutre_lien_parente1()).isEqualTo(UPDATED_AUTRE_LIEN_PARENTE_1);
+        assertThat(testFiche.getCode_registre2_cas_depistes()).isEqualTo(UPDATED_CODE_REGISTRE_2_CAS_DEPISTES);
+        assertThat(testFiche.getLien_parente2_cas_depistes()).isEqualTo(UPDATED_LIEN_PARENTE_2_CAS_DEPISTES);
+        assertThat(testFiche.getAutre_lien_parente2()).isEqualTo(UPDATED_AUTRE_LIEN_PARENTE_2);
+        assertThat(testFiche.getNombre_de_grossesse_ulterieures()).isEqualTo(UPDATED_NOMBRE_DE_GROSSESSE_ULTERIEURES);
+        assertThat(testFiche.getNomre_DPN()).isEqualTo(UPDATED_NOMRE_DPN);
+        assertThat(testFiche.getNombre_nouveaux_cas_diagnostiques()).isEqualTo(UPDATED_NOMBRE_NOUVEAUX_CAS_DIAGNOSTIQUES);
+        assertThat(testFiche.getNombre_ITG()).isEqualTo(UPDATED_NOMBRE_ITG);
+        assertThat(testFiche.getNomre_de_grossesses_poursuivies()).isEqualTo(UPDATED_NOMRE_DE_GROSSESSES_POURSUIVIES);
+        assertThat(testFiche.getNombre_de_foetus_sains()).isEqualTo(UPDATED_NOMBRE_DE_FOETUS_SAINS);
     }
 
     @Test

@@ -32,6 +32,14 @@ import { evitamines } from 'app/entities/enumerations/evitamines.model';
 import { evitamineval } from 'app/entities/enumerations/evitamineval.model';
 import { egreffehepatique } from 'app/entities/enumerations/egreffehepatique.model';
 import { erededucationfonctionnelle } from 'app/entities/enumerations/erededucationfonctionnelle.model';
+import { eappareillage } from 'app/entities/enumerations/eappareillage.model';
+import { epsychologie } from 'app/entities/enumerations/epsychologie.model';
+import { eergotherapie } from 'app/entities/enumerations/eergotherapie.model';
+import { edepistage_post_natal_oriente } from 'app/entities/enumerations/edepistage-post-natal-oriente.model';
+import { eechelledepistage } from 'app/entities/enumerations/eechelledepistage.model';
+import { enouveaux_cas_depistes } from 'app/entities/enumerations/enouveaux-cas-depistes.model';
+import { elienparente1 } from 'app/entities/enumerations/elienparente-1.model';
+import { elienparente2 } from 'app/entities/enumerations/elienparente-2.model';
 
 export interface IFiche {
   id: number;
@@ -94,6 +102,26 @@ export interface IFiche {
   vitamines_val?: evitamineval | null;
   greffehepatique?: egreffehepatique | null;
   reeducation_fonctionnelle?: erededucationfonctionnelle | null;
+  appareillage?: eappareillage | null;
+  psuchologie?: epsychologie | null;
+  ergotherapie?: eergotherapie | null;
+  depistage_post_natal_oriente?: edepistage_post_natal_oriente | null;
+  echelle_depistage?: eechelledepistage | null;
+  nombre_individus_depistes?: number | null;
+  nouveaux_cas_depistes?: enouveaux_cas_depistes | null;
+  nombre_nouveaux_cas_depistes?: number | null;
+  code_registre1_cas_depistes?: string | null;
+  lien_parente1_cas_depistes?: elienparente1 | null;
+  autre_lien_parente1?: string | null;
+  code_registre2_cas_depistes?: string | null;
+  lien_parente2_cas_depistes?: elienparente2 | null;
+  autre_lien_parente2?: string | null;
+  nombre_de_grossesse_ulterieures?: number | null;
+  nomre_DPN?: number | null;
+  nombre_nouveaux_cas_diagnostiques?: number | null;
+  nombre_ITG?: number | null;
+  nomre_de_grossesses_poursuivies?: number | null;
+  nombre_de_foetus_sains?: number | null;
   pathologie?: Pick<IPathologie, 'id'> | null;
 }
 

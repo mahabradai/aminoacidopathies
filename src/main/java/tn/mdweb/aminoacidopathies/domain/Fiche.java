@@ -11,6 +11,7 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.eQI;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eactivite;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eage_premier_symptome;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eagepremiereconsultation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eappareillage;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecasfamiliaux;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecircondecouverte;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ecirconstance;
@@ -21,15 +22,22 @@ import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edeficiencepsychiqueval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneuro;
 import tn.mdweb.aminoacidopathies.domain.enumeration.edeficitneurosensorielval;
+import tn.mdweb.aminoacidopathies.domain.enumeration.edepistage_post_natal_oriente;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eechelledepistage;
+import tn.mdweb.aminoacidopathies.domain.enumeration.eergotherapie;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernorat;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egouvernoratmere;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egrade;
 import tn.mdweb.aminoacidopathies.domain.enumeration.egreffehepatique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.ehandicapmental;
+import tn.mdweb.aminoacidopathies.domain.enumeration.elienparente1;
+import tn.mdweb.aminoacidopathies.domain.enumeration.elienparente2;
 import tn.mdweb.aminoacidopathies.domain.enumeration.elieudeces;
 import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifique;
 import tn.mdweb.aminoacidopathies.domain.enumeration.emedicamentspecifiqueval;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eniveauscolarisation;
+import tn.mdweb.aminoacidopathies.domain.enumeration.enouveaux_cas_depistes;
+import tn.mdweb.aminoacidopathies.domain.enumeration.epsychologie;
 import tn.mdweb.aminoacidopathies.domain.enumeration.erededucationfonctionnelle;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregime;
 import tn.mdweb.aminoacidopathies.domain.enumeration.eregimeval;
@@ -264,6 +272,74 @@ public class Fiche implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "reeducation_fonctionnelle")
     private erededucationfonctionnelle reeducation_fonctionnelle;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "appareillage")
+    private eappareillage appareillage;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "psuchologie")
+    private epsychologie psuchologie;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "ergotherapie")
+    private eergotherapie ergotherapie;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "depistage_post_natal_oriente")
+    private edepistage_post_natal_oriente depistage_post_natal_oriente;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "echelle_depistage")
+    private eechelledepistage echelle_depistage;
+
+    @Column(name = "nombre_individus_depistes")
+    private Integer nombre_individus_depistes;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nouveaux_cas_depistes")
+    private enouveaux_cas_depistes nouveaux_cas_depistes;
+
+    @Column(name = "nombre_nouveaux_cas_depistes")
+    private Integer nombre_nouveaux_cas_depistes;
+
+    @Column(name = "code_registre_1_cas_depistes")
+    private String code_registre1_cas_depistes;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "lien_parente_1_cas_depistes")
+    private elienparente1 lien_parente1_cas_depistes;
+
+    @Column(name = "autre_lien_parente_1")
+    private String autre_lien_parente1;
+
+    @Column(name = "code_registre_2_cas_depistes")
+    private String code_registre2_cas_depistes;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "lien_parente_2_cas_depistes")
+    private elienparente2 lien_parente2_cas_depistes;
+
+    @Column(name = "autre_lien_parente_2")
+    private String autre_lien_parente2;
+
+    @Column(name = "nombre_de_grossesse_ulterieures")
+    private Integer nombre_de_grossesse_ulterieures;
+
+    @Column(name = "nomre_dpn")
+    private Integer nomre_DPN;
+
+    @Column(name = "nombre_nouveaux_cas_diagnostiques")
+    private Integer nombre_nouveaux_cas_diagnostiques;
+
+    @Column(name = "nombre_itg")
+    private Integer nombre_ITG;
+
+    @Column(name = "nomre_de_grossesses_poursuivies")
+    private Integer nomre_de_grossesses_poursuivies;
+
+    @Column(name = "nombre_de_foetus_sains")
+    private Integer nombre_de_foetus_sains;
 
     @ManyToOne(optional = false)
     @NotNull
@@ -1051,6 +1127,266 @@ public class Fiche implements Serializable {
         this.reeducation_fonctionnelle = reeducation_fonctionnelle;
     }
 
+    public eappareillage getAppareillage() {
+        return this.appareillage;
+    }
+
+    public Fiche appareillage(eappareillage appareillage) {
+        this.setAppareillage(appareillage);
+        return this;
+    }
+
+    public void setAppareillage(eappareillage appareillage) {
+        this.appareillage = appareillage;
+    }
+
+    public epsychologie getPsuchologie() {
+        return this.psuchologie;
+    }
+
+    public Fiche psuchologie(epsychologie psuchologie) {
+        this.setPsuchologie(psuchologie);
+        return this;
+    }
+
+    public void setPsuchologie(epsychologie psuchologie) {
+        this.psuchologie = psuchologie;
+    }
+
+    public eergotherapie getErgotherapie() {
+        return this.ergotherapie;
+    }
+
+    public Fiche ergotherapie(eergotherapie ergotherapie) {
+        this.setErgotherapie(ergotherapie);
+        return this;
+    }
+
+    public void setErgotherapie(eergotherapie ergotherapie) {
+        this.ergotherapie = ergotherapie;
+    }
+
+    public edepistage_post_natal_oriente getDepistage_post_natal_oriente() {
+        return this.depistage_post_natal_oriente;
+    }
+
+    public Fiche depistage_post_natal_oriente(edepistage_post_natal_oriente depistage_post_natal_oriente) {
+        this.setDepistage_post_natal_oriente(depistage_post_natal_oriente);
+        return this;
+    }
+
+    public void setDepistage_post_natal_oriente(edepistage_post_natal_oriente depistage_post_natal_oriente) {
+        this.depistage_post_natal_oriente = depistage_post_natal_oriente;
+    }
+
+    public eechelledepistage getEchelle_depistage() {
+        return this.echelle_depistage;
+    }
+
+    public Fiche echelle_depistage(eechelledepistage echelle_depistage) {
+        this.setEchelle_depistage(echelle_depistage);
+        return this;
+    }
+
+    public void setEchelle_depistage(eechelledepistage echelle_depistage) {
+        this.echelle_depistage = echelle_depistage;
+    }
+
+    public Integer getNombre_individus_depistes() {
+        return this.nombre_individus_depistes;
+    }
+
+    public Fiche nombre_individus_depistes(Integer nombre_individus_depistes) {
+        this.setNombre_individus_depistes(nombre_individus_depistes);
+        return this;
+    }
+
+    public void setNombre_individus_depistes(Integer nombre_individus_depistes) {
+        this.nombre_individus_depistes = nombre_individus_depistes;
+    }
+
+    public enouveaux_cas_depistes getNouveaux_cas_depistes() {
+        return this.nouveaux_cas_depistes;
+    }
+
+    public Fiche nouveaux_cas_depistes(enouveaux_cas_depistes nouveaux_cas_depistes) {
+        this.setNouveaux_cas_depistes(nouveaux_cas_depistes);
+        return this;
+    }
+
+    public void setNouveaux_cas_depistes(enouveaux_cas_depistes nouveaux_cas_depistes) {
+        this.nouveaux_cas_depistes = nouveaux_cas_depistes;
+    }
+
+    public Integer getNombre_nouveaux_cas_depistes() {
+        return this.nombre_nouveaux_cas_depistes;
+    }
+
+    public Fiche nombre_nouveaux_cas_depistes(Integer nombre_nouveaux_cas_depistes) {
+        this.setNombre_nouveaux_cas_depistes(nombre_nouveaux_cas_depistes);
+        return this;
+    }
+
+    public void setNombre_nouveaux_cas_depistes(Integer nombre_nouveaux_cas_depistes) {
+        this.nombre_nouveaux_cas_depistes = nombre_nouveaux_cas_depistes;
+    }
+
+    public String getCode_registre1_cas_depistes() {
+        return this.code_registre1_cas_depistes;
+    }
+
+    public Fiche code_registre1_cas_depistes(String code_registre1_cas_depistes) {
+        this.setCode_registre1_cas_depistes(code_registre1_cas_depistes);
+        return this;
+    }
+
+    public void setCode_registre1_cas_depistes(String code_registre1_cas_depistes) {
+        this.code_registre1_cas_depistes = code_registre1_cas_depistes;
+    }
+
+    public elienparente1 getLien_parente1_cas_depistes() {
+        return this.lien_parente1_cas_depistes;
+    }
+
+    public Fiche lien_parente1_cas_depistes(elienparente1 lien_parente1_cas_depistes) {
+        this.setLien_parente1_cas_depistes(lien_parente1_cas_depistes);
+        return this;
+    }
+
+    public void setLien_parente1_cas_depistes(elienparente1 lien_parente1_cas_depistes) {
+        this.lien_parente1_cas_depistes = lien_parente1_cas_depistes;
+    }
+
+    public String getAutre_lien_parente1() {
+        return this.autre_lien_parente1;
+    }
+
+    public Fiche autre_lien_parente1(String autre_lien_parente1) {
+        this.setAutre_lien_parente1(autre_lien_parente1);
+        return this;
+    }
+
+    public void setAutre_lien_parente1(String autre_lien_parente1) {
+        this.autre_lien_parente1 = autre_lien_parente1;
+    }
+
+    public String getCode_registre2_cas_depistes() {
+        return this.code_registre2_cas_depistes;
+    }
+
+    public Fiche code_registre2_cas_depistes(String code_registre2_cas_depistes) {
+        this.setCode_registre2_cas_depistes(code_registre2_cas_depistes);
+        return this;
+    }
+
+    public void setCode_registre2_cas_depistes(String code_registre2_cas_depistes) {
+        this.code_registre2_cas_depistes = code_registre2_cas_depistes;
+    }
+
+    public elienparente2 getLien_parente2_cas_depistes() {
+        return this.lien_parente2_cas_depistes;
+    }
+
+    public Fiche lien_parente2_cas_depistes(elienparente2 lien_parente2_cas_depistes) {
+        this.setLien_parente2_cas_depistes(lien_parente2_cas_depistes);
+        return this;
+    }
+
+    public void setLien_parente2_cas_depistes(elienparente2 lien_parente2_cas_depistes) {
+        this.lien_parente2_cas_depistes = lien_parente2_cas_depistes;
+    }
+
+    public String getAutre_lien_parente2() {
+        return this.autre_lien_parente2;
+    }
+
+    public Fiche autre_lien_parente2(String autre_lien_parente2) {
+        this.setAutre_lien_parente2(autre_lien_parente2);
+        return this;
+    }
+
+    public void setAutre_lien_parente2(String autre_lien_parente2) {
+        this.autre_lien_parente2 = autre_lien_parente2;
+    }
+
+    public Integer getNombre_de_grossesse_ulterieures() {
+        return this.nombre_de_grossesse_ulterieures;
+    }
+
+    public Fiche nombre_de_grossesse_ulterieures(Integer nombre_de_grossesse_ulterieures) {
+        this.setNombre_de_grossesse_ulterieures(nombre_de_grossesse_ulterieures);
+        return this;
+    }
+
+    public void setNombre_de_grossesse_ulterieures(Integer nombre_de_grossesse_ulterieures) {
+        this.nombre_de_grossesse_ulterieures = nombre_de_grossesse_ulterieures;
+    }
+
+    public Integer getNomre_DPN() {
+        return this.nomre_DPN;
+    }
+
+    public Fiche nomre_DPN(Integer nomre_DPN) {
+        this.setNomre_DPN(nomre_DPN);
+        return this;
+    }
+
+    public void setNomre_DPN(Integer nomre_DPN) {
+        this.nomre_DPN = nomre_DPN;
+    }
+
+    public Integer getNombre_nouveaux_cas_diagnostiques() {
+        return this.nombre_nouveaux_cas_diagnostiques;
+    }
+
+    public Fiche nombre_nouveaux_cas_diagnostiques(Integer nombre_nouveaux_cas_diagnostiques) {
+        this.setNombre_nouveaux_cas_diagnostiques(nombre_nouveaux_cas_diagnostiques);
+        return this;
+    }
+
+    public void setNombre_nouveaux_cas_diagnostiques(Integer nombre_nouveaux_cas_diagnostiques) {
+        this.nombre_nouveaux_cas_diagnostiques = nombre_nouveaux_cas_diagnostiques;
+    }
+
+    public Integer getNombre_ITG() {
+        return this.nombre_ITG;
+    }
+
+    public Fiche nombre_ITG(Integer nombre_ITG) {
+        this.setNombre_ITG(nombre_ITG);
+        return this;
+    }
+
+    public void setNombre_ITG(Integer nombre_ITG) {
+        this.nombre_ITG = nombre_ITG;
+    }
+
+    public Integer getNomre_de_grossesses_poursuivies() {
+        return this.nomre_de_grossesses_poursuivies;
+    }
+
+    public Fiche nomre_de_grossesses_poursuivies(Integer nomre_de_grossesses_poursuivies) {
+        this.setNomre_de_grossesses_poursuivies(nomre_de_grossesses_poursuivies);
+        return this;
+    }
+
+    public void setNomre_de_grossesses_poursuivies(Integer nomre_de_grossesses_poursuivies) {
+        this.nomre_de_grossesses_poursuivies = nomre_de_grossesses_poursuivies;
+    }
+
+    public Integer getNombre_de_foetus_sains() {
+        return this.nombre_de_foetus_sains;
+    }
+
+    public Fiche nombre_de_foetus_sains(Integer nombre_de_foetus_sains) {
+        this.setNombre_de_foetus_sains(nombre_de_foetus_sains);
+        return this;
+    }
+
+    public void setNombre_de_foetus_sains(Integer nombre_de_foetus_sains) {
+        this.nombre_de_foetus_sains = nombre_de_foetus_sains;
+    }
+
     public Pathologie getPathologie() {
         return this.pathologie;
     }
@@ -1147,6 +1483,26 @@ public class Fiche implements Serializable {
             ", vitamines_val='" + getVitamines_val() + "'" +
             ", greffehepatique='" + getGreffehepatique() + "'" +
             ", reeducation_fonctionnelle='" + getReeducation_fonctionnelle() + "'" +
+            ", appareillage='" + getAppareillage() + "'" +
+            ", psuchologie='" + getPsuchologie() + "'" +
+            ", ergotherapie='" + getErgotherapie() + "'" +
+            ", depistage_post_natal_oriente='" + getDepistage_post_natal_oriente() + "'" +
+            ", echelle_depistage='" + getEchelle_depistage() + "'" +
+            ", nombre_individus_depistes=" + getNombre_individus_depistes() +
+            ", nouveaux_cas_depistes='" + getNouveaux_cas_depistes() + "'" +
+            ", nombre_nouveaux_cas_depistes=" + getNombre_nouveaux_cas_depistes() +
+            ", code_registre1_cas_depistes='" + getCode_registre1_cas_depistes() + "'" +
+            ", lien_parente1_cas_depistes='" + getLien_parente1_cas_depistes() + "'" +
+            ", autre_lien_parente1='" + getAutre_lien_parente1() + "'" +
+            ", code_registre2_cas_depistes='" + getCode_registre2_cas_depistes() + "'" +
+            ", lien_parente2_cas_depistes='" + getLien_parente2_cas_depistes() + "'" +
+            ", autre_lien_parente2='" + getAutre_lien_parente2() + "'" +
+            ", nombre_de_grossesse_ulterieures=" + getNombre_de_grossesse_ulterieures() +
+            ", nomre_DPN=" + getNomre_DPN() +
+            ", nombre_nouveaux_cas_diagnostiques=" + getNombre_nouveaux_cas_diagnostiques() +
+            ", nombre_ITG=" + getNombre_ITG() +
+            ", nomre_de_grossesses_poursuivies=" + getNomre_de_grossesses_poursuivies() +
+            ", nombre_de_foetus_sains=" + getNombre_de_foetus_sains() +
             "}";
     }
 }
