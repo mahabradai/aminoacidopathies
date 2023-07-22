@@ -49,7 +49,7 @@
     {
       "fieldName": "lieu_deces",
       "fieldType": "elieudeces",
-      "fieldValues": "DOMICILE,STRUCTURE_SANTE_PUBLIQUE_NP"
+      "fieldValues": "DOMICILE,STRUCTURE_SANTE_PUBLIQUE"
     },
     {
       "fieldName": "consanguinite",
@@ -372,6 +372,12 @@
       "relationshipName": "pathologie",
       "relationshipType": "many-to-one",
       "relationshipValidateRules": ["required"]
+    },
+    {
+      "otherEntityName": "casconfirme",
+      "otherEntityRelationshipName": "fiche",
+      "relationshipName": "casconfirme",
+      "relationshipType": "one-to-many"
     }
   ],
   "service": "serviceClass"

@@ -1,7 +1,10 @@
 package tn.mdweb.aminoacidopathies.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import org.hibernate.annotations.Cache;
@@ -344,6 +347,11 @@ public class Fiche implements Serializable {
     @ManyToOne(optional = false)
     @NotNull
     private Pathologie pathologie;
+
+    @OneToMany(mappedBy = "fiche")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "fiche" }, allowSetters = true)
+    private Set<Casconfirme> casconfirmes = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -1397,6 +1405,37 @@ public class Fiche implements Serializable {
 
     public Fiche pathologie(Pathologie pathologie) {
         this.setPathologie(pathologie);
+        return this;
+    }
+
+    public Set<Casconfirme> getCasconfirmes() {
+        return this.casconfirmes;
+    }
+
+    public void setCasconfirmes(Set<Casconfirme> casconfirmes) {
+        if (this.casconfirmes != null) {
+            this.casconfirmes.forEach(i -> i.setFiche(null));
+        }
+        if (casconfirmes != null) {
+            casconfirmes.forEach(i -> i.setFiche(this));
+        }
+        this.casconfirmes = casconfirmes;
+    }
+
+    public Fiche casconfirmes(Set<Casconfirme> casconfirmes) {
+        this.setCasconfirmes(casconfirmes);
+        return this;
+    }
+
+    public Fiche addCasconfirme(Casconfirme casconfirme) {
+        this.casconfirmes.add(casconfirme);
+        casconfirme.setFiche(this);
+        return this;
+    }
+
+    public Fiche removeCasconfirme(Casconfirme casconfirme) {
+        this.casconfirmes.remove(casconfirme);
+        casconfirme.setFiche(null);
         return this;
     }
 
