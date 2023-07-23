@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { IFiche } from '../fiche.model';
 
 @Component({
@@ -8,7 +7,10 @@ import { IFiche } from '../fiche.model';
   templateUrl: './fiche-detail.component.html',
 })
 export class FicheDetailComponent implements OnInit {
-  fiche: IFiche | null = null;
+  fiche: IFiche = {
+    id: 0,
+    casconfirmes: [],
+  };
 
   constructor(protected activatedRoute: ActivatedRoute) {}
 

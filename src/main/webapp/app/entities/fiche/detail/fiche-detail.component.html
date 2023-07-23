@@ -338,6 +338,14 @@
         </dd>
       </dl>
 
+      <dt><span>Cas Confirme</span></dt>
+      <dd>
+        <ul *ngIf="fiche.casconfirmes && fiche.casconfirmes.length > 0">
+          <li *ngFor="let cas of fiche.casconfirmes">{{ cas.code_registre }} - {{ cas.lien_parente }}</li>
+        </ul>
+        <span *ngIf="!(fiche.casconfirmes && fiche.casconfirmes.length > 0)">Aucun cas confirmé</span>
+      </dd>
+
       <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
         <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
       </button>

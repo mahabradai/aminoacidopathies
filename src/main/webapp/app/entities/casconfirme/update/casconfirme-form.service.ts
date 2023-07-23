@@ -20,7 +20,7 @@ type CasconfirmeFormGroupContent = {
   id: FormControl<ICasconfirme['id'] | NewCasconfirme['id']>;
   code_registre: FormControl<ICasconfirme['code_registre']>;
   lien_parente: FormControl<ICasconfirme['lien_parente']>;
-  fiche: FormControl<ICasconfirme['fiche']>;
+  fiche: FormControl<ICasconfirme['fiche'] | null | undefined>;
 };
 
 export type CasconfirmeFormGroup = FormGroup<CasconfirmeFormGroupContent>;

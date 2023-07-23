@@ -5,7 +5,7 @@ export interface ICasconfirme {
   id: number;
   code_registre?: string | null;
   lien_parente?: elien_parente | null;
-  fiche?: Pick<IFiche, 'id'> | null;
+  fiche: IFiche; //  relation ManyToOne
 }
 
 export type NewCasconfirme = Omit<ICasconfirme, 'id'> & { id: null };
